@@ -1,7 +1,7 @@
 package ProyectoCuadroMando;
 
 
-import Controladores.LectorArchivo;
+import Controladores.ProvedorInformacion;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,10 +25,11 @@ public static void main(String[] args){
 
 public static void testLector(){
         try {
-            LectorArchivo lec= new LectorArchivo("l://prueba.txt");
+            ProvedorInformacion lec= new ProvedorInformacion("l://prueba.txt");
             System.out.println(lec.leerLinea());
             
         } catch (FileNotFoundException ex) {
+            System.out.println("Error en la lectura");
             Logger.getLogger(Aplicacion.class.getName()).log(Level.SEVERE, null, ex);
         }
 

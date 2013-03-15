@@ -9,10 +9,10 @@ import java.io.FileReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class LectorArchivo {
+public class ProvedorInformacion {
     File archivo;
     FileReader flujoLectura;
-public LectorArchivo(String ruta) throws FileNotFoundException{
+public ProvedorInformacion(String ruta) throws FileNotFoundException{
 //comprobar archivo
     archivo=new File(ruta);
 
@@ -34,7 +34,7 @@ StringBuilder linea= new StringBuilder();
               linea= linea.append((char)caracter);
             }
         } catch (IOException ex) {
-            Logger.getLogger(LectorArchivo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProvedorInformacion.class.getName()).log(Level.SEVERE, null, ex);
         }
 
  return linea.toString();
