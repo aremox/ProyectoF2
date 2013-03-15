@@ -1,4 +1,4 @@
-package PruebaMenuInicio;
+package ProyectoCuadroMando;
 
 
 import javax.swing.JPanel;
