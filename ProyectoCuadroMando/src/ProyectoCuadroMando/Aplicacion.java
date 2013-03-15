@@ -26,7 +26,7 @@ public static void main(String[] args){
 public static void testLector(){
         try {
             ProveedorInformacion lec= new ProveedorInformacion("l://prueba.txt");
-            System.out.println(lec.leerLinea());
+            lec.leerLinea();
             
         } catch (FileNotFoundException ex) {
             System.out.println("Error en la lectura");

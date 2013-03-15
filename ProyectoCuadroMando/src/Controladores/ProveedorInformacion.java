@@ -56,11 +56,13 @@ try {
                 }
                 else
                 {
+                    System.out.print("Separo la linea: ");
+                    System.out.println(linea);
                     while(tokens.hasMoreTokens()){
 
                         System.out.println(tokens.nextToken().trim());
                     }
-                    System.out.println(linea);
+                    
                 }
             }
             //while ((caracter = flujoLectura.read()) != -1) {
