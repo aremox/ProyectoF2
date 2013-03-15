@@ -19,7 +19,9 @@ public LectorArchivo(String ruta) throws FileNotFoundException{
     try{
         flujoLectura= new FileReader (archivo);
     if (!archivo.exists()) throw new IOException();
-    }catch (IOException ex){}
+    }catch (IOException ex){
+    System.out.println("No existe el fichero, melon");
+    }
 }
 
 public void cerrarFlujo(){}
