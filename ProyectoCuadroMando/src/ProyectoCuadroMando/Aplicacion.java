@@ -1,7 +1,7 @@
 package ProyectoCuadroMando;
 
 
-import Controladores.ProvedorInformacion;
+import Controladores.ProveedorInformacion;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +25,7 @@ public static void main(String[] args){
 
 public static void testLector(){
         try {
-            ProvedorInformacion lec= new ProvedorInformacion("l://prueba.txt");
+            ProveedorInformacion lec= new ProveedorInformacion("l://prueba.txt");
             System.out.println(lec.leerLinea());
             
         } catch (FileNotFoundException ex) {
