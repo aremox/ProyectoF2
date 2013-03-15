@@ -9,10 +9,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class VentanaCargaDatos extends JFrame implements Action{
+public class VentanaPrincipalCuadroMando extends JFrame implements Action{
 
-PanelOpcionesCarga panelOpciones;
-    public VentanaCargaDatos() {
+PanelGeneralOpciones panelOpciones;
+    public VentanaPrincipalCuadroMando() {
         //Configurar ventana principal
         this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         this.getContentPane().setLayout( new BorderLayout() );
@@ -20,7 +20,7 @@ PanelOpcionesCarga panelOpciones;
         this.setTitle( "Test" );
 
        //Inicializar controles
-        panelOpciones=new PanelOpcionesCarga();
+        panelOpciones=new PanelGeneralOpciones();
          this.setContentPane(panelOpciones);
        //Mostrar ventana principal
         this.setVisible(true);

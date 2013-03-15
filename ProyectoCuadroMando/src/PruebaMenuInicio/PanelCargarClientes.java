@@ -9,9 +9,9 @@ import javax.swing.JPanel;
 /*
  */
 
-public class PanelCargaClientes extends JPanel implements Action{
+public class PanelCargarClientes extends JPanel implements Action{
 
-    public PanelCargaClientes() {
+    public PanelCargarClientes() {
         //Establecer tamaño y otros parámetros
         //Inicializar controles
         JLabel etiqueta1= new JLabel("Archivo de carga");

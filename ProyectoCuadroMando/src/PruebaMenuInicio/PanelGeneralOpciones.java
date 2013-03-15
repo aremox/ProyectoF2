@@ -5,17 +5,17 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 
-public class PanelOpcionesCarga extends JTabbedPane {
+public class PanelGeneralOpciones extends JTabbedPane {
 
-    PanelCargaClientes panelClientes;
+    PanelCargarClientes panelClientes;
 
-    public PanelOpcionesCarga() {
-        panelClientes= new PanelCargaClientes();
+    public PanelGeneralOpciones() {
+        panelClientes= new PanelCargarClientes();
         //Crear un panel por cada pestaña
         //Pestaña carga de clientes
 
 
-          PanelCargaClientes tabA = new PanelCargaClientes();
+        PanelCargarClientes tabA = new PanelCargarClientes();
         tabA.setSize( 100,100);
         this.addTab( "Cargar Clientes" , tabA );
         //pestaña carga de articulos

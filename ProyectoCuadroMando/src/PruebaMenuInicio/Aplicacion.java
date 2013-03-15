@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 public class Aplicacion {
 public static void main(String[] args){
 
- new VentanaCargaDatos();
+ new VentanaPrincipalCuadroMando();
  testLector();
 }
 
