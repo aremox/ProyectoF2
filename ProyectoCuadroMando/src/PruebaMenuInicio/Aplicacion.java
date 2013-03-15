@@ -20,11 +20,14 @@ public class Aplicacion {
 public static void main(String[] args){
 
  new VentanaCargaDatos();
+ testLector();
 }
 
 public static void testLector(){
         try {
-            LectorArchivo lec= new LectorArchivo("c://text.txt");
+            LectorArchivo lec= new LectorArchivo("l://prueba.txt");
+            System.out.println(lec.leerLinea());
+            
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Aplicacion.class.getName()).log(Level.SEVERE, null, ex);
         }

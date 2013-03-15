@@ -25,11 +25,11 @@ public LectorArchivo(String ruta) throws FileNotFoundException{
 public void cerrarFlujo(){}
 
 public String leerLinea(){
-StringBuilder linea=null;
+StringBuilder linea= new StringBuilder();
  try {
             int caracter;
             while ((caracter = flujoLectura.read()) != -1) {
-              linea= linea.append(caracter);
+              linea= linea.append((char)caracter);
             }
         } catch (IOException ex) {
             Logger.getLogger(LectorArchivo.class.getName()).log(Level.SEVERE, null, ex);
