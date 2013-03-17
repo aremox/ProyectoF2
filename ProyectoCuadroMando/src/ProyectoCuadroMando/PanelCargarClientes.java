@@ -16,18 +16,23 @@ public class PanelCargarClientes extends JPanel implements Action{
 
     private JButton openButton;
     private JFileChooser selector;
-    
+   
     
     public PanelCargarClientes() {
         //Establecer tamaño y otros parámetros
         //Inicializar controles
-        JLabel etiqueta1= new JLabel("Archivo de carga");
-        selector=new JFileChooser();
-        openButton = new JButton("Abrir un File...");
-        
+        JLabel etiqueta1 = new JLabel("Archivo de clientes :");
+        selector = new JFileChooser();
+        openButton = new JButton("Seleccionar archivo");
+            
+        this.setLayout(null);
         this.add(etiqueta1);
+        etiqueta1.setBounds(75,75,150,30);
         this.add(openButton);
+        openButton.setBounds(450,75,150,30);
         openButton.addActionListener(this);
+        
+        
     }
 
 
