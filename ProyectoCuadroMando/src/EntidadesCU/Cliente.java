@@ -8,6 +8,6 @@ package EntidadesCU;
  *
  * @author ivan
  */
-public class NewClass {
+public class Cliente {
     
 }

@@ -8,6 +8,6 @@ package ContenedoresCU;
  *
  * @author ivan
  */
-public class NewClass {
+public class ContenedorCliente {
     
 }
