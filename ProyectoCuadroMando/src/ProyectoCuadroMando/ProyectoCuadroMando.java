@@ -1,7 +1,7 @@
 package ProyectoCuadroMando;
 
 
-import InterfazCU.VentanaPrincipalCuadroMando;
+import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import ControlAuxiliarCU.ProveedorInformacion;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
@@ -21,7 +21,7 @@ public class ProyectoCuadroMando {
 public static void main(String[] args){
 
  new VentanaPrincipalCuadroMando();
- testLector();
+ //testLector();
 }
 
 public static void testLector(){
