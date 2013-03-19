@@ -1,7 +1,7 @@
-package InterfazCU;
+package InterfazGraficaUsuarioCU;
 
 
-import InterfazCU.PanelCargarClientes;
+import InterfazGraficaUsuarioCU.PanelCargarClientes;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 

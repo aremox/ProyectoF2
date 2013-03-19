@@ -1,4 +1,4 @@
-package InterfazCU;
+package InterfazGraficaUsuarioCU;
 
 import java.awt.Color;
 import java.io.InputStream;

@@ -1,7 +1,7 @@
-package InterfazCU;
+package InterfazGraficaUsuarioCU;
 
 
-import InterfazCU.PanelGeneralOpciones;
+import InterfazGraficaUsuarioCU.PanelGeneralOpciones;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
