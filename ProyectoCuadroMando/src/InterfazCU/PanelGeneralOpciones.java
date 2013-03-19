@@ -1,6 +1,7 @@
-package ProyectoCuadroMando;
+package InterfazCU;
 
 
+import InterfazCU.PanelCargarClientes;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 

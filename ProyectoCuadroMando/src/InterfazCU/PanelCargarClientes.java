@@ -1,4 +1,4 @@
-package ProyectoCuadroMando;
+package InterfazCU;
 
 import java.awt.Color;
 import java.io.InputStream;
