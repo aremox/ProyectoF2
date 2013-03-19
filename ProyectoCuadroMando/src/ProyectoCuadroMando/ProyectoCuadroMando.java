@@ -2,7 +2,7 @@ package ProyectoCuadroMando;
 
 
 import InterfazCU.VentanaPrincipalCuadroMando;
-import Controladores.ProveedorInformacion;
+import ControlAuxiliarCU.ProveedorInformacion;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
