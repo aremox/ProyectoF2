@@ -23,22 +23,22 @@ import javax.swing.JTextField;
 public class ManejadorEventosCargaAlmacenes implements Action{
   public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == PanelCargarClientes.botonSelector) {
-            int returnVal = PanelCargarClientes.selector.showOpenDialog(PanelCargarClientes.selector);
+        if (e.getSource() == PanelCargarAlmacenes.botonSelector) {
+            int returnVal = PanelCargarAlmacenes.selector.showOpenDialog(PanelCargarAlmacenes.selector);
 
             if (returnVal == JFileChooser.APPROVE_OPTION) {
-                File file = PanelCargarClientes.selector.getSelectedFile();
+                File file = PanelCargarAlmacenes.selector.getSelectedFile();
                 System.out.println(file.toString());
-                PanelCargarClientes.cuadroTextoRuta.setText(file.toString());
-                PanelCargarClientes.botonCargar.setEnabled(true);
+                PanelCargarAlmacenes.cuadroTextoRuta.setText(file.toString());
+                PanelCargarAlmacenes.botonCargar.setEnabled(true);
             }
             
-        } else if (e.getSource() == PanelCargarClientes.botonCancelar) {
+        } else if (e.getSource() == PanelCargarAlmacenes.botonCancelar) {
 
-            PanelCargarClientes.cuadroTextoRuta.setText("");
-            PanelCargarClientes.botonCargar.setEnabled(false);
+            PanelCargarAlmacenes.cuadroTextoRuta.setText("");
+            PanelCargarAlmacenes.botonCargar.setEnabled(false);
             
-        } else if (e.getSource() == PanelCargarClientes.botonCargar) {
+        } else if (e.getSource() == PanelCargarAlmacenes.botonCargar) {
 
             System.out.println("Boton cargar");
         }
