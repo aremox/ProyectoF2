@@ -1,11 +1,6 @@
 package InterfazGraficaUsuarioCU;
 
 import java.awt.Color;
-import java.io.InputStream;
-import java.io.File;
-import java.awt.event.ActionEvent;
-import java.awt.Component;
-import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -14,13 +9,13 @@ import javax.swing.JTextField;
 
 /*
  */
-public class PanelCargarClientes extends JPanel implements Action{
+public class PanelCargarClientes extends JPanel{
 
-    private JButton botonSelector;
-    private JButton botonCancelar;
-    private JButton botonCargar;
-    private JFileChooser selector;
-    private JTextField cuadroTextoRuta; 
+    static public JButton botonSelector;
+    static public JButton botonCancelar;
+    static public JButton botonCargar;
+    static public JFileChooser selector;
+    static public JTextField cuadroTextoRuta; 
    
     
     public PanelCargarClientes() {
@@ -42,40 +37,19 @@ public class PanelCargarClientes extends JPanel implements Action{
         this.add(cuadroTextoRuta);
         cuadroTextoRuta.setBounds(205,75,225,30);
 
+        ManejadorEventosCargaCliente evento = new ManejadorEventosCargaCliente();
+        
         this.add(botonSelector);
         botonSelector.setBounds(450,75,150,30);
-        botonSelector.addActionListener(this);
+        botonSelector.addActionListener(evento);
         this.add(botonCancelar);
-        botonCancelar.addActionListener(this);
+        botonCancelar.addActionListener(evento);
         botonCancelar.setBounds(350,225,150,30);
         this.add(botonCargar);
+        botonCargar.addActionListener(evento);
         botonCargar.setBounds(510,225,150,30);
         botonCargar.setEnabled(false);
        
-    }
-
-    public void actionPerformed(ActionEvent e) {
-        //Handle open button action.
-        if (e.getSource() == botonSelector) {
-            int returnVal = selector.showOpenDialog(PanelCargarClientes.this);
-
-            if (returnVal == JFileChooser.APPROVE_OPTION) {
-                File file = selector.getSelectedFile();
-                System.out.println(file.toString());
-                cuadroTextoRuta.setText(file.toString());
-                botonCargar.setEnabled(true);
-                
-                //This is where a real application would open the file.
-               // log.append("Opening: " + file.getName() + "." + newline);
-            } else {
-                //log.append("Open command cancelled by user." + newline);
-            }
-            //log.setCaretPosition(log.getDocument().getLength()); 
-        } else if (e.getSource() == botonCancelar) {
-            
-            cuadroTextoRuta.setText("");
-            botonCargar.setEnabled(false);
-        }
     }
 
     public Object getValue(String key) {

@@ -4,10 +4,71 @@
  */
 package InterfazGraficaUsuarioCU;
 
+import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
+import javax.swing.Action;
+import java.io.File;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author ivan
  */
-public class ManejadorEventosCargaCliente {
-    
+public class ManejadorEventosCargaCliente implements Action {
+
+    public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == PanelCargarClientes.botonSelector) {
+            int returnVal = PanelCargarClientes.selector.showOpenDialog(PanelCargarClientes.selector);
+
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+                File file = PanelCargarClientes.selector.getSelectedFile();
+                System.out.println(file.toString());
+                PanelCargarClientes.cuadroTextoRuta.setText(file.toString());
+                PanelCargarClientes.botonCargar.setEnabled(true);
+            }
+            
+        } else if (e.getSource() == PanelCargarClientes.botonCancelar) {
+
+            PanelCargarClientes.cuadroTextoRuta.setText("");
+            PanelCargarClientes.botonCargar.setEnabled(false);
+            
+        } else if (e.getSource() == PanelCargarClientes.botonCargar) {
+
+            System.out.println("Boton cargar");
+        }
+
+
+    }
+
+    @Override
+    public Object getValue(String key) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void putValue(String key, Object value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setEnabled(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isEnabled() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
