@@ -9,14 +9,17 @@ import javax.swing.JTabbedPane;
 public class PanelGeneralOpciones extends JTabbedPane {
 
     PanelCargarClientes panelClientes;
+    PanelCargarAlmacenes panelAlmacenes;
 
     public PanelGeneralOpciones() {
         panelClientes= new PanelCargarClientes();
+        panelAlmacenes= new PanelCargarAlmacenes();
         //Crear un panel por cada pestaña
         //Pestaña carga de clientes
 
 
         PanelCargarClientes tabA = new PanelCargarClientes();
+        PanelCargarAlmacenes tabE = new PanelCargarAlmacenes();
         
         tabA.setSize( 100,100);
         this.addTab( "Carga de clientes" , tabA );
@@ -34,7 +37,6 @@ public class PanelGeneralOpciones extends JTabbedPane {
         tabD.setSize( 100,100 );
          this.addTab( "Carga de tiendas" , tabD );
          
-        JPanel tabE = new JPanel();
         tabE.setSize( 100,100 );
          this.addTab( "Carga de almacenes" , tabE );         
          
