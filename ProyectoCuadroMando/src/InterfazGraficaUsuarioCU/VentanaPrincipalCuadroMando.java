@@ -18,7 +18,7 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action{
 PanelGeneralOpciones panelOpciones;
     public VentanaPrincipalCuadroMando() {
         //Configurar ventana principal
-        this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setLayout( new BorderLayout() );
         this.setSize( 700, 350 );
         this.setTitle( "Proyecto Cuadro de Mando" );
