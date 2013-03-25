@@ -1,12 +1,7 @@
 package InterfazGraficaUsuarioCU;
 
 import java.awt.Color;
-import java.io.InputStream;
 import java.io.File;
-import java.awt.event.ActionEvent;
-import java.awt.Component;
-import java.awt.event.ActionListener;
-import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -17,17 +12,17 @@ import javax.swing.JTextField;
  */
 public class PanelCargarAlmacenes extends JPanel {
 
-   static public JButton botonSelector;
-    static public JButton botonCancelar;
-    static public JButton botonCargar;
-    static public JFileChooser selector;
-    static public JTextField cuadroTextoRuta; 
+   private JButton botonSelector;
+   private JButton botonCancelar;
+   private JButton botonCargar;
+   private JFileChooser selector;
+   private JTextField cuadroTextoRuta; 
    
     
     public PanelCargarAlmacenes() {
         //Establecer tamaño y otros parámetros
         //Inicializar controles
-        JLabel etiquetaArchivo = new JLabel("Archivo de clientes :");
+        JLabel etiquetaArchivo = new JLabel("Archivo de almacen :");
         selector = new JFileChooser();
         botonSelector = new JButton("Seleccionar archivo");
         botonCancelar = new JButton("Cancelar");
@@ -43,7 +38,7 @@ public class PanelCargarAlmacenes extends JPanel {
         this.add(cuadroTextoRuta);
         cuadroTextoRuta.setBounds(205,75,225,30);
 
-        ManejadorEventosCargaAlmacenes evento = new ManejadorEventosCargaAlmacenes();
+        ManejadorEventosCargaAlmacenes evento = new ManejadorEventosCargaAlmacenes(this);
         
         this.add(botonSelector);
         botonSelector.setBounds(450,75,150,30);
@@ -57,6 +52,24 @@ public class PanelCargarAlmacenes extends JPanel {
         botonCargar.setEnabled(false);
        
     }
+    
+     public void setEnabledBotonCargar(Boolean estado){
+        botonCargar.setEnabled(estado);
+    }
+    
+    public void setTextCuadroTextoRuta(String texto){
+        cuadroTextoRuta.setText(texto);
+    }
+    
+    public int abrirSelectorFichero(){
+        int returnVal = selector.showOpenDialog(selector);
+        return returnVal;
+    }
+    
+    public File getSelectedFile(){
+        return selector.getSelectedFile();
+    }
+   
 
     public Object getValue(String key) {
         throw new UnsupportedOperationException("Not supported yet.");
