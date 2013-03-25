@@ -9,6 +9,7 @@ import java.beans.PropertyChangeListener;
 import javax.swing.Action;
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JButton;
 
 /**
  *
@@ -17,23 +18,24 @@ import javax.swing.JFileChooser;
 public class ManejadorEventosCargaCliente implements Action {
 
     public void actionPerformed(ActionEvent e) {
-
-        if (e.getSource() == PanelCargarClientes.botonSelector) {
+        JButton boton = (JButton) e.getSource();
+        System.out.println(boton.getText());
+        if ("Seleccionar archivo".equals(boton.getText())) {
             int returnVal = PanelCargarClientes.selector.showOpenDialog(PanelCargarClientes.selector);
 
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 File file = PanelCargarClientes.selector.getSelectedFile();
                 System.out.println(file.toString());
                 PanelCargarClientes.cuadroTextoRuta.setText(file.toString());
-                PanelCargarClientes.botonCargar.setEnabled(true);
+                //PanelCargarClientes.botonCargar.setEnabled(true);
             }
             
-        } else if (e.getSource() == PanelCargarClientes.botonCancelar) {
+        } else if ("Cancelar".equals(boton.getText())) {
 
             PanelCargarClientes.cuadroTextoRuta.setText("");
-            PanelCargarClientes.botonCargar.setEnabled(false);
+            //PanelCargarClientes.botonCargar.setEnabled(false);
             
-        } else if (e.getSource() == PanelCargarClientes.botonCargar) {
+        } else if ("Cargar".equals(boton.getText())) {
 
             System.out.println("Boton cargar");
         }

@@ -11,9 +11,9 @@ import javax.swing.JTextField;
  */
 public class PanelCargarClientes extends JPanel{
 
-    static public JButton botonSelector;
-    static public JButton botonCancelar;
-    static public JButton botonCargar;
+    private JButton botonSelector;
+    private JButton botonCancelar;
+    private JButton botonCargar;
     static public JFileChooser selector;
     static public JTextField cuadroTextoRuta; 
    
@@ -55,7 +55,7 @@ public class PanelCargarClientes extends JPanel{
     public Object getValue(String key) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
+    
     public void putValue(String key, Object value) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
