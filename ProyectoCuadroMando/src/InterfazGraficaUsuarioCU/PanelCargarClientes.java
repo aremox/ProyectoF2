@@ -6,6 +6,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.io.File;
 
 /*
  */
@@ -13,11 +14,10 @@ public class PanelCargarClientes extends JPanel{
 
     private JButton botonSelector;
     private JButton botonCancelar;
-    public JButton botonCargar;
-    public JFileChooser selector;
-    public JTextField cuadroTextoRuta; 
-   
-    
+    private JButton botonCargar;
+    private JFileChooser selector;
+    private JTextField cuadroTextoRuta; 
+
     public PanelCargarClientes() {
         //Establecer tamaño y otros parámetros
         //Inicializar controles
@@ -29,8 +29,7 @@ public class PanelCargarClientes extends JPanel{
         cuadroTextoRuta = new JTextField(40);
         cuadroTextoRuta.setEditable(false);
         cuadroTextoRuta.setBackground(Color.WHITE); 
-
-            
+    
         this.setLayout(null);
         this.add(etiquetaArchivo);
         etiquetaArchivo.setBounds(75,75,120,30);
@@ -52,6 +51,22 @@ public class PanelCargarClientes extends JPanel{
        
     }
 
+    public void setEnabledBotonCargar(Boolean estado){
+        botonCargar.setEnabled(estado);
+    }
+    
+    public void setTextCuadroTextoRuta(String texto){
+        cuadroTextoRuta.setText(texto);
+    }
+    
+    public int showOpenDialog(){
+        int returnVal = selector.showOpenDialog(selector);
+        return returnVal;
+    }
+    
+    public File getSelectedFile(){
+        return selector.getSelectedFile();
+    }
     
     public Object getValue(String key) {
         throw new UnsupportedOperationException("Not supported yet.");

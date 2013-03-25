@@ -18,7 +18,7 @@ import javax.swing.JButton;
 public class ManejadorEventosCargaCliente implements Action {
 
     private PanelCargarClientes panel;
-    public File file;
+    private File file;
     
     public ManejadorEventosCargaCliente(PanelCargarClientes objeto){
         panel = objeto;
@@ -28,18 +28,18 @@ public class ManejadorEventosCargaCliente implements Action {
         JButton boton = (JButton) e.getSource(); 
 
         if ("Seleccionar archivo".equals(boton.getText())) {
-            int returnVal = panel.selector.showOpenDialog(panel.selector);
+            int returnVal = panel.showOpenDialog();
 
             if (returnVal == JFileChooser.APPROVE_OPTION) {
-                file = panel.selector.getSelectedFile();
-                panel.cuadroTextoRuta.setText(file.toString());
-                panel.botonCargar.setEnabled(Boolean.TRUE);
+                file = panel.getSelectedFile();
+                panel.setTextCuadroTextoRuta(file.toString());
+                panel.setEnabledBotonCargar(Boolean.TRUE);
 ;
             }
             
         } else if ("Cancelar".equals(boton.getText())) {
-            panel.cuadroTextoRuta.setText("");
-            panel.botonCargar.setEnabled(Boolean.FALSE);
+            panel.setTextCuadroTextoRuta("");
+            panel.setEnabledBotonCargar(Boolean.FALSE);
             
         } else if ("Cargar".equals(boton.getText())) {
 
