@@ -24,6 +24,7 @@ public class ManejadorEventosCargaCliente implements Action {
         panel = objeto;
     }
     
+    @Override
     public void actionPerformed(ActionEvent e) {
         JButton boton = (JButton) e.getSource(); 
 
@@ -34,7 +35,6 @@ public class ManejadorEventosCargaCliente implements Action {
                 file = panel.getSelectedFile();
                 panel.setTextCuadroTextoRuta(file.toString());
                 panel.setEnabledBotonCargar(Boolean.TRUE);
-;
             }
             
         } else if ("Cancelar".equals(boton.getText())) {
