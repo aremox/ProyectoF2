@@ -23,7 +23,7 @@ public static void main(String[] args){
  new VentanaPrincipalCuadroMando();
  //testLector();
 }
-
+/*
 public static void testLector(){
         try {
             ProveedorInformacion lec= new ProveedorInformacion("src//ArchivoDatos//prueba.txt");
@@ -34,5 +34,5 @@ public static void testLector(){
             Logger.getLogger(ProyectoCuadroMando.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-}
+} */
 }

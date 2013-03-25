@@ -4,6 +4,7 @@
  */
 package InterfazGraficaUsuarioCU;
 
+import ControlServicioCU.ControladorServicioCargaAlmacenes;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,8 +48,8 @@ public class ManejadorEventosCargaAlmacenes implements Action{
             panel.setEnabledBotonCargar(Boolean.FALSE);
             
         } else if ("Cargar".equals(boton.getText())) {
-
-            System.out.println(file);
+            
+            ControladorServicioCargaAlmacenes control1 = new ControladorServicioCargaAlmacenes(file);
         }
 
 
