@@ -1,20 +1,21 @@
 package ControlAuxiliarCU;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.FileReader;
-import java.io.BufferedReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public abstract class ProveedorInformacion {
 
     private File archivo;
     private FileReader flujoLectura;
-    private String separadorCampos;
+    protected String separadorCampos;
     private int numeroCampos;
+    protected LinkedList lineas;
 
     public ProveedorInformacion(String ruta, String separador, int numero) throws FileNotFoundException {
 //comprobar archivo
@@ -35,8 +36,8 @@ public abstract class ProveedorInformacion {
     public void cerrarFlujo() {
     }
 
-    public String leerLinea() {
-
+    public void leerLinea() {
+          
         //StringBuilder linea = new StringBuilder();
 
         //String linea2 = "elemento1::elemento2::elemento3";
@@ -50,7 +51,7 @@ public abstract class ProveedorInformacion {
 
         String linea = "";
         StringTokenizer tokens;
-
+        lineas=new LinkedList();
         try {
          
             //int caracter;
@@ -63,13 +64,14 @@ public abstract class ProveedorInformacion {
                 if (tokens.countTokens() != numeroCampos) {
                     System.out.println("ERROR: Linea sin todos los campos");
                 } else {
-                    System.out.print("Separo la linea: ");
-                    System.out.println(linea);
+                    //System.out.print("Separo la linea: ");
+                    //System.out.println(linea);
+                    lineas.add(linea);/*
                     while (tokens.hasMoreTokens()) {
-
-                        System.out.println(tokens.nextToken().trim());
+                        
+                        //System.out.println(tokens.nextToken().trim());
                     }
-
+*/
                 }
             }
             //while ((caracter = flujoLectura.read()) != -1) {
@@ -82,6 +84,6 @@ public abstract class ProveedorInformacion {
         }
 
 
-        return linea;
+       // return lineas;
     }
 }
