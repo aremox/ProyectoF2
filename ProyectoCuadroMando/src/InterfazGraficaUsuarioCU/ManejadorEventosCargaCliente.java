@@ -43,11 +43,12 @@ public class ManejadorEventosCargaCliente implements Action {
             
         } else if ("Cargar".equals(boton.getText())) {
 
-            //System.out.println("Boton cargar");
+            System.out.println(file);
         }
 
 
     }
+    
 
     @Override
     public Object getValue(String key) {
