@@ -17,27 +17,33 @@ import javax.swing.JButton;
  */
 public class ManejadorEventosCargaCliente implements Action {
 
+    private PanelCargarClientes panel;
+    public File file;
+    
+    public ManejadorEventosCargaCliente(PanelCargarClientes objeto){
+        panel = objeto;
+    }
+    
     public void actionPerformed(ActionEvent e) {
-        JButton boton = (JButton) e.getSource();
-        System.out.println(boton.getText());
+        JButton boton = (JButton) e.getSource(); 
+
         if ("Seleccionar archivo".equals(boton.getText())) {
-            int returnVal = PanelCargarClientes.selector.showOpenDialog(PanelCargarClientes.selector);
+            int returnVal = panel.selector.showOpenDialog(panel.selector);
 
             if (returnVal == JFileChooser.APPROVE_OPTION) {
-                File file = PanelCargarClientes.selector.getSelectedFile();
-                System.out.println(file.toString());
-                PanelCargarClientes.cuadroTextoRuta.setText(file.toString());
-                //PanelCargarClientes.botonCargar.setEnabled(true);
+                file = panel.selector.getSelectedFile();
+                panel.cuadroTextoRuta.setText(file.toString());
+                panel.botonCargar.setEnabled(Boolean.TRUE);
+;
             }
             
         } else if ("Cancelar".equals(boton.getText())) {
-
-            PanelCargarClientes.cuadroTextoRuta.setText("");
-            //PanelCargarClientes.botonCargar.setEnabled(false);
+            panel.cuadroTextoRuta.setText("");
+            panel.botonCargar.setEnabled(Boolean.FALSE);
             
         } else if ("Cargar".equals(boton.getText())) {
 
-            System.out.println("Boton cargar");
+            //System.out.println("Boton cargar");
         }
 
 

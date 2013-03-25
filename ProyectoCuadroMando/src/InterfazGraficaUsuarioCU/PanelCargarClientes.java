@@ -13,9 +13,9 @@ public class PanelCargarClientes extends JPanel{
 
     private JButton botonSelector;
     private JButton botonCancelar;
-    private JButton botonCargar;
-    static public JFileChooser selector;
-    static public JTextField cuadroTextoRuta; 
+    public JButton botonCargar;
+    public JFileChooser selector;
+    public JTextField cuadroTextoRuta; 
    
     
     public PanelCargarClientes() {
@@ -37,7 +37,7 @@ public class PanelCargarClientes extends JPanel{
         this.add(cuadroTextoRuta);
         cuadroTextoRuta.setBounds(205,75,225,30);
 
-        ManejadorEventosCargaCliente evento = new ManejadorEventosCargaCliente();
+        ManejadorEventosCargaCliente evento = new ManejadorEventosCargaCliente(this);
         
         this.add(botonSelector);
         botonSelector.setBounds(450,75,150,30);
@@ -52,6 +52,7 @@ public class PanelCargarClientes extends JPanel{
        
     }
 
+    
     public Object getValue(String key) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
