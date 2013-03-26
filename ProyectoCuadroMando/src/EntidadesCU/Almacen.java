@@ -28,6 +28,8 @@ public class Almacen {
         telefono = ptelefono;
         municipio = pmunicipio;
         provincia = pprovincia;
-
+    }
+    public String getId_almacen(){
+        return id_almacenes;
     }
 }
