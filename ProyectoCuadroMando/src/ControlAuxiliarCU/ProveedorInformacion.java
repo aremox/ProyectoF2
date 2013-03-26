@@ -14,7 +14,7 @@ public abstract class ProveedorInformacion {
     private FileReader flujoLectura;
     protected String separadorCampos;
     protected int numeroCampos;
-    protected LinkedList lineas;
+    protected LinkedList<String> lineas;
     protected int errores=0;
 
     public ProveedorInformacion(String ruta, String separador, int numero) throws FileNotFoundException {
@@ -42,7 +42,7 @@ public abstract class ProveedorInformacion {
 
         String linea = "";
       
-        lineas=new LinkedList();
+        lineas=new LinkedList<String>();
         try {
          
            
