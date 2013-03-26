@@ -15,6 +15,7 @@ public abstract class ProveedorInformacion {
     protected String separadorCampos;
     protected int numeroCampos;
     protected LinkedList lineas;
+    protected int errores=0;
 
     public ProveedorInformacion(String ruta, String separador, int numero) throws FileNotFoundException {
 //comprobar archivo
@@ -32,57 +33,36 @@ public abstract class ProveedorInformacion {
         }
     }
 
-    public void cerrarFlujo() {
+    public void cerrarFlujo() throws IOException {
+         if (null != flujoLectura)
+              flujoLectura.close();
     }
 
     public void leerLinea() {
-          
-        //StringBuilder linea = new StringBuilder();
-
-        //String linea2 = "elemento1::elemento2::elemento3";
-        //StringTokenizer tokens = new StringTokenizer(linea2, "::");
-
-        //while(tokens.hasMoreTokens()){
-
-        //System.out.println(tokens.nextToken());
-
-        //}
 
         String linea = "";
-        StringTokenizer tokens;
+      
         lineas=new LinkedList();
         try {
          
-            //int caracter;
+           
             BufferedReader br = new BufferedReader(flujoLectura); 
            
 
             while ((linea = br.readLine()) != null) {
-
-                tokens = new StringTokenizer(linea, separadorCampos);
-                if (tokens.countTokens() != numeroCampos) {
-                    System.out.println("ERROR: Linea sin todos los campos");
-                } else {
-                    //System.out.print("Separo la linea: ");
-                    //System.out.println(linea);
-                    lineas.add(linea);/*
-                    while (tokens.hasMoreTokens()) {
-                        
-                        //System.out.println(tokens.nextToken().trim());
-                    }
-*/
-                }
+                    
+                    lineas.add(linea);
+              
             }
-            //while ((caracter = flujoLectura.read()) != -1) {
-            //  linea = linea.append((char)caracter);
-            // 
-            //}
+            
         } catch (IOException ex) {
             System.out.println("ERROR: En el flujo de lectura");
-           // Logger.getLogger(ProveedorInformacion.class.getName()).log(Level.SEVERE, null, ex);
+      
         }
-
-
-       // return lineas;
     }
+    
+    public int getErrores(){
+    return errores;
+}
+
 }

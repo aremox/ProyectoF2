@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,6 +32,7 @@ public class ControladorServicioCargaAlmacenes {
             int errores=0;
             
             LinkedList<RegistroAlmacen> almacenes = new LinkedList<RegistroAlmacen>(lec.extraer());
+            errores=lec.getErrores();
             int tam = almacenes.size();
             int cont = 0;
             for (int i = 0; i < tam; i++) {
@@ -54,6 +56,7 @@ public class ControladorServicioCargaAlmacenes {
         }
             ficheroCarga.escribirFichero("Almacen="+aciertos+" errores="+errores);
             ficheroCarga.cerrarFichero();
+            JOptionPane.showMessageDialog(null,"Almacen="+aciertos+" errores="+errores); 
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

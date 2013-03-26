@@ -1,6 +1,7 @@
 package ControlAuxiliarCU;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
@@ -13,7 +14,7 @@ public class ProveedorInformacionAlmacenes extends ProveedorInformacion {
 
     }
 
-    public LinkedList extraer() {
+    public LinkedList extraer() throws IOException {
         almacenes = new LinkedList<RegistroAlmacen>();
         String[] elementos;
         StringTokenizer tokens;
@@ -25,13 +26,19 @@ public class ProveedorInformacionAlmacenes extends ProveedorInformacion {
             String linea = (String) lineas.get(pos);
             tokens = new StringTokenizer(linea, separadorCampos);
             int pos2 = 0;
-            while (tokens.hasMoreTokens()) {
-                elementos[pos2] = tokens.nextToken().trim();
-                pos2++;
-            }
+            if (tokens.countTokens() != numeroCampos) {
+                System.out.println("ERROR: Linea sin todos los campos");
+                RegistroLog log = new RegistroLog("ERROR: Linea sin todos los campos","Almacenes");
+                errores++;
+            } else {
+                while (tokens.hasMoreTokens()) {
+                    elementos[pos2] = tokens.nextToken().trim();
+                    pos2++;
+                }
 
-            RegistroAlmacen registro = new RegistroAlmacen(elementos[0], elementos[1], elementos[2], elementos[3], elementos[4], elementos[5], elementos[6]);
-            almacenes.add(registro);
+                RegistroAlmacen registro = new RegistroAlmacen(elementos[0], elementos[1], elementos[2], elementos[3], elementos[4], elementos[5], elementos[6]);
+                almacenes.add(registro);
+            }
             pos++;
         }
 
