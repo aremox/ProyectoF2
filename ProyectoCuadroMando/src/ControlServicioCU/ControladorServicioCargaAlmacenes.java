@@ -6,6 +6,8 @@ package ControlServicioCU;
 
 import ControlAuxiliarCU.ProveedorInformacion;
 import ControlAuxiliarCU.ProveedorInformacionAlmacenes;
+import ControlAuxiliarCU.RegistroAlmacen;
+import EntidadesCU.Almacen;
 import ProyectoCuadroMando.ProyectoCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,12 +30,17 @@ public class ControladorServicioCargaAlmacenes {
             ProveedorInformacionAlmacenes lec= new ProveedorInformacionAlmacenes(fichero.getAbsolutePath(), "::", 7);
             //lec.leerLinea();
             LinkedList almacenes = new LinkedList (lec.extraer());
+            int tam = almacenes.size();
+            int cont = 0;
+            for (int i = 0; i < tam; i++) {
+
+            RegistroAlmacen registros = (RegistroAlmacen) almacenes.get(i);
+            Almacen alm = new Almacen(registros.getId_almacen(),registros.getCalle(),registros.getNumero(),registros.getCod_postal(),registros.getTelefono(), registros.getMunicipio(), registros.getProvincia());
+
             
-             List lista2 = new ArrayList(almacenes);
-                    Iterator it = lista2.iterator();
-                    while (it.hasNext()) {
-                        System.out.println(it.next() + "");
-                    }
+
+            cont++;
+        }
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

@@ -2,23 +2,25 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ControlAuxiliarCU;
+package EntidadesCU;
+
+import ControlAuxiliarCU.*;
 
 /**
  *
  * @author ivan
  */
-public class RegistroAlmacenes {
+public class Almacen {
 
     private String id_almacenes;
     private String calle;
-    private int numero;
-    private int cod_postal;
-    private int telefono;
+    private String numero;
+    private String cod_postal;
+    private String telefono;
     private String municipio;
     private String provincia;
 
-    public RegistroAlmacenes(String pid_almacenes, String pcalle, int pnumero, int pcod_postal, int ptelefono, String pmunicipio, String pprovincia) {
+    public Almacen(String pid_almacenes, String pcalle, String pnumero, String pcod_postal, String ptelefono, String pmunicipio, String pprovincia) {
         id_almacenes = pid_almacenes;
         calle = pcalle;
         numero = pnumero;
