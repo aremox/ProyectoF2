@@ -9,7 +9,10 @@ import ControlAuxiliarCU.ProveedorInformacionAlmacenes;
 import ProyectoCuadroMando.ProyectoCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,14 +29,11 @@ public class ControladorServicioCargaAlmacenes {
             //lec.leerLinea();
             LinkedList almacenes = new LinkedList (lec.extraer());
             
-             int tam = almacenes.size();
-        int pos = 0; //Mientras haya elementos 
-        while (pos <= tam - 1) {
-            //obtener 
-            String linea = (String) almacenes.get(pos);
-            System.out.println(linea);
-            pos++;
-        }
+             List lista2 = new ArrayList(almacenes);
+                    Iterator it = lista2.iterator();
+                    while (it.hasNext()) {
+                        System.out.println(it.next() + "");
+                    }
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");
