@@ -24,7 +24,7 @@ public class ContenedorTienda {
         lista.add(alm);
     }
 
-    public Tienda getAlmacen(String id) {
+    public Tienda getTienda(String id) {
        /*sustituir por lo bueno */
         Tienda tie_resultado = new Tienda("TIE0001");
                 return tie_resultado;

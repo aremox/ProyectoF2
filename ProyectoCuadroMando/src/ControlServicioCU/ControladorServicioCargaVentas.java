@@ -5,6 +5,7 @@
 package ControlServicioCU;
 
 import ContenedoresCU.ContenedorArticulo;
+import ContenedoresCU.ContenedorCliente;
 import ContenedoresCU.ContenedorTienda;
 import ContenedoresCU.ContenedorVenta;
 import ControlAuxiliarCU.RegistroDatosCarga;
@@ -29,6 +30,7 @@ public class ControladorServicioCargaVentas {
             ProveedorInformacionVentas lec= new ProveedorInformacionVentas(fichero.getAbsolutePath(), "::", 7);
             AceptadorVentas aceptar = new AceptadorVentas();
             ContenedorVenta contenedor_venta = new ContenedorVenta();
+            ContenedorCliente contenedor_cliente = new ContenedorCliente();
             ContenedorTienda contenedor_tienda = new ContenedorTienda();
             ContenedorArticulo contenedor_articulo = new ContenedorArticulo();
             
@@ -44,7 +46,7 @@ public class ControladorServicioCargaVentas {
             for (int i = 0; i < tam; i++) {
 
             RegistroVentas registros = (RegistroVentas) ventas.get(i);
-            Venta ven = new Venta(registros.getId_venta(),registros.getId_clienta(),registros.getId_articulo(),registros.getId_tienda(),registros.getUnidades(), registros.getImporte(), registros.geFecha());
+            Venta ven = new Venta(registros.getId_venta(),contenedor_cliente.getCliente(registros.getId_clienta()),contenedor_articulo.getArticulo(registros.getId_articulo()),contenedor_tienda.getTienda(registros.getId_tienda()),registros.getUnidades(), registros.getImporte(), registros.geFecha());
             
             if (aceptar.aceptar(ven)){
                 contenedor_venta.anadirVenta(ven);
