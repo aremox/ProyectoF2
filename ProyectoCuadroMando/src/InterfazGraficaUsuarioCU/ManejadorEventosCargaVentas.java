@@ -4,7 +4,7 @@
  */
 package InterfazGraficaUsuarioCU;
 
-import ControlServicioCU.ControladorServicioCargaAlmacenes;
+import ControlServicioCU.ControladorServicioCargaVentas;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -20,12 +20,12 @@ import javax.swing.JFileChooser;
  *
  * @author ivan
  */
-public class ManejadorEventosCargaAlmacenes implements Action{
+public class ManejadorEventosCargaVentas implements Action{
     
-    private PanelCargarAlmacenes panel;
+    private PanelCargarVentas panel;
     private File file;
     
-  public ManejadorEventosCargaAlmacenes(PanelCargarAlmacenes objeto){
+  public ManejadorEventosCargaVentas(PanelCargarVentas objeto){
         panel = objeto;
     }
     
@@ -48,9 +48,9 @@ public class ManejadorEventosCargaAlmacenes implements Action{
             
         } else if ("Cargar".equals(boton.getText())) {
             try {
-                ControladorServicioCargaAlmacenes control1 = new ControladorServicioCargaAlmacenes(file);
+                ControladorServicioCargaVentas control1 = new ControladorServicioCargaVentas(file);
             } catch (IOException ex) {
-                Logger.getLogger(ManejadorEventosCargaAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ManejadorEventosCargaVentas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 

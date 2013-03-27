@@ -5,9 +5,9 @@
 package ControlServicioCU;
 
 import ContenedoresCU.ContenedorAlmacen;
-import ControlAuxiliarCU.AceptadorAlmacenes;
-import ControlAuxiliarCU.ProveedorInformacionAlmacenes;
-import ControlAuxiliarCU.RegistroAlmacen;
+import ControlAuxiliarCU.Almacen.AceptadorAlmacenes;
+import ControlAuxiliarCU.Almacen.ProveedorInformacionAlmacenes;
+import ControlAuxiliarCU.Almacen.RegistroAlmacen;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import EntidadesCU.Almacen;
 import java.io.File;
