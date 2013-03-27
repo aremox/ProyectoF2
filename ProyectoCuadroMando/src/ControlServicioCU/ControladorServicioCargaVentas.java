@@ -4,6 +4,8 @@
  */
 package ControlServicioCU;
 
+import ContenedoresCU.ContenedorArticulo;
+import ContenedoresCU.ContenedorTienda;
 import ContenedoresCU.ContenedorVenta;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import ControlAuxiliarCU.Ventas.AceptadorVentas;
@@ -26,7 +28,11 @@ public class ControladorServicioCargaVentas {
             //
             ProveedorInformacionVentas lec= new ProveedorInformacionVentas(fichero.getAbsolutePath(), "::", 7);
             AceptadorVentas aceptar = new AceptadorVentas();
-            ContenedorVenta contenedor = new ContenedorVenta();
+            ContenedorVenta contenedor_venta = new ContenedorVenta();
+            ContenedorTienda contenedor_tienda = new ContenedorTienda();
+            ContenedorArticulo contenedor_articulo = new ContenedorArticulo();
+            
+            
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga("src//ArchivoDatos//registroCargaVentas.log");
             int aciertos=0;
             int errores=0;
@@ -41,8 +47,8 @@ public class ControladorServicioCargaVentas {
             Venta ven = new Venta(registros.getId_venta(),registros.getId_clienta(),registros.getId_articulo(),registros.getId_tienda(),registros.getUnidades(), registros.getImporte(), registros.geFecha());
             
             if (aceptar.aceptar(ven)){
-                contenedor.anadirVenta(ven);
-                Venta ven2 = contenedor.getVenta("AL0000001");
+                contenedor_venta.anadirVenta(ven);
+                Venta ven2 = contenedor_venta.getVenta("AL0000001");
                 //System.out.println(alm2.getId_almacen());
                 aciertos++;
             }else{

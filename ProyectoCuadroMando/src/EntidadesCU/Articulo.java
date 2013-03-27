@@ -12,24 +12,14 @@ import ControlAuxiliarCU.*;
  */
 public class Articulo {
 
-    private String id_almacenes;
-    private String calle;
-    private String numero;
-    private String cod_postal;
-    private String telefono;
-    private String municipio;
-    private String provincia;
+    private String id_articulo;
+   
 
-    public Articulo(String pid_almacenes, String pcalle, String pnumero, String pcod_postal, String ptelefono, String pmunicipio, String pprovincia) {
-        id_almacenes = pid_almacenes;
-        calle = pcalle;
-        numero = pnumero;
-        cod_postal = pcod_postal;
-        telefono = ptelefono;
-        municipio = pmunicipio;
-        provincia = pprovincia;
+    public Articulo(String pid_almacenes) {
+        id_articulo = pid_almacenes;
+       
     }
-    public String getId_almacen(){
-        return id_almacenes;
+    public String getId_articulo(){
+        return id_articulo;
     }
 }
