@@ -4,12 +4,16 @@
  */
 package InterfazGraficaUsuarioCU;
 
+import ControlServicioCU.ControladorServicioCargaClientes;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
-import javax.swing.Action;
 import java.io.File;
-import javax.swing.JFileChooser;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.Action;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -42,8 +46,11 @@ public class ManejadorEventosCargaCliente implements Action {
             panel.setEnabledBotonCargar(Boolean.FALSE);
             
         } else if ("Cargar".equals(boton.getText())) {
-
-            System.out.println(file);
+            try {
+                ControladorServicioCargaClientes controlCli = new ControladorServicioCargaClientes(file);
+            } catch (IOException ex) {
+                Logger.getLogger(ManejadorEventosCargaAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
 

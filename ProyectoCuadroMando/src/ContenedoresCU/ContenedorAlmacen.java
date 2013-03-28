@@ -24,16 +24,16 @@ public class ContenedorAlmacen {
     }
 
     public Almacen getAlmacen(String id) {
-        Almacen alm_resultado=null;
+        Almacen alm_resultado = null;
         int tam = lista.size();
-            int cont = 0;
-            for (int i = 0; i < tam; i++) {
-                Almacen alm = (Almacen) lista.get(i);
-                 if ( alm.getId_almacen().equals( id ) ){
-                 alm_resultado = alm;
-                 }
-        cont++;
+        int cont = 0;
+        for (int i = 0; i < tam; i++) {
+            Almacen alm = (Almacen) lista.get(i);
+            if (alm.getId_almacen().equals(id)) {
+                alm_resultado = alm;
+            }
+            cont++;
         }
-                return alm_resultado;
+        return alm_resultado;
     }
 }

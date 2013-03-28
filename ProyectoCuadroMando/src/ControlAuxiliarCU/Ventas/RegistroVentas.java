@@ -4,8 +4,6 @@
  */
 package ControlAuxiliarCU.Ventas;
 
-import ControlAuxiliarCU.Almacen.*;
-
 /**
  *
  * @author ivan

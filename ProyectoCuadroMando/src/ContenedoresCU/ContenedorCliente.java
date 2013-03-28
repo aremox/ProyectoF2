@@ -1,22 +1,37 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ContenedoresCU;
 
 import EntidadesCU.Cliente;
+import java.util.LinkedList;
 
-/**
+/*
  *
- * @author ivan
+ * @author Javier Roncero
+ *
  */
+
 public class ContenedorCliente {
-    
-    
-    public Cliente getCliente(String id) {
-       /*sustituir por lo bueno */
-        Cliente cli_resultado = new Cliente("CLI0001");
-                return cli_resultado;
+
+    private LinkedList lista;
+
+    public ContenedorCliente() {
+        lista = new LinkedList();
     }
-    
+
+    public void anadirCliente(Cliente cli) {
+        lista.add(cli);
+    }
+
+    public Cliente getCliente(String id) {
+        Cliente cli_resultado = null;
+        int tam = lista.size();
+        //int cont = 0;
+        for (int i = 0; i < tam; i++) {
+            Cliente cli = (Cliente) lista.get(i);
+            if (cli.getId_cliente().equals(id)) {
+                cli_resultado = cli;
+            }
+            //cont++;
+        }
+        return cli_resultado;
+    }
 }

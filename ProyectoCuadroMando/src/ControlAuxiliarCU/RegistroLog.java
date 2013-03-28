@@ -24,7 +24,7 @@ public class RegistroLog {
             pw.println(":::::::::::"+categoria+"::::::::::");
             pw.println("");
             pw.println(texto);
-        
+            pw.println("");
                 if (null != fichero) {
                     fichero.close();
              }

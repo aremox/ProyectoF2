@@ -1,4 +1,10 @@
-package ControlAuxiliarCU.Almacen;
+package ControlAuxiliarCU.Clientes;
+
+/*
+ *
+ * @author Javier Roncero
+ *
+ */
 
 import ControlAuxiliarCU.ProveedorInformacion;
 import ControlAuxiliarCU.RegistroLog;
@@ -7,17 +13,16 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-public class ProveedorInformacionAlmacenes extends ProveedorInformacion {
+public class ProveedorInformacionClientes extends ProveedorInformacion {
 
-    LinkedList<RegistroAlmacen> almacenes;
+        LinkedList<RegistroClientes> clientes;
 
-    public ProveedorInformacionAlmacenes(String absolutePath, String separador, int numero) throws FileNotFoundException {
+    public ProveedorInformacionClientes(String absolutePath, String separador, int numero) throws FileNotFoundException {
         super(absolutePath, separador, numero);
-
     }
 
     public LinkedList extraer() throws IOException {
-        almacenes = new LinkedList<RegistroAlmacen>();
+        clientes = new LinkedList<RegistroClientes>();
         String[] elementos;
         StringTokenizer tokens;
         leerLinea();
@@ -30,7 +35,7 @@ public class ProveedorInformacionAlmacenes extends ProveedorInformacion {
             int pos2 = 0;
             if (tokens.countTokens() != numeroCampos) {
                 System.out.println("ERROR: Linea sin todos los campos");
-                RegistroLog log = new RegistroLog("ERROR: Linea sin todos los campos","Almacenes");
+                RegistroLog log = new RegistroLog("ERROR: Linea sin todos los campos","Clientes");
                 errores++;
             } else {
                 while (tokens.hasMoreTokens()) {
@@ -38,12 +43,14 @@ public class ProveedorInformacionAlmacenes extends ProveedorInformacion {
                     pos2++;
                 }
 
-                RegistroAlmacen registro = new RegistroAlmacen(elementos[0], elementos[1], elementos[2], elementos[3], elementos[4], elementos[5], elementos[6]);
-                almacenes.add(registro);
+                RegistroClientes registro = new RegistroClientes(elementos[0], elementos[1], elementos[2], elementos[3], elementos[4], elementos[5], elementos[6], elementos[7], elementos[8], elementos[9]);
+                clientes.add(registro);
             }
             pos++;
         }
 
-        return almacenes;
+        return clientes;
     }
+    
+    
 }

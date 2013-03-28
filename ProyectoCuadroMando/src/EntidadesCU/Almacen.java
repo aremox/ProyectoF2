@@ -1,15 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package EntidadesCU;
 
 import ControlAuxiliarCU.*;
 
-/**
+/*
  *
- * @author ivan
+ * @author Ivan Arenas
+ *
  */
+
 public class Almacen {
 
     private String id_almacenes;

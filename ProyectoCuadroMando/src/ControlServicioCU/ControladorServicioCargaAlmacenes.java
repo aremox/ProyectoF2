@@ -5,9 +5,9 @@
 package ControlServicioCU;
 
 import ContenedoresCU.ContenedorAlmacen;
-import ControlAuxiliarCU.Almacen.AceptadorAlmacenes;
-import ControlAuxiliarCU.Almacen.ProveedorInformacionAlmacenes;
-import ControlAuxiliarCU.Almacen.RegistroAlmacen;
+import ControlAuxiliarCU.Almacenes.AceptadorAlmacenes;
+import ControlAuxiliarCU.Almacenes.ProveedorInformacionAlmacenes;
+import ControlAuxiliarCU.Almacenes.RegistroAlmacenes;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import EntidadesCU.Almacen;
 import java.io.File;
@@ -31,29 +31,24 @@ public class ControladorServicioCargaAlmacenes {
             int aciertos=0;
             int errores=0;
             
-            LinkedList<RegistroAlmacen> almacenes = new LinkedList<RegistroAlmacen>(lec.extraer());
+            LinkedList<RegistroAlmacenes> almacenes = new LinkedList<RegistroAlmacenes>(lec.extraer());
             errores=lec.getErrores();
             int tam = almacenes.size();
             int cont = 0;
             for (int i = 0; i < tam; i++) {
+                RegistroAlmacenes registros = (RegistroAlmacenes) almacenes.get(i);
+                Almacen alm = new Almacen(registros.getId_almacen(),registros.getCalle(),registros.getNumero(),registros.getCod_postal(),registros.getTelefono(), registros.getMunicipio(), registros.getProvincia());
 
-            RegistroAlmacen registros = (RegistroAlmacen) almacenes.get(i);
-            Almacen alm = new Almacen(registros.getId_almacen(),registros.getCalle(),registros.getNumero(),registros.getCod_postal(),registros.getTelefono(), registros.getMunicipio(), registros.getProvincia());
-            
-            if (aceptar.aceptar(alm)){
-                contenedor.anadirAlmacen(alm);
-                Almacen alm2 = contenedor.getAlmacen("AL0000001");
-                //System.out.println(alm2.getId_almacen());
-                aciertos++;
-            }else{
-                errores++;
+                if (aceptar.aceptar(alm)){
+                    contenedor.anadirAlmacen(alm);
+                    Almacen alm2 = contenedor.getAlmacen("AL0000001");
+                    //System.out.println(alm2.getId_almacen());
+                    aciertos++;
+                }else{
+                    errores++;
+                }
+                cont++;
             }
-            
-                
-            
-
-            cont++;
-        }
             ficheroCarga.escribirFichero("Almacen="+aciertos+" errores="+errores);
             ficheroCarga.cerrarFichero();
             JOptionPane.showMessageDialog(null,"Almacen="+aciertos+" errores="+errores); 

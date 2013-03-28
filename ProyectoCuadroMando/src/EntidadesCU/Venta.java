@@ -1,13 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package EntidadesCU;
 
-/**
+/*
  *
- * @author ivan
+ * @author Ivan Arenas
+ *
  */
+
 public class Venta {
 
     private String id_venta;
