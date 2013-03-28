@@ -31,7 +31,7 @@ public class ControladorServicioCargaAlmacenes {
             ProveedorInformacionAlmacenes lec= new ProveedorInformacionAlmacenes(ruta, "::", 7);
             AceptadorAlmacenes aceptar = new AceptadorAlmacenes();
             ContenedorAlmacen contenedor = new ContenedorAlmacen();
-            RegistroDatosCarga ficheroCarga = new RegistroDatosCarga("src//ArchivoDatos//registroCargaAlmacen.log");
+            RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
             int aciertos=0;
             int errores=0;
             
@@ -41,21 +41,26 @@ public class ControladorServicioCargaAlmacenes {
             int cont = 0;
             for (int i = 0; i < tam; i++) {
                 RegistroAlmacenes registros = (RegistroAlmacenes) almacenes.get(i);
-                Almacen alm = new Almacen(registros.getId_almacen(),registros.getCalle(),registros.getNumero(),registros.getCod_postal(),registros.getTelefono(), registros.getMunicipio(), registros.getProvincia());
+                Almacen alm = new Almacen(registros.getId_almacen(),
+                                          registros.getCalle(),
+                                          registros.getNumero(),
+                                          registros.getCod_postal(),
+                                          registros.getTelefono(), 
+                                          registros.getMunicipio(), 
+                                          registros.getProvincia());
 
                 if (aceptar.aceptar(alm)){
                     contenedor.anadirAlmacen(alm);
-                    //Almacen alm2 = contenedor.getAlmacen("AL0000001");
-                    //System.out.println(alm2.getId_almacen());
                     aciertos++;
                 }else{
                     errores++;
                 }
                 cont++;
             }
-            ficheroCarga.escribirFichero("Almacen="+aciertos+" errores="+errores);
+            int total = aciertos + errores;
+            ficheroCarga.escribirFichero("ALMACEN="+total+":ERROR="+errores);
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null,"Almacen="+aciertos+" errores="+errores); 
+            JOptionPane.showMessageDialog(null,"ALMACEN="+total+":ERROR="+errores); 
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

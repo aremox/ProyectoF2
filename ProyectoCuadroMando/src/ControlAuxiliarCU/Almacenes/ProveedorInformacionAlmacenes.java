@@ -26,7 +26,7 @@ public class ProveedorInformacionAlmacenes extends ProveedorInformacion {
         almacenes = new LinkedList<RegistroAlmacenes>();
         String[] elementos;
         StringTokenizer tokens;
-        leerLinea();
+        leerLineas();
         int tam = lineas.size();
         int pos = 0; //Mientras haya elementos 
         while (pos <= tam - 1) {

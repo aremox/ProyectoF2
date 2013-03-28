@@ -35,4 +35,9 @@ public class Cliente {
     public String getId_cliente(){
         return id_cliente;
     }
+ 
+    public String getCod_Postal(){
+        return cod_postal;
+    }      
+
 }

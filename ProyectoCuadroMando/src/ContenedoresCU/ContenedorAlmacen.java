@@ -1,16 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ContenedoresCU;
 
 import EntidadesCU.Almacen;
 import java.util.LinkedList;
 
-/**
+/*
  *
- * @author ivan
+ * @author Ivan Arenas
+ *
  */
+
 public class ContenedorAlmacen {
 
     private LinkedList lista;
@@ -31,6 +29,7 @@ public class ContenedorAlmacen {
             Almacen alm = (Almacen) lista.get(i);
             if (alm.getId_almacen().equals(id)) {
                 alm_resultado = alm;
+                break;
             }
             cont++;
         }

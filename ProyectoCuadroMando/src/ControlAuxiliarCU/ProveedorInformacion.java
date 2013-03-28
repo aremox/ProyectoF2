@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
 
 public abstract class ProveedorInformacion {
 
@@ -29,16 +30,18 @@ public abstract class ProveedorInformacion {
             }
         } catch (IOException ex) {
             System.out.println("ERROR: El fichero no existe");
+            JOptionPane.showMessageDialog(null,"El fichero no se puede abrir"); 
 
         }
     }
 
-    public void cerrarFlujo() throws IOException {
-         if (null != flujoEntrada)
+    private void cerrarFlujo() throws IOException {
+         if (flujoEntrada != null){
               flujoEntrada.close();
+         }
     }
 
-    public void leerLinea() {
+    protected void leerLineas() {
         String linea = "";
         lineas=new LinkedList<String>();
         try {
@@ -46,8 +49,10 @@ public abstract class ProveedorInformacion {
             while ((linea = br.readLine()) != null) {
                     lineas.add(linea);
             }
+            cerrarFlujo();
         } catch (IOException ex) {
             System.out.println("ERROR: En el flujo de lectura");
+            JOptionPane.showMessageDialog(null,"Error al intentar leer el archivo"); 
         }
     }
     

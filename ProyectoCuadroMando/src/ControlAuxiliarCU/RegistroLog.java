@@ -19,7 +19,7 @@ public class RegistroLog {
 
     public RegistroLog(String texto, String categoria) throws IOException {
     
-            fichero = new FileWriter("src//ArchivoDatos//error.log", true);
+            fichero = new FileWriter("src//ArchivoDatos//auditoriacarga.txt", true);
             pw = new PrintWriter(fichero);
             pw.println(":::::::::::"+categoria+"::::::::::");
             pw.println("");

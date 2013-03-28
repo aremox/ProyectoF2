@@ -1,0 +1,32 @@
+:::::::::::Clientes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Clientes::::::::::
+
+Cliente con código postal erróneo
+
+:::::::::::Clientes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Clientes::::::::::
+
+Cliente con código postal erróneo
+
+:::::::::::Clientes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Clientes::::::::::
+
+Cliente con código postal erróneo
+
+:::::::::::Clientes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Clientes::::::::::
+
+Cliente con código postal erróneo
+

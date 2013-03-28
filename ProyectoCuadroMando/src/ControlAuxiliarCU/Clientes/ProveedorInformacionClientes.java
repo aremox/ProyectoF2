@@ -25,9 +25,10 @@ public class ProveedorInformacionClientes extends ProveedorInformacion {
         clientes = new LinkedList<RegistroClientes>();
         String[] elementos;
         StringTokenizer tokens;
-        leerLinea();
+        leerLineas();
         int tam = lineas.size();
         int pos = 0; //Mientras haya elementos 
+        
         while (pos <= tam - 1) {
             elementos = new String[numeroCampos];
             String linea = (String) lineas.get(pos);

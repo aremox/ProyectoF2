@@ -5,6 +5,7 @@ import ControlAuxiliarCU.Clientes.AceptadorClientes;
 import ControlAuxiliarCU.Clientes.ProveedorInformacionClientes;
 import ControlAuxiliarCU.Clientes.RegistroClientes;
 import ControlAuxiliarCU.RegistroDatosCarga;
+import ControlAuxiliarCU.RegistroLog;
 import EntidadesCU.Cliente;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -30,12 +31,13 @@ public class ControladorServicioCargaClientes {
             ProveedorInformacionClientes lec = new ProveedorInformacionClientes(ruta, ":", 10);
             AceptadorClientes aceptar = new AceptadorClientes();
             ContenedorCliente contenedor = new ContenedorCliente();
-            RegistroDatosCarga ficheroCarga = new RegistroDatosCarga("src//ArchivoDatos//registroCargaClientes.log");
-            int aciertos=0;
-            int errores=0;
+            RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
+            int aciertos = 0;
+            int errores = 0;
             
             LinkedList<RegistroClientes> clientes = new LinkedList<RegistroClientes>(lec.extraer());
-            errores=lec.getErrores();
+            errores = lec.getErrores();
+            
             int tam = clientes.size();
             int cont = 0;
             for (int i = 0; i < tam; i++) {
@@ -56,12 +58,15 @@ public class ControladorServicioCargaClientes {
                     aciertos++;
                 }else{
                     errores++;
+                    RegistroLog log = new RegistroLog("Cliente con código postal erróneo","Clientes");
                 }
                 cont++;
             }
-            ficheroCarga.escribirFichero("CLIENTES="+aciertos+":ERROR="+errores);
+            
+            int total = aciertos + errores;
+            ficheroCarga.escribirFichero("CLIENTES="+total+":ERROR="+errores);
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null,"CLIENTES="+aciertos+":ERRORES="+errores); 
+            JOptionPane.showMessageDialog(null,"CLIENTES="+total+":ERRORES="+errores); 
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

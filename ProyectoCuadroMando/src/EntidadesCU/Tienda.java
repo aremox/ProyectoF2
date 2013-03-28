@@ -17,7 +17,7 @@ public class Tienda {
         id_almacenes = pid_tienda;
         
     }
-    public String getId_almacen(){
+    public String getId_tienda(){
         return id_almacenes;
     }
 }

@@ -1,17 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ContenedoresCU;
 
 import EntidadesCU.Almacen;
 import EntidadesCU.Articulo;
 import java.util.LinkedList;
 
-/**
+/*
  *
- * @author ivan
+ * @author Ivan Arenas
+ *
  */
+
 public class ContenedorArticulo {
 
     private LinkedList lista;

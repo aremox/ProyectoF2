@@ -29,6 +29,7 @@ public class ContenedorCliente {
             Cliente cli = (Cliente) lista.get(i);
             if (cli.getId_cliente().equals(id)) {
                 cli_resultado = cli;
+                break;
             }
             //cont++;
         }
