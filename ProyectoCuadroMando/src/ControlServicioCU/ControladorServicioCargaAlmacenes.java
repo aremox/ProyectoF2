@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ControlServicioCU;
 
 import ContenedoresCU.ContenedorAlmacen;
@@ -16,15 +12,23 @@ import java.io.IOException;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
-/**
+/*
  *
- * @author ivan
+ * @author Ivan Arenas
+ *
  */
+
 public class ControladorServicioCargaAlmacenes {
-    public ControladorServicioCargaAlmacenes(File fichero) throws IOException{
+    private String ruta;
+    
+    public ControladorServicioCargaAlmacenes(File fichero){
+        ruta = fichero.getAbsolutePath();
+    }
+    
+    public void DesarrollarServicio() throws IOException{
         try {
             //
-            ProveedorInformacionAlmacenes lec= new ProveedorInformacionAlmacenes(fichero.getAbsolutePath(), "::", 7);
+            ProveedorInformacionAlmacenes lec= new ProveedorInformacionAlmacenes(ruta, "::", 7);
             AceptadorAlmacenes aceptar = new AceptadorAlmacenes();
             ContenedorAlmacen contenedor = new ContenedorAlmacen();
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga("src//ArchivoDatos//registroCargaAlmacen.log");
@@ -41,7 +45,7 @@ public class ControladorServicioCargaAlmacenes {
 
                 if (aceptar.aceptar(alm)){
                     contenedor.anadirAlmacen(alm);
-                    Almacen alm2 = contenedor.getAlmacen("AL0000001");
+                    //Almacen alm2 = contenedor.getAlmacen("AL0000001");
                     //System.out.println(alm2.getId_almacen());
                     aciertos++;
                 }else{

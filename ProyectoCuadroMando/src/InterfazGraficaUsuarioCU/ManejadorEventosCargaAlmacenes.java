@@ -48,7 +48,8 @@ public class ManejadorEventosCargaAlmacenes implements Action{
             
         } else if ("Cargar".equals(boton.getText())) {
             try {
-                ControladorServicioCargaAlmacenes control1 = new ControladorServicioCargaAlmacenes(file);
+                ControladorServicioCargaAlmacenes controladorAlmacenes = new ControladorServicioCargaAlmacenes(file);
+                controladorAlmacenes.DesarrollarServicio();
             } catch (IOException ex) {
                 Logger.getLogger(ManejadorEventosCargaAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
             }

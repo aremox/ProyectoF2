@@ -47,7 +47,8 @@ public class ManejadorEventosCargaCliente implements Action {
             
         } else if ("Cargar".equals(boton.getText())) {
             try {
-                ControladorServicioCargaClientes controlCli = new ControladorServicioCargaClientes(file);
+                ControladorServicioCargaClientes controladorClientes = new ControladorServicioCargaClientes(file);
+                controladorClientes.DesarrollarServicio();
             } catch (IOException ex) {
                 Logger.getLogger(ManejadorEventosCargaAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -48,7 +48,8 @@ public class ManejadorEventosCargaVentas implements Action{
             
         } else if ("Cargar".equals(boton.getText())) {
             try {
-                ControladorServicioCargaVentas control1 = new ControladorServicioCargaVentas(file);
+                ControladorServicioCargaVentas controladorVentas = new ControladorServicioCargaVentas(file);
+                controladorVentas.DesarrollarServicio();
             } catch (IOException ex) {
                 Logger.getLogger(ManejadorEventosCargaVentas.class.getName()).log(Level.SEVERE, null, ex);
             }

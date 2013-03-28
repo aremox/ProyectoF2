@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ControlServicioCU;
 
 import ContenedoresCU.ContenedorCliente;
@@ -23,10 +19,15 @@ import javax.swing.JOptionPane;
  */
 
 public class ControladorServicioCargaClientes {
-    public ControladorServicioCargaClientes(File fichero) throws IOException{
+    private String ruta;
+    
+    public ControladorServicioCargaClientes(File fichero){
+        ruta = fichero.getAbsolutePath();
+    }
+    public void DesarrollarServicio() throws IOException{
         try {
             //
-            ProveedorInformacionClientes lec = new ProveedorInformacionClientes(fichero.getAbsolutePath(), ":", 10);
+            ProveedorInformacionClientes lec = new ProveedorInformacionClientes(ruta, ":", 10);
             AceptadorClientes aceptar = new AceptadorClientes();
             ContenedorCliente contenedor = new ContenedorCliente();
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga("src//ArchivoDatos//registroCargaClientes.log");
@@ -52,8 +53,6 @@ public class ControladorServicioCargaClientes {
 
                 if (aceptar.aceptar(cli)){
                     contenedor.anadirCliente(cli);
-                    //Almacen alm2 = contenedor.getAlmacen("AL0000001");
-                    //System.out.println(alm2.getId_almacen());
                     aciertos++;
                 }else{
                     errores++;
