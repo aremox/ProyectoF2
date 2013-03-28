@@ -69,10 +69,10 @@ public class ControladorServicioCargaVentas {
             int total = aciertos + errores;
             ficheroCarga.escribirFichero("VENTAS="+total+":ERROR="+errores);
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null, "VENTAS="+total+":ERROR="+errores);
+            JOptionPane.showMessageDialog(null, "VENTAS="+total+":ERROR="+errores,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
 
         } catch (FileNotFoundException ex) {
-            //  System.out.println("Error en la lectura");
+            //  System.out.rintln("Error en la lectura");
             //Logger.getLogger(ControladorServicioCargaAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

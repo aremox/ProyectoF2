@@ -60,7 +60,7 @@ public class ControladorServicioCargaAlmacenes {
             int total = aciertos + errores;
             ficheroCarga.escribirFichero("ALMACEN="+total+":ERROR="+errores);
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null,"ALMACEN="+total+":ERROR="+errores); 
+            JOptionPane.showMessageDialog(null,"ALMACEN="+total+":ERROR="+errores,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

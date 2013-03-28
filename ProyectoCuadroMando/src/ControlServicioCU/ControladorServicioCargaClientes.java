@@ -66,7 +66,7 @@ public class ControladorServicioCargaClientes {
             int total = aciertos + errores;
             ficheroCarga.escribirFichero("CLIENTES="+total+":ERROR="+errores);
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null,"CLIENTES="+total+":ERRORES="+errores); 
+            JOptionPane.showMessageDialog(null,"CLIENTES="+total+":ERRORES="+errores,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

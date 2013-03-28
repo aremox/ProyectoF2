@@ -30,7 +30,7 @@ public abstract class ProveedorInformacion {
             }
         } catch (IOException ex) {
             System.out.println("ERROR: El fichero no existe");
-            JOptionPane.showMessageDialog(null,"El fichero no se puede abrir"); 
+            JOptionPane.showMessageDialog(null,"El fichero no se puede abrir","ERROR AL ABRIR EL ARCHIVO       ", JOptionPane.ERROR_MESSAGE); 
 
         }
     }
@@ -52,7 +52,7 @@ public abstract class ProveedorInformacion {
             cerrarFlujo();
         } catch (IOException ex) {
             System.out.println("ERROR: En el flujo de lectura");
-            JOptionPane.showMessageDialog(null,"Error al intentar leer el archivo"); 
+            JOptionPane.showMessageDialog(null,"Error al intentar leer el archivo","ERROR AL LEER EL ARCHIVO       ", JOptionPane.ERROR_MESSAGE); 
         }
     }
     
