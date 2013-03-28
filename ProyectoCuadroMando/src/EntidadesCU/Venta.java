@@ -10,13 +10,13 @@ public class Venta {
 
     private String id_venta;
     private Cliente cliente;
-    private Articulo articulo;
+    private Producto articulo;
     private Tienda tienda;
     private String unidades;
     private String importe;
     private String fecha;
 
-    public Venta(String at1, Cliente at2, Articulo at3, Tienda at4, String at5, String at6, String at7) {
+    public Venta(String at1, Cliente at2, Producto at3, Tienda at4, String at5, String at6, String at7) {
         id_venta = at1;
         cliente = at2;
         articulo = at3;

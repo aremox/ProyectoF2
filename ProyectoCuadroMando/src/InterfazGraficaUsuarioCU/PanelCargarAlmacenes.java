@@ -38,7 +38,7 @@ public class PanelCargarAlmacenes extends JPanel {
         this.add(cuadroTextoRuta);
         cuadroTextoRuta.setBounds(205,75,225,30);
 
-        ManejadorEventosCargaAlmacenes evento = new ManejadorEventosCargaAlmacenes(this);
+        ManejadorEventosCargarAlmacenes evento = new ManejadorEventosCargarAlmacenes(this);
         
         this.add(botonSelector);
         botonSelector.setBounds(450,75,150,30);

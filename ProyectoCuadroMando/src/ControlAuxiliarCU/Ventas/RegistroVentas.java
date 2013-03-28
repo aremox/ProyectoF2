@@ -12,7 +12,7 @@ public class RegistroVentas {
 
     private String id_venta;
     private String id_cliente;
-    private String id_articulo;
+    private String id_producto;
     private String id_tienda;
     private String unidades;
     private String importe;
@@ -21,7 +21,7 @@ public class RegistroVentas {
     public RegistroVentas(String at1, String at2, String at3, String at4, String at5, String at6, String at7) {
         id_venta = at1;
         id_cliente = at2;
-        id_articulo = at3;
+        id_producto = at3;
         id_tienda = at4;
         unidades = at5;
         importe = at6;
@@ -32,11 +32,11 @@ public class RegistroVentas {
     public String getId_venta(){
         return id_venta;
     }
-    public String getId_clienta(){
+    public String getId_cliente(){
         return id_cliente;
     }
-    public String getId_articulo(){
-        return id_articulo;
+    public String getId_producto(){
+        return id_producto;
     }
     public String getId_tienda(){
         return id_tienda;

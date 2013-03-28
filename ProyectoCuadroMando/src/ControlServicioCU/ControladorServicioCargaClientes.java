@@ -30,7 +30,7 @@ public class ControladorServicioCargaClientes {
             //
             ProveedorInformacionClientes lec = new ProveedorInformacionClientes(ruta, ":", 10);
             AceptadorClientes aceptar = new AceptadorClientes();
-            ContenedorCliente contenedor = new ContenedorCliente();
+            ContenedorCliente contenedor_cliente = new ContenedorCliente();
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
             int aciertos = 0;
             int errores = 0;
@@ -54,7 +54,7 @@ public class ControladorServicioCargaClientes {
                                           registros.getTelefono());
 
                 if (aceptar.aceptar(cli)){
-                    contenedor.anadirCliente(cli);
+                    contenedor_cliente.anadirCliente(cli);
                     aciertos++;
                 }else{
                     errores++;

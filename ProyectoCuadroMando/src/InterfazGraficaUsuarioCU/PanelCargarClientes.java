@@ -1,15 +1,19 @@
 package InterfazGraficaUsuarioCU;
 
 import java.awt.Color;
+import java.io.File;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.io.File;
 
 /*
+ *
+ * @author Javier Roncero
+ *
  */
+
 public class PanelCargarClientes extends JPanel{
 
     private JButton botonSelector;
@@ -36,7 +40,7 @@ public class PanelCargarClientes extends JPanel{
         this.add(cuadroTextoRuta);
         cuadroTextoRuta.setBounds(205,75,225,30);
 
-        ManejadorEventosCargaCliente evento = new ManejadorEventosCargaCliente(this);
+        ManejadorEventosCargarCliente evento = new ManejadorEventosCargarCliente(this);
         
         this.add(botonSelector);
         botonSelector.setBounds(450,75,150,30);

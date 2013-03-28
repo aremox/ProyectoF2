@@ -9,20 +9,23 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /*
+ *
+ * @author Javier Roncero
+ *
  */
-public class PanelCargarVentas extends JPanel {
 
-   private JButton botonSelector;
-   private JButton botonCancelar;
-   private JButton botonCargar;
-   private JFileChooser selector;
-   private JTextField cuadroTextoRuta; 
-   
-    
-    public PanelCargarVentas() {
+public class PanelCargarProductos extends JPanel{
+
+    private JButton botonSelector;
+    private JButton botonCancelar;
+    private JButton botonCargar;
+    private JFileChooser selector;
+    private JTextField cuadroTextoRuta; 
+
+    public PanelCargarProductos() {
         //Establecer tamaño y otros parámetros
         //Inicializar controles
-        JLabel etiquetaArchivo = new JLabel("Archivo de ventas:");
+        JLabel etiquetaArchivo = new JLabel("Archivo de artículos :");
         selector = new JFileChooser();
         botonSelector = new JButton("Seleccionar archivo");
         botonCancelar = new JButton("Cancelar");
@@ -30,15 +33,14 @@ public class PanelCargarVentas extends JPanel {
         cuadroTextoRuta = new JTextField(40);
         cuadroTextoRuta.setEditable(false);
         cuadroTextoRuta.setBackground(Color.WHITE); 
-
-            
+    
         this.setLayout(null);
         this.add(etiquetaArchivo);
-        etiquetaArchivo.setBounds(75,75,120,30);
+        etiquetaArchivo.setBounds(65,75,130,30);
         this.add(cuadroTextoRuta);
         cuadroTextoRuta.setBounds(205,75,225,30);
 
-        ManejadorEventosCargarVentas evento = new ManejadorEventosCargarVentas(this);
+        ManejadorEventosCargarProductos evento = new ManejadorEventosCargarProductos(this);
         
         this.add(botonSelector);
         botonSelector.setBounds(450,75,150,30);
@@ -52,8 +54,8 @@ public class PanelCargarVentas extends JPanel {
         botonCargar.setEnabled(false);
        
     }
-    
-     public void setEnabledBotonCargar(Boolean estado){
+
+    public void setEnabledBotonCargar(Boolean estado){
         botonCargar.setEnabled(estado);
     }
     
@@ -61,7 +63,7 @@ public class PanelCargarVentas extends JPanel {
         cuadroTextoRuta.setText(texto);
     }
     
-    public int abrirSelectorFichero(){
+    public int showOpenDialog(){
         int returnVal = selector.showOpenDialog(selector);
         return returnVal;
     }
@@ -69,14 +71,15 @@ public class PanelCargarVentas extends JPanel {
     public File getSelectedFile(){
         return selector.getSelectedFile();
     }
-   
-
+    
     public Object getValue(String key) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
+    
     public void putValue(String key, Object value) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+
 
 }

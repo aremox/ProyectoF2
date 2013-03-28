@@ -19,6 +19,7 @@ public class PanelGeneralOpciones extends JTabbedPane {
 
 
         PanelCargarClientes tabA = new PanelCargarClientes();
+        PanelCargarProductos tabB = new PanelCargarProductos();
         PanelCargarVentas tabC = new PanelCargarVentas();
         PanelCargarAlmacenes tabE = new PanelCargarAlmacenes();
         
@@ -26,7 +27,6 @@ public class PanelGeneralOpciones extends JTabbedPane {
         this.addTab( "Carga de clientes" , tabA );
         //pestaña carga de articulos
 
-        JPanel tabB = new JPanel();
         tabB.setSize( 100,100 );
          this.addTab( "Carga de articulos" , tabB );
 

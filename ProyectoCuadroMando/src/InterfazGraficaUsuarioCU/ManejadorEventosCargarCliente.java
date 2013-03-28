@@ -1,10 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package InterfazGraficaUsuarioCU;
 
-import ControlServicioCU.ControladorServicioCargaVentas;
+import ControlServicioCU.ControladorServicioCargaClientes;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -15,17 +11,18 @@ import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 
-
-/**
+/*
  *
- * @author ivan
+ * @author Javier Roncero
+ *
  */
-public class ManejadorEventosCargaVentas implements Action{
-    
-    private PanelCargarVentas panel;
+
+public class ManejadorEventosCargarCliente implements Action {
+
+    private PanelCargarClientes panel;
     private File file;
     
-  public ManejadorEventosCargaVentas(PanelCargarVentas objeto){
+    public ManejadorEventosCargarCliente(PanelCargarClientes objeto){
         panel = objeto;
     }
     
@@ -34,7 +31,7 @@ public class ManejadorEventosCargaVentas implements Action{
         JButton boton = (JButton) e.getSource(); 
 
         if ("Seleccionar archivo".equals(boton.getText())) {
-            int returnVal = panel.abrirSelectorFichero();
+            int returnVal = panel.showOpenDialog();
 
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 file = panel.getSelectedFile();
@@ -48,15 +45,16 @@ public class ManejadorEventosCargaVentas implements Action{
             
         } else if ("Cargar".equals(boton.getText())) {
             try {
-                ControladorServicioCargaVentas controladorVentas = new ControladorServicioCargaVentas(file);
-                controladorVentas.DesarrollarServicio();
+                ControladorServicioCargaClientes controladorClientes = new ControladorServicioCargaClientes(file);
+                controladorClientes.DesarrollarServicio();
             } catch (IOException ex) {
-                Logger.getLogger(ManejadorEventosCargaVentas.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ManejadorEventosCargarAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 
 
     }
+    
 
     @Override
     public Object getValue(String key) {
@@ -87,4 +85,5 @@ public class ManejadorEventosCargaVentas implements Action{
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 }

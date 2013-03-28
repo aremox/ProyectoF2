@@ -1,6 +1,6 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorArticulo;
+import ContenedoresCU.ContenedorProducto;
 import ContenedoresCU.ContenedorCliente;
 import ContenedoresCU.ContenedorTienda;
 import ContenedoresCU.ContenedorVenta;
@@ -36,7 +36,7 @@ public class ControladorServicioCargaVentas {
             ContenedorVenta contenedor_venta = new ContenedorVenta();
             ContenedorCliente contenedor_cliente = new ContenedorCliente();
             ContenedorTienda contenedor_tienda = new ContenedorTienda();
-            ContenedorArticulo contenedor_articulo = new ContenedorArticulo();
+            ContenedorProducto contenedor_articulo = new ContenedorProducto();
 
 
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
@@ -51,8 +51,8 @@ public class ControladorServicioCargaVentas {
 
                 RegistroVentas registros = (RegistroVentas) ventas.get(i);
                 Venta ven = new Venta(registros.getId_venta(), 
-                                      contenedor_cliente.getCliente(registros.getId_clienta()), 
-                                      contenedor_articulo.getArticulo(registros.getId_articulo()), 
+                                      contenedor_cliente.getCliente(registros.getId_cliente()), 
+                                      contenedor_articulo.getProducto(registros.getId_producto()), 
                                       contenedor_tienda.getTienda(registros.getId_tienda()), 
                                       registros.getUnidades(), 
                                       registros.getImporte(), 
