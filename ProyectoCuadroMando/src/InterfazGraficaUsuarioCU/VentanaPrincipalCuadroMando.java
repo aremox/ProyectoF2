@@ -1,13 +1,10 @@
 package InterfazGraficaUsuarioCU;
 
-import ContenedoresCU.ContenedorCliente;
-import ContenedoresCU.ContenedorProducto;
-import ContenedoresCU.ContenedorTienda;
-import ContenedoresCU.ContenedorVenta;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import javax.swing.JFrame;
+
 
 /*
  *
@@ -29,6 +26,9 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action {
         this.setResizable(false);
         //Centramos la ventana en la pantalla
         this.setLocationRelativeTo(null);
+        //
+
+        
 
 
 
