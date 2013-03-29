@@ -1,10 +1,10 @@
 package ControlServicioCU;
 
+import ContenedoresCU.ContenedorProducto;
 import ControlAuxiliarCU.Productos.ProveedorInformacionProductos;
 import ControlAuxiliarCU.Productos.RegistroProductos;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import EntidadesCU.Producto;
-import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 
 public class ControladorServicioCargarProductos {
     private String ruta;
+    public static ContenedorProducto contenedor_producto = new ContenedorProducto();
     
     public ControladorServicioCargarProductos(File fichero){
         ruta = fichero.getAbsolutePath();
@@ -45,7 +46,7 @@ public class ControladorServicioCargarProductos {
                                             registros.getFicha_tecnica());
 
                 // Los productos no necesitan validación
-                VentanaPrincipalCuadroMando.contenedor_producto.anadirProducto(pro);
+                contenedor_producto.anadirProducto(pro);
                 aciertos++;
                 
                 cont++;

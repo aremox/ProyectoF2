@@ -1,12 +1,12 @@
 package ControlServicioCU;
 
+import ContenedoresCU.ContenedorTienda;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import ControlAuxiliarCU.RegistroLog;
 import ControlAuxiliarCU.Tiendas.AceptadorTiendas;
 import ControlAuxiliarCU.Tiendas.ProveedorInformacionTiendas;
 import ControlAuxiliarCU.Tiendas.RegistroTiendas;
 import EntidadesCU.Tienda;
-import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 
 public class ControladorServicioCargarTiendas {
     private String ruta;
+    public static ContenedorTienda contenedor_tienda = new ContenedorTienda();
     
     public ControladorServicioCargarTiendas(File fichero){
         ruta = fichero.getAbsolutePath();
@@ -49,10 +50,10 @@ public class ControladorServicioCargarTiendas {
                                           registros.getPoblacion(), 
                                           registros.getProvincia(), 
                                           registros.getTelefono(),
-                                          VentanaPrincipalCuadroMando.contenedor_almacen.getAlmacenCod_Postal(registros.getCod_Postal()));
+                                          ControladorServicioCargarAlmacenes.contenedor_almacen.getAlmacenCod_Postal(registros.getCod_Postal()));
 
                 if (aceptar.aceptar(tie)){
-                    VentanaPrincipalCuadroMando.contenedor_tienda.anadirTienda(tie);
+                    contenedor_tienda.anadirTienda(tie);
                     aciertos++;
                 }else{
                     errores++;

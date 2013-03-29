@@ -1,12 +1,12 @@
 package ControlServicioCU;
 
+import ContenedoresCU.ContenedorAlmacen;
 import ControlAuxiliarCU.Almacenes.AceptadorAlmacenes;
 import ControlAuxiliarCU.Almacenes.ProveedorInformacionAlmacenes;
 import ControlAuxiliarCU.Almacenes.RegistroAlmacenes;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import ControlAuxiliarCU.RegistroLog;
 import EntidadesCU.Almacen;
-import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
 
 public class ControladorServicioCargarAlmacenes {
     private String ruta;
-    
+    public static ContenedorAlmacen contenedor_almacen = new ContenedorAlmacen();
     
     public ControladorServicioCargarAlmacenes(File fichero){
         ruta = fichero.getAbsolutePath();
@@ -52,7 +52,7 @@ public class ControladorServicioCargarAlmacenes {
                                           registros.getProvincia());
 
                 if (aceptar.aceptar(alm)){
-                    VentanaPrincipalCuadroMando.contenedor_almacen.anadirAlmacen(alm);
+                    contenedor_almacen.anadirAlmacen(alm);
                     aciertos++;
                 }else{
                     errores++;

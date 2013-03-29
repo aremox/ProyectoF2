@@ -1,12 +1,12 @@
 package ControlServicioCU;
 
+import ContenedoresCU.ContenedorCliente;
 import ControlAuxiliarCU.Clientes.AceptadorClientes;
 import ControlAuxiliarCU.Clientes.ProveedorInformacionClientes;
 import ControlAuxiliarCU.Clientes.RegistroClientes;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import ControlAuxiliarCU.RegistroLog;
 import EntidadesCU.Cliente;
-import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 
 public class ControladorServicioCargarClientes {
     private String ruta;
+    public static ContenedorCliente contenedor_cliente = new ContenedorCliente();
     
     public ControladorServicioCargarClientes(File fichero){
         ruta = fichero.getAbsolutePath();
@@ -54,7 +55,7 @@ public class ControladorServicioCargarClientes {
                                           registros.getTelefono());
 
                 if (aceptar.aceptar(cli)){
-                    VentanaPrincipalCuadroMando.contenedor_cliente.anadirCliente(cli);
+                    contenedor_cliente.anadirCliente(cli);
                     aciertos++;
                 }else{
                     errores++;

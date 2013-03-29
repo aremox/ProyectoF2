@@ -1,12 +1,12 @@
 package ControlServicioCU;
 
+import ContenedoresCU.ContenedorVenta;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import ControlAuxiliarCU.RegistroLog;
 import ControlAuxiliarCU.Ventas.AceptadorVentas;
 import ControlAuxiliarCU.Ventas.ProveedorInformacionVentas;
 import ControlAuxiliarCU.Ventas.RegistroVentas;
 import EntidadesCU.Venta;
-import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,6 +22,7 @@ import javax.swing.JOptionPane;
 public class ControladorServicioCargarVentas {
 
     private String ruta;
+    public static ContenedorVenta contenedor_venta = new ContenedorVenta();
 
     public ControladorServicioCargarVentas(File fichero) {
         ruta = fichero.getAbsolutePath();
@@ -46,15 +47,15 @@ public class ControladorServicioCargarVentas {
 
                 RegistroVentas registros = (RegistroVentas) ventas.get(i);
                 Venta ven = new Venta(registros.getId_venta(), 
-                                      VentanaPrincipalCuadroMando.contenedor_cliente.getCliente(registros.getId_cliente()), 
-                                      VentanaPrincipalCuadroMando.contenedor_producto.getProducto(registros.getId_producto()), 
-                                      VentanaPrincipalCuadroMando.contenedor_tienda.getTienda(registros.getId_tienda()), 
+                                      ControladorServicioCargarClientes.contenedor_cliente.getCliente(registros.getId_cliente()), 
+                                      ControladorServicioCargarProductos.contenedor_producto.getProducto(registros.getId_producto()), 
+                                      ControladorServicioCargarTiendas.contenedor_tienda.getTienda(registros.getId_tienda()), 
                                       registros.getUnidades(), 
                                       registros.getImporte(), 
                                       registros.geFecha());
 
                 if (aceptar.aceptar(ven)) {
-                    VentanaPrincipalCuadroMando.contenedor_venta.anadirVenta(ven);
+                    contenedor_venta.anadirVenta(ven);
                     aciertos++;
                 } else {
                     errores++;

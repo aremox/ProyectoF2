@@ -20,23 +20,8 @@ import javax.swing.JFrame;
 public class VentanaPrincipalCuadroMando extends JFrame implements Action {
 
     PanelGeneralOpciones panelOpciones;
-    public static ContenedorAlmacen contenedor_almacen;
-    public static ContenedorCliente contenedor_cliente;
-    public static ContenedorProducto contenedor_producto;
-    public static ContenedorTienda contenedor_tienda;
-    public static ContenedorVenta contenedor_venta;
     
-    
-
     public VentanaPrincipalCuadroMando() {
-        //Creamos los contenedores
-        contenedor_almacen = new ContenedorAlmacen();
-        contenedor_cliente = new ContenedorCliente();
-        contenedor_producto = new ContenedorProducto();
-        contenedor_tienda = new ContenedorTienda();
-        contenedor_venta = new ContenedorVenta();
-        
-        
         //Configurar ventana principal
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setLayout(new BorderLayout());

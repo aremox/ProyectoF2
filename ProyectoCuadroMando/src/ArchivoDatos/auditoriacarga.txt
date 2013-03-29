@@ -1,0 +1,52 @@
+:::::::::::Almacenes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Almacenes::::::::::
+
+Almacen con código postal erróneo
+
+:::::::::::Tiendas::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+Tienda con código postal no numérico
+
+:::::::::::Clientes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Clientes::::::::::
+
+Cliente con código postal erróneo
+
+:::::::::::Productos::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Ventas::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Ventas::::::::::
+
+Venta con incoherencia de datos, no se ha encontrado el cliente asociado a la venta
+
+:::::::::::Ventas::::::::::
+
+Venta con incoherencia de datos, no se ha encontrado el producto asociado a la venta
+
+:::::::::::Ventas::::::::::
+
+Venta con incoherencia de datos, no se ha encontrado la tienda asociada a la venta
+
+:::::::::::Ventas::::::::::
+
+Venta con incoherencia de datos, el importe no es numérico
+
