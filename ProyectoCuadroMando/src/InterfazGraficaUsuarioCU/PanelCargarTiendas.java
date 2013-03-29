@@ -22,7 +22,7 @@ public class PanelCargarTiendas extends JPanel{
     private JFileChooser selector;
     private JTextField cuadroTextoRuta; 
 
-    public PanelCargarTiendas() {
+    public PanelCargarTiendas(PanelGeneralOpciones objeto){
         //Establecer tamaño y otros parámetros
         //Inicializar controles
         JLabel etiquetaArchivo = new JLabel("Archivo de tiendas :");
@@ -40,7 +40,7 @@ public class PanelCargarTiendas extends JPanel{
         this.add(cuadroTextoRuta);
         cuadroTextoRuta.setBounds(205,75,225,30);
 
-        ManejadorEventosCargarTiendas evento = new ManejadorEventosCargarTiendas(this);
+        ManejadorEventosCargarTiendas evento = new ManejadorEventosCargarTiendas(this, objeto);
         
         this.add(botonSelector);
         botonSelector.setBounds(450,75,150,30);
@@ -72,6 +72,14 @@ public class PanelCargarTiendas extends JPanel{
         return selector.getSelectedFile();
     }
     
+    public File getCurrentDirectory(){
+        return selector.getCurrentDirectory();
+    }
+
+    public void setCurrentDirectory(File dir){
+        selector.setCurrentDirectory(dir);
+    }
+   
     public Object getValue(String key) {
         throw new UnsupportedOperationException("Not supported yet.");
     }

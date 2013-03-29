@@ -2,6 +2,7 @@ package InterfazGraficaUsuarioCU;
 
 
 import InterfazGraficaUsuarioCU.PanelCargarClientes;
+import java.io.File;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
@@ -13,22 +14,16 @@ import javax.swing.JTabbedPane;
  */
 
 public class PanelGeneralOpciones extends JTabbedPane {
-
-    PanelCargarClientes panelClientes;
-    PanelCargarAlmacenes panelAlmacenes;
+    private File directorioActual = null;
 
     public PanelGeneralOpciones() {
-        panelClientes= new PanelCargarClientes();
-        panelAlmacenes= new PanelCargarAlmacenes();
         //Crear un panel por cada pestaña
         //Pestaña carga de clientes
-
-
-        PanelCargarClientes tabA = new PanelCargarClientes();
-        PanelCargarProductos tabB = new PanelCargarProductos();
-        PanelCargarVentas tabC = new PanelCargarVentas();
-        PanelCargarTiendas tabD = new PanelCargarTiendas();
-        PanelCargarAlmacenes tabE = new PanelCargarAlmacenes();
+        PanelCargarClientes tabA = new PanelCargarClientes(this);
+        PanelCargarProductos tabB = new PanelCargarProductos(this);
+        PanelCargarVentas tabC = new PanelCargarVentas(this);
+        PanelCargarTiendas tabD = new PanelCargarTiendas(this);
+        PanelCargarAlmacenes tabE = new PanelCargarAlmacenes(this);
         
         tabA.setSize( 100,100);
         this.addTab( "Carga de clientes" , tabA );
@@ -45,9 +40,15 @@ public class PanelGeneralOpciones extends JTabbedPane {
          
         tabE.setSize( 100,100 );
          this.addTab( "Carga de almacenes" , tabE );         
-         
-         
-         
+                  
     }
 
+    public File getCurrentDirectory(){
+        return directorioActual;
+    }
+
+    public void setCurrentDirectory(File dir){
+        directorioActual = dir;
+    }
+    
 }

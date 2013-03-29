@@ -23,7 +23,7 @@ public class PanelCargarVentas extends JPanel {
    private JTextField cuadroTextoRuta; 
    
     
-    public PanelCargarVentas() {
+    public PanelCargarVentas(PanelGeneralOpciones objeto) {
         //Establecer tamaño y otros parámetros
         //Inicializar controles
         JLabel etiquetaArchivo = new JLabel("Archivo de ventas:");
@@ -42,7 +42,7 @@ public class PanelCargarVentas extends JPanel {
         this.add(cuadroTextoRuta);
         cuadroTextoRuta.setBounds(205,75,225,30);
 
-        ManejadorEventosCargarVentas evento = new ManejadorEventosCargarVentas(this);
+        ManejadorEventosCargarVentas evento = new ManejadorEventosCargarVentas(this, objeto);
         
         this.add(botonSelector);
         botonSelector.setBounds(450,75,150,30);
@@ -73,8 +73,15 @@ public class PanelCargarVentas extends JPanel {
     public File getSelectedFile(){
         return selector.getSelectedFile();
     }
-   
+    
+    public File getCurrentDirectory(){
+        return selector.getCurrentDirectory();
+    }
 
+    public void setCurrentDirectory(File dir){
+        selector.setCurrentDirectory(dir);
+    }
+   
     public Object getValue(String key) {
         throw new UnsupportedOperationException("Not supported yet.");
     }

@@ -20,10 +20,13 @@ import javax.swing.JFileChooser;
 public class ManejadorEventosCargarCliente implements Action {
 
     private PanelCargarClientes panel;
+    private PanelGeneralOpciones panelGeneral;
     private File file;
     
-    public ManejadorEventosCargarCliente(PanelCargarClientes objeto){
+    
+    public ManejadorEventosCargarCliente(PanelCargarClientes objeto, PanelGeneralOpciones objeto2){
         panel = objeto;
+        panelGeneral = objeto2;
     }
     
     @Override
@@ -31,12 +34,19 @@ public class ManejadorEventosCargarCliente implements Action {
         JButton boton = (JButton) e.getSource(); 
 
         if ("Seleccionar archivo".equals(boton.getText())) {
+            
+            if (panelGeneral.getCurrentDirectory() != null) {
+                panel.setCurrentDirectory(panelGeneral.getCurrentDirectory());
+            }
+
+            
             int returnVal = panel.showOpenDialog();
 
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 file = panel.getSelectedFile();
                 panel.setTextCuadroTextoRuta(file.toString());
                 panel.setEnabledBotonCargar(Boolean.TRUE);
+                panelGeneral.setCurrentDirectory(panel.getCurrentDirectory());
             }
             
         } else if ("Cancelar".equals(boton.getText())) {

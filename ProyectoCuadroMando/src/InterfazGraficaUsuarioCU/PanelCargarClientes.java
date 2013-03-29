@@ -22,7 +22,7 @@ public class PanelCargarClientes extends JPanel{
     private JFileChooser selector;
     private JTextField cuadroTextoRuta; 
 
-    public PanelCargarClientes() {
+    public PanelCargarClientes(PanelGeneralOpciones objeto){
         //Establecer tamaño y otros parámetros
         //Inicializar controles
         JLabel etiquetaArchivo = new JLabel("Archivo de clientes :");
@@ -40,7 +40,7 @@ public class PanelCargarClientes extends JPanel{
         this.add(cuadroTextoRuta);
         cuadroTextoRuta.setBounds(205,75,225,30);
 
-        ManejadorEventosCargarCliente evento = new ManejadorEventosCargarCliente(this);
+        ManejadorEventosCargarCliente evento = new ManejadorEventosCargarCliente(this, objeto);
         
         this.add(botonSelector);
         botonSelector.setBounds(450,75,150,30);
@@ -70,6 +70,14 @@ public class PanelCargarClientes extends JPanel{
     
     public File getSelectedFile(){
         return selector.getSelectedFile();
+    }
+    
+    public File getCurrentDirectory(){
+        return selector.getCurrentDirectory();
+    }
+
+    public void setCurrentDirectory(File dir){
+        selector.setCurrentDirectory(dir);
     }
     
     public Object getValue(String key) {

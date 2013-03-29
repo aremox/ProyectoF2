@@ -20,10 +20,12 @@ import javax.swing.JFileChooser;
 public class ManejadorEventosCargarAlmacenes implements Action{
     
     private PanelCargarAlmacenes panel;
+    private PanelGeneralOpciones panelGeneral;
     private File file;
     
-  public ManejadorEventosCargarAlmacenes(PanelCargarAlmacenes objeto){
+  public ManejadorEventosCargarAlmacenes(PanelCargarAlmacenes objeto, PanelGeneralOpciones objeto2){
         panel = objeto;
+        panelGeneral = objeto2;
     }
     
     @Override
@@ -31,12 +33,18 @@ public class ManejadorEventosCargarAlmacenes implements Action{
         JButton boton = (JButton) e.getSource(); 
 
         if ("Seleccionar archivo".equals(boton.getText())) {
+            
+            if (panelGeneral.getCurrentDirectory() != null) {
+                panel.setCurrentDirectory(panelGeneral.getCurrentDirectory());
+            }
+
             int returnVal = panel.abrirSelectorFichero();
 
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 file = panel.getSelectedFile();
                 panel.setTextCuadroTextoRuta(file.toString());
                 panel.setEnabledBotonCargar(Boolean.TRUE);
+                panelGeneral.setCurrentDirectory(panel.getCurrentDirectory());
             }
             
         } else if ("Cancelar".equals(boton.getText())) {
