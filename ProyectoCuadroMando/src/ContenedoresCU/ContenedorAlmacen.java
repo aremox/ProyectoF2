@@ -11,10 +11,10 @@ import java.util.LinkedList;
 
 public class ContenedorAlmacen {
 
-    private LinkedList lista;
+    private LinkedList<Almacen> lista;
 
     public  ContenedorAlmacen() {
-        lista = new LinkedList();
+        lista = new LinkedList<Almacen>();
     }
 
     public void anadirAlmacen(Almacen alm) {

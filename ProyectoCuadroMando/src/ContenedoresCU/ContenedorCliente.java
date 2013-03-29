@@ -11,10 +11,10 @@ import java.util.LinkedList;
 
 public class ContenedorCliente {
 
-    private LinkedList lista;
+    private LinkedList<Cliente> lista;
 
     public ContenedorCliente() {
-        lista = new LinkedList();
+        lista = new LinkedList<Cliente>();
     }
 
     public void anadirCliente(Cliente cli) {

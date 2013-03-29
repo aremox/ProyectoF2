@@ -38,6 +38,7 @@ public class ControladorServicioCargarAlmacenes {
             int errores=0;
             
             LinkedList<RegistroAlmacenes> almacenes = new LinkedList<RegistroAlmacenes>(lec.extraer());
+            
             errores=lec.getErrores();
             int tam = almacenes.size();
             int cont = 0;

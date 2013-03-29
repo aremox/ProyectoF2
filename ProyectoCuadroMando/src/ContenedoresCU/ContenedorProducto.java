@@ -11,10 +11,10 @@ import java.util.LinkedList;
 
 public class ContenedorProducto {
 
-    private LinkedList lista;
+    private LinkedList<Producto> lista;
 
     public ContenedorProducto() {
-        lista = new LinkedList();
+        lista = new LinkedList<Producto>();
     }
 
     public void anadirProducto(Producto pro) {
