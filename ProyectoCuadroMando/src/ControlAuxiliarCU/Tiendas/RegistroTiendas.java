@@ -15,9 +15,8 @@ public class RegistroTiendas {
     private String poblacion;
     private String provincia;         
     private String telefono;
-    private String id_almacen;
 
-    public RegistroTiendas(String at_id_tienda, String at_calle, String at_numero, String at_cod_postal, String at_poblacion, String at_provincia, String at_telefono, String at_id_almacen) {
+    public RegistroTiendas(String at_id_tienda, String at_calle, String at_numero, String at_cod_postal, String at_poblacion, String at_provincia, String at_telefono) {
         id_tienda = at_id_tienda;
         calle = at_calle;
         numero = at_numero;
@@ -25,7 +24,6 @@ public class RegistroTiendas {
         poblacion = at_poblacion;
         provincia = at_provincia;
         telefono = at_telefono;
-        id_almacen = at_id_almacen;
     }
     
     
@@ -50,7 +48,4 @@ public class RegistroTiendas {
     public String getTelefono(){
         return telefono;
     } 
-    public String getId_almacen(){
-        return id_almacen;
-    }
 }

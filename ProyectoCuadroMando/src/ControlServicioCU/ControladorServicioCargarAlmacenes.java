@@ -1,11 +1,12 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorAlmacen;
 import ControlAuxiliarCU.Almacenes.AceptadorAlmacenes;
 import ControlAuxiliarCU.Almacenes.ProveedorInformacionAlmacenes;
 import ControlAuxiliarCU.Almacenes.RegistroAlmacenes;
 import ControlAuxiliarCU.RegistroDatosCarga;
+import ControlAuxiliarCU.RegistroLog;
 import EntidadesCU.Almacen;
+import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,6 +22,7 @@ import javax.swing.JOptionPane;
 public class ControladorServicioCargarAlmacenes {
     private String ruta;
     
+    
     public ControladorServicioCargarAlmacenes(File fichero){
         ruta = fichero.getAbsolutePath();
     }
@@ -30,7 +32,7 @@ public class ControladorServicioCargarAlmacenes {
             //
             ProveedorInformacionAlmacenes lec= new ProveedorInformacionAlmacenes(ruta, "::", 7);
             AceptadorAlmacenes aceptar = new AceptadorAlmacenes();
-            ContenedorAlmacen contenedor = new ContenedorAlmacen();
+            
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
             int aciertos=0;
             int errores=0;
@@ -50,10 +52,19 @@ public class ControladorServicioCargarAlmacenes {
                                           registros.getProvincia());
 
                 if (aceptar.aceptar(alm)){
-                    contenedor.anadirAlmacen(alm);
+                    VentanaPrincipalCuadroMando.contenedor_almacen.anadirAlmacen(alm);
                     aciertos++;
                 }else{
                     errores++;
+                    RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Almacenes");
+                    System.out.println("ERROR: " + aceptar.getTextoError() + "  -  "+ 
+                                                    registros.getId_almacen()+"::"+
+                                                    registros.getCalle()+"::"+
+                                                    registros.getNumero()+"::"+
+                                                    registros.getCod_postal()+"::"+
+                                                    registros.getTelefono()+"::"+
+                                                    registros.getMunicipio()+"::"+ 
+                                                    registros.getProvincia());
                 }
                 cont++;
             }

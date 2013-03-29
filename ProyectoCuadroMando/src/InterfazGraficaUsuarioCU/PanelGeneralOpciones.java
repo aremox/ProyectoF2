@@ -5,6 +5,12 @@ import InterfazGraficaUsuarioCU.PanelCargarClientes;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+/*
+ *
+ * @author Ivan Arenas
+ * @author Javier Roncero
+ *
+ */
 
 public class PanelGeneralOpciones extends JTabbedPane {
 
@@ -21,6 +27,7 @@ public class PanelGeneralOpciones extends JTabbedPane {
         PanelCargarClientes tabA = new PanelCargarClientes();
         PanelCargarProductos tabB = new PanelCargarProductos();
         PanelCargarVentas tabC = new PanelCargarVentas();
+        PanelCargarTiendas tabD = new PanelCargarTiendas();
         PanelCargarAlmacenes tabE = new PanelCargarAlmacenes();
         
         tabA.setSize( 100,100);
@@ -33,7 +40,6 @@ public class PanelGeneralOpciones extends JTabbedPane {
         tabC.setSize( 100,100 );
          this.addTab( "Carga de ventas" , tabC );
          
-        JPanel tabD = new JPanel();
         tabD.setSize( 100,100 );
          this.addTab( "Carga de tiendas" , tabD );
          

@@ -1,14 +1,11 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorProducto;
-import ContenedoresCU.ContenedorCliente;
-import ContenedoresCU.ContenedorTienda;
-import ContenedoresCU.ContenedorVenta;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import ControlAuxiliarCU.Ventas.AceptadorVentas;
 import ControlAuxiliarCU.Ventas.ProveedorInformacionVentas;
 import ControlAuxiliarCU.Ventas.RegistroVentas;
 import EntidadesCU.Venta;
+import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,6 +17,7 @@ import javax.swing.JOptionPane;
  * @author Ivan Arenas
  *
  */
+
 public class ControladorServicioCargarVentas {
 
     private String ruta;
@@ -33,10 +31,6 @@ public class ControladorServicioCargarVentas {
             //
             ProveedorInformacionVentas lec = new ProveedorInformacionVentas(ruta, "::", 7);
             AceptadorVentas aceptar = new AceptadorVentas();
-            ContenedorVenta contenedor_venta = new ContenedorVenta();
-            ContenedorCliente contenedor_cliente = new ContenedorCliente();
-            ContenedorTienda contenedor_tienda = new ContenedorTienda();
-            ContenedorProducto contenedor_articulo = new ContenedorProducto();
 
 
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
@@ -51,15 +45,15 @@ public class ControladorServicioCargarVentas {
 
                 RegistroVentas registros = (RegistroVentas) ventas.get(i);
                 Venta ven = new Venta(registros.getId_venta(), 
-                                      contenedor_cliente.getCliente(registros.getId_cliente()), 
-                                      contenedor_articulo.getProducto(registros.getId_producto()), 
-                                      contenedor_tienda.getTienda(registros.getId_tienda()), 
+                                      VentanaPrincipalCuadroMando.contenedor_cliente.getCliente(registros.getId_cliente()), 
+                                      VentanaPrincipalCuadroMando.contenedor_producto.getProducto(registros.getId_producto()), 
+                                      VentanaPrincipalCuadroMando.contenedor_tienda.getTienda(registros.getId_tienda()), 
                                       registros.getUnidades(), 
                                       registros.getImporte(), 
                                       registros.geFecha());
 
                 if (aceptar.aceptar(ven)) {
-                    contenedor_venta.anadirVenta(ven);
+                    VentanaPrincipalCuadroMando.contenedor_venta.anadirVenta(ven);
                     aciertos++;
                 } else {
                     errores++;

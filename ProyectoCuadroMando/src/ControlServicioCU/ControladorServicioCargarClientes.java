@@ -1,12 +1,12 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorCliente;
 import ControlAuxiliarCU.Clientes.AceptadorClientes;
 import ControlAuxiliarCU.Clientes.ProveedorInformacionClientes;
 import ControlAuxiliarCU.Clientes.RegistroClientes;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import ControlAuxiliarCU.RegistroLog;
 import EntidadesCU.Cliente;
+import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -30,7 +30,7 @@ public class ControladorServicioCargarClientes {
             //
             ProveedorInformacionClientes lec = new ProveedorInformacionClientes(ruta, ":", 10);
             AceptadorClientes aceptar = new AceptadorClientes();
-            ContenedorCliente contenedor_cliente = new ContenedorCliente();
+            
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
             int aciertos = 0;
             int errores = 0;
@@ -54,11 +54,22 @@ public class ControladorServicioCargarClientes {
                                           registros.getTelefono());
 
                 if (aceptar.aceptar(cli)){
-                    contenedor_cliente.anadirCliente(cli);
+                    VentanaPrincipalCuadroMando.contenedor_cliente.anadirCliente(cli);
                     aciertos++;
                 }else{
                     errores++;
                     RegistroLog log = new RegistroLog("Cliente con código postal erróneo","Clientes");
+                    System.out.println("ERROR: " + aceptar.getTextoError() + "  -  "+ 
+                                                    registros.getId_cliente()+":"+
+                                                    registros.getDni()+":"+
+                                                    registros.getNombre()+":"+
+                                                    registros.getApellidos()+":"+
+                                                    registros.getCalle()+":"+
+                                                    registros.getNumero()+":"+
+                                                    registros.getCod_Postal()+":"+
+                                                    registros.getPoblacion()+":"+
+                                                    registros.getProvincia()+":"+
+                                                    registros.getTelefono());
                 }
                 cont++;
             }

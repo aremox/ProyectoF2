@@ -47,6 +47,8 @@ public class ManejadorEventosCargarCliente implements Action {
             try {
                 ControladorServicioCargarClientes controladorClientes = new ControladorServicioCargarClientes(file);
                 controladorClientes.DesarrollarServicio();
+                panel.setTextCuadroTextoRuta("");
+                panel.setEnabledBotonCargar(Boolean.FALSE);
             } catch (IOException ex) {
                 Logger.getLogger(ManejadorEventosCargarAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
             }

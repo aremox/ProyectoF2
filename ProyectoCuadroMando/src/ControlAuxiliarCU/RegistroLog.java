@@ -1,17 +1,16 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ControlAuxiliarCU;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
+/*
  *
- * @author ivan
+ * @author Ivan Arenas
+ * @author Javier Roncero
+ *
  */
+
 public class RegistroLog {
 
     FileWriter fichero = null;

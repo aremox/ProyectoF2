@@ -14,10 +14,10 @@ public class Tienda {
     private String poblacion;
     private String provincia;         
     private String telefono;
-    private String id_almacen;
+    private Almacen id_almacen;
 
 
-    public Tienda(String at_id_tienda, String at_calle, String at_numero, String at_cod_postal, String at_poblacion, String at_provincia, String at_telefono, String at_id_almacen) {
+    public Tienda(String at_id_tienda, String at_calle, String at_numero, String at_cod_postal, String at_poblacion, String at_provincia, String at_telefono, Almacen at_id_almacen) {
         id_tienda = at_id_tienda;
         calle = at_calle;
         numero = at_numero;
@@ -35,6 +35,10 @@ public class Tienda {
     public String getCod_Postal(){
         return cod_postal;
     }      
+    
+    public Almacen getAlmacen(){
+        return id_almacen;
+    }
     
     
 }

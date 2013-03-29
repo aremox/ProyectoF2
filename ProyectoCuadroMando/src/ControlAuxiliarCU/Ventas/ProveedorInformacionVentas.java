@@ -7,6 +7,13 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
+/*
+ *
+ * @author Ivan Arenas
+ *
+ */
+
+
 public class ProveedorInformacionVentas extends ProveedorInformacion {
 
     LinkedList<RegistroVentas> ventas;
@@ -29,7 +36,7 @@ public class ProveedorInformacionVentas extends ProveedorInformacion {
             tokens = new StringTokenizer(linea, separadorCampos);
             int pos2 = 0;
             if (tokens.countTokens() != numeroCampos) {
-                System.out.println("ERROR: Linea sin todos los campos");
+                System.out.println("ERROR: Linea sin todos los campos  -  "+linea);
                 RegistroLog log = new RegistroLog("ERROR: Linea sin todos los campos","Ventas");
                 errores++;
             } else {

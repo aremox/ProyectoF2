@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package InterfazGraficaUsuarioCU;
 
 import ControlServicioCU.ControladorServicioCargarVentas;
@@ -16,10 +12,12 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 
 
-/**
+/*
  *
- * @author ivan
+ * @author Ivan Arenas
+ *
  */
+
 public class ManejadorEventosCargarVentas implements Action{
     
     private PanelCargarVentas panel;
@@ -50,6 +48,8 @@ public class ManejadorEventosCargarVentas implements Action{
             try {
                 ControladorServicioCargarVentas controladorVentas = new ControladorServicioCargarVentas(file);
                 controladorVentas.DesarrollarServicio();
+                panel.setTextCuadroTextoRuta("");
+                panel.setEnabledBotonCargar(Boolean.FALSE);
             } catch (IOException ex) {
                 Logger.getLogger(ManejadorEventosCargarVentas.class.getName()).log(Level.SEVERE, null, ex);
             }

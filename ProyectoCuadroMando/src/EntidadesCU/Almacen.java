@@ -1,7 +1,5 @@
 package EntidadesCU;
 
-import ControlAuxiliarCU.*;
-
 /*
  *
  * @author Ivan Arenas
@@ -30,4 +28,8 @@ public class Almacen {
     public String getId_almacen(){
         return id_almacenes;
     }
+    public String getCod_postal(){
+        return cod_postal;
+    }
+
 }

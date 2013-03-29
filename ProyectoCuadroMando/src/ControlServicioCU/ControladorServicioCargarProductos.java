@@ -1,10 +1,10 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorProducto;
 import ControlAuxiliarCU.Productos.ProveedorInformacionProductos;
 import ControlAuxiliarCU.Productos.RegistroProductos;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import EntidadesCU.Producto;
+import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class ControladorServicioCargarProductos {
         try {
             //
             ProveedorInformacionProductos lec = new ProveedorInformacionProductos(ruta, "--", 4);
-            ContenedorProducto contenedor_producto = new ContenedorProducto();
+            
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
             int aciertos = 0;
             int errores = 0;
@@ -45,7 +45,7 @@ public class ControladorServicioCargarProductos {
                                             registros.getFicha_tecnica());
 
                 // Los productos no necesitan validación
-                contenedor_producto.anadirProducto(pro);
+                VentanaPrincipalCuadroMando.contenedor_producto.anadirProducto(pro);
                 aciertos++;
                 
                 cont++;

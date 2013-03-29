@@ -1,17 +1,17 @@
 package ControlAuxiliarCU.Clientes;
 
-/*
- *
- * @author Javier Roncero
- *
- */
-
 import ControlAuxiliarCU.ProveedorInformacion;
 import ControlAuxiliarCU.RegistroLog;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
+
+/*
+ *
+ * @author Javier Roncero
+ *
+ */
 
 public class ProveedorInformacionClientes extends ProveedorInformacion {
 
@@ -35,7 +35,7 @@ public class ProveedorInformacionClientes extends ProveedorInformacion {
             tokens = new StringTokenizer(linea, separadorCampos);
             int pos2 = 0;
             if (tokens.countTokens() != numeroCampos) {
-                System.out.println("ERROR: Linea sin todos los campos");
+                System.out.println("ERROR: Linea sin todos los campos  -  "+linea);
                 RegistroLog log = new RegistroLog("ERROR: Linea sin todos los campos","Clientes");
                 errores++;
             } else {

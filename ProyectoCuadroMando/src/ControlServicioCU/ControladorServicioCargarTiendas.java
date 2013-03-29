@@ -1,12 +1,12 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorTienda;
+import ControlAuxiliarCU.RegistroDatosCarga;
+import ControlAuxiliarCU.RegistroLog;
 import ControlAuxiliarCU.Tiendas.AceptadorTiendas;
 import ControlAuxiliarCU.Tiendas.ProveedorInformacionTiendas;
 import ControlAuxiliarCU.Tiendas.RegistroTiendas;
-import ControlAuxiliarCU.RegistroDatosCarga;
-import ControlAuxiliarCU.RegistroLog;
 import EntidadesCU.Tienda;
+import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -30,7 +30,7 @@ public class ControladorServicioCargarTiendas {
             //
             ProveedorInformacionTiendas lec = new ProveedorInformacionTiendas(ruta, "::", 7);
             AceptadorTiendas aceptar = new AceptadorTiendas();
-            ContenedorTienda contenedor_tienda = new ContenedorTienda();
+            
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
             int aciertos = 0;
             int errores = 0;
@@ -48,15 +48,23 @@ public class ControladorServicioCargarTiendas {
                                           registros.getCod_Postal(), 
                                           registros.getPoblacion(), 
                                           registros.getProvincia(), 
-                                          registros.getTelefono(),                        
-                                          registros.getId_almacen());
+                                          registros.getTelefono(),
+                                          VentanaPrincipalCuadroMando.contenedor_almacen.getAlmacenCod_Postal(registros.getCod_Postal()));
 
                 if (aceptar.aceptar(tie)){
-                    contenedor_tienda.anadirTienda(tie);
+                    VentanaPrincipalCuadroMando.contenedor_tienda.anadirTienda(tie);
                     aciertos++;
                 }else{
                     errores++;
-                    RegistroLog log = new RegistroLog("Tienda con código postal erróneo","Tiendas");
+                    RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Tiendas");
+                    System.out.println("ERROR: " + aceptar.getTextoError() + "  -  "+ 
+                                                    registros.getId_tienda()+"::"+
+                                                    registros.getCalle()+"::"+
+                                                    registros.getNumero()+"::"+
+                                                    registros.getCod_Postal()+"::"+
+                                                    registros.getPoblacion()+"::"+
+                                                    registros.getProvincia()+"::"+ 
+                                                    registros.getTelefono());
                 }
                 cont++;
             }

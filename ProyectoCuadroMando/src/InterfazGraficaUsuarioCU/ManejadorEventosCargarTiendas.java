@@ -47,6 +47,8 @@ public class ManejadorEventosCargarTiendas implements Action {
             try {
                 ControladorServicioCargarTiendas controladorTiendas = new ControladorServicioCargarTiendas(file);
                 controladorTiendas.DesarrollarServicio();
+                panel.setTextCuadroTextoRuta("");
+                panel.setEnabledBotonCargar(Boolean.FALSE);
             } catch (IOException ex) {
                 Logger.getLogger(ManejadorEventosCargarAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
             }

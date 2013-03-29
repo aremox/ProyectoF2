@@ -1,54 +1,34 @@
-:::::::::::Clientes::::::::::
+:::::::::::Almacenes::::::::::
 
 ERROR: Linea sin todos los campos
 
-:::::::::::Clientes::::::::::
+:::::::::::Almacenes::::::::::
 
-Cliente con código postal erróneo
+Almacen con código postal erróneo
 
-:::::::::::Clientes::::::::::
-
-ERROR: Linea sin todos los campos
-
-:::::::::::Clientes::::::::::
-
-Cliente con código postal erróneo
-
-:::::::::::Clientes::::::::::
+:::::::::::Tiendas::::::::::
 
 ERROR: Linea sin todos los campos
 
-:::::::::::Clientes::::::::::
+:::::::::::Tiendas::::::::::
 
-Cliente con código postal erróneo
+No existe un almacén en el mismo codigo postal de la tienda
 
-:::::::::::Clientes::::::::::
+:::::::::::Tiendas::::::::::
 
-ERROR: Linea sin todos los campos
+No existe un almacén en el mismo codigo postal de la tienda
 
-:::::::::::Clientes::::::::::
+:::::::::::Tiendas::::::::::
 
-Cliente con código postal erróneo
+No existe un almacén en el mismo codigo postal de la tienda
 
-:::::::::::Productos::::::::::
+:::::::::::Tiendas::::::::::
 
-ERROR: Linea sin todos los campos
+No existe un almacén en el mismo codigo postal de la tienda
 
-:::::::::::Productos::::::::::
+:::::::::::Tiendas::::::::::
 
-ERROR: Linea sin todos los campos
-
-:::::::::::Productos::::::::::
-
-ERROR: Linea sin todos los campos
-
-:::::::::::Productos::::::::::
-
-ERROR: Linea sin todos los campos
-
-:::::::::::Productos::::::::::
-
-ERROR: Linea sin todos los campos
+Tienda con código postal no numérico
 
 :::::::::::Clientes::::::::::
 
@@ -58,35 +38,247 @@ ERROR: Linea sin todos los campos
 
 Cliente con código postal erróneo
 
-:::::::::::Clientes::::::::::
+:::::::::::Almacenes::::::::::
 
 ERROR: Linea sin todos los campos
 
-:::::::::::Clientes::::::::::
+:::::::::::Almacenes::::::::::
 
-Cliente con código postal erróneo
+Almacen con código postal erróneo
 
-:::::::::::Clientes::::::::::
-
-ERROR: Linea sin todos los campos
-
-:::::::::::Clientes::::::::::
-
-Cliente con código postal erróneo
-
-:::::::::::Productos::::::::::
+:::::::::::Tiendas::::::::::
 
 ERROR: Linea sin todos los campos
 
-:::::::::::Productos::::::::::
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+Tienda con código postal no numérico
+
+:::::::::::Almacenes::::::::::
 
 ERROR: Linea sin todos los campos
 
-:::::::::::Productos::::::::::
+:::::::::::Almacenes::::::::::
+
+Almacen con código postal erróneo
+
+:::::::::::Tiendas::::::::::
 
 ERROR: Linea sin todos los campos
 
-:::::::::::Productos::::::::::
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+Tienda con código postal no numérico
+
+:::::::::::Almacenes::::::::::
 
 ERROR: Linea sin todos los campos
+
+:::::::::::Almacenes::::::::::
+
+Almacen con código postal erróneo
+
+:::::::::::Almacenes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Almacenes::::::::::
+
+Almacen con código postal erróneo
+
+:::::::::::Tiendas::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+Tienda con código postal no numérico
+
+:::::::::::Almacenes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Almacenes::::::::::
+
+Almacen con código postal erróneo
+
+:::::::::::Tiendas::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+Tienda con código postal no numérico
+
+:::::::::::Almacenes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Almacenes::::::::::
+
+Almacen con código postal erróneo
+
+:::::::::::Tiendas::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+Tienda con código postal no numérico
+
+:::::::::::Almacenes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Almacenes::::::::::
+
+Almacen con código postal erróneo
+
+:::::::::::Tiendas::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+Tienda con código postal no numérico
+
+:::::::::::Almacenes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Almacenes::::::::::
+
+Almacen con código postal erróneo
+
+:::::::::::Almacenes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Almacenes::::::::::
+
+Almacen con código postal erróneo
+
+:::::::::::Tiendas::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+Tienda con código postal no numérico
+
+:::::::::::Almacenes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Almacenes::::::::::
+
+Almacen con código postal erróneo
+
+:::::::::::Almacenes::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Almacenes::::::::::
+
+Almacen con código postal erróneo
+
+:::::::::::Tiendas::::::::::
+
+ERROR: Linea sin todos los campos
+
+:::::::::::Tiendas::::::::::
+
+No existe un almacén en el mismo codigo postal de la tienda
+
+:::::::::::Tiendas::::::::::
+
+Tienda con código postal no numérico
 

@@ -9,7 +9,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /*
+ *
+ * @author Ivan Arenas
+ *
  */
+
 public class PanelCargarVentas extends JPanel {
 
    private JButton botonSelector;
