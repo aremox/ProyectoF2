@@ -19,6 +19,7 @@ public class ProyectoCuadroMando {
             
             //Muestra el aspecto de las ventanas propio del Sistema Operativo donde se ejecute
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); 
+            
         } catch (Exception e) {
         }
         new VentanaPrincipalCuadroMando();
