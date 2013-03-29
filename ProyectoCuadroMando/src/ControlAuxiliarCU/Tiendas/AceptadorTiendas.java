@@ -12,9 +12,10 @@ public class AceptadorTiendas {
     
     private String textoError = "";
     private Boolean resAceptar = true;
+    private ControlServicioCU.ControladorServicioCargarTiendas controlador;
     
-    public AceptadorTiendas(){
-        
+    public AceptadorTiendas(ControlServicioCU.ControladorServicioCargarTiendas objeto){
+        controlador = objeto;
     }
     public boolean aceptar(Tienda tie){
         textoError = "";
@@ -34,13 +35,13 @@ public class AceptadorTiendas {
             }
             else
             {
-                textoError = "Tienda con código postal erróneo";
+                textoError = "La tienda "+ controlador.getRegistroTiendas().getId_tienda()+" tiene un código postal erróneo ["+controlador.getRegistroTiendas().getCod_Postal()+"]";
                 resAceptar = false;
             }
         }
         catch(NumberFormatException nfe)
         {
-            textoError = "Tienda con código postal no numérico";
+            textoError = "La tienda "+ controlador.getRegistroTiendas().getId_tienda()+" tiene un código postal no numérico ["+controlador.getRegistroTiendas().getCod_Postal()+"]";
             resAceptar = false;
         }
         
@@ -50,7 +51,7 @@ public class AceptadorTiendas {
     private boolean comprobarAlmacen(Tienda tie){
         if (resAceptar){
             if (tie.getAlmacen() == null){
-                textoError = "No existe un almacén en el mismo codigo postal de la tienda";
+                textoError = "La tienda "+ controlador.getRegistroTiendas().getId_tienda()+" no dispone de ningún Almacén en el mismo código postal ["+controlador.getRegistroTiendas().getCod_Postal()+"]";
                 resAceptar = false;
             }
         }

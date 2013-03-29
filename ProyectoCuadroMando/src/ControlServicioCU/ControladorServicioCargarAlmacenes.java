@@ -22,6 +22,7 @@ import javax.swing.JOptionPane;
 public class ControladorServicioCargarAlmacenes {
     private String ruta;
     public static ContenedorAlmacen contenedor_almacen = new ContenedorAlmacen();
+    private RegistroAlmacenes registros;
     
     public ControladorServicioCargarAlmacenes(File fichero){
         ruta = fichero.getAbsolutePath();
@@ -31,7 +32,7 @@ public class ControladorServicioCargarAlmacenes {
         try {
             //
             ProveedorInformacionAlmacenes lec= new ProveedorInformacionAlmacenes(ruta, "::", 7);
-            AceptadorAlmacenes aceptar = new AceptadorAlmacenes();
+            AceptadorAlmacenes aceptar = new AceptadorAlmacenes(this);
             
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
             int aciertos=0;
@@ -43,7 +44,7 @@ public class ControladorServicioCargarAlmacenes {
             int tam = almacenes.size();
             int cont = 0;
             for (int i = 0; i < tam; i++) {
-                RegistroAlmacenes registros = (RegistroAlmacenes) almacenes.get(i);
+                registros = (RegistroAlmacenes) almacenes.get(i);
                 Almacen alm = new Almacen(registros.getId_almacen(),
                                           registros.getCalle(),
                                           registros.getNumero(),
@@ -58,14 +59,7 @@ public class ControladorServicioCargarAlmacenes {
                 }else{
                     errores++;
                     RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Almacenes");
-                    System.out.println("ERROR: " + aceptar.getTextoError() + "  -  "+ 
-                                                    registros.getId_almacen()+"::"+
-                                                    registros.getCalle()+"::"+
-                                                    registros.getNumero()+"::"+
-                                                    registros.getCod_postal()+"::"+
-                                                    registros.getTelefono()+"::"+
-                                                    registros.getMunicipio()+"::"+ 
-                                                    registros.getProvincia());
+                    System.out.println("ERROR: " + aceptar.getTextoError());
                 }
                 cont++;
             }
@@ -78,6 +72,10 @@ public class ControladorServicioCargarAlmacenes {
           //  System.out.println("Error en la lectura");
             //Logger.getLogger(ControladorServicioCargaAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public RegistroAlmacenes getRegistroAlmacenes(){
+        return registros;
     }
     
 }

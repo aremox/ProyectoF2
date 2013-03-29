@@ -22,6 +22,7 @@ import javax.swing.JOptionPane;
 public class ControladorServicioCargarClientes {
     private String ruta;
     public static ContenedorCliente contenedor_cliente = new ContenedorCliente();
+    private RegistroClientes registros;
     
     public ControladorServicioCargarClientes(File fichero){
         ruta = fichero.getAbsolutePath();
@@ -30,7 +31,7 @@ public class ControladorServicioCargarClientes {
         try {
             //
             ProveedorInformacionClientes lec = new ProveedorInformacionClientes(ruta, ":", 10);
-            AceptadorClientes aceptar = new AceptadorClientes();
+            AceptadorClientes aceptar = new AceptadorClientes(this);
             
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
             int aciertos = 0;
@@ -42,7 +43,7 @@ public class ControladorServicioCargarClientes {
             int tam = clientes.size();
             int cont = 0;
             for (int i = 0; i < tam; i++) {
-                RegistroClientes registros = (RegistroClientes) clientes.get(i);
+                registros = (RegistroClientes) clientes.get(i);
                 Cliente cli = new Cliente(registros.getId_cliente(),
                                           registros.getDni(),
                                           registros.getNombre(),
@@ -59,18 +60,8 @@ public class ControladorServicioCargarClientes {
                     aciertos++;
                 }else{
                     errores++;
-                    RegistroLog log = new RegistroLog("Cliente con código postal erróneo","Clientes");
-                    System.out.println("ERROR: " + aceptar.getTextoError() + "  -  "+ 
-                                                    registros.getId_cliente()+":"+
-                                                    registros.getDni()+":"+
-                                                    registros.getNombre()+":"+
-                                                    registros.getApellidos()+":"+
-                                                    registros.getCalle()+":"+
-                                                    registros.getNumero()+":"+
-                                                    registros.getCod_Postal()+":"+
-                                                    registros.getPoblacion()+":"+
-                                                    registros.getProvincia()+":"+
-                                                    registros.getTelefono());
+                    RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Clientes");
+                    System.out.println("ERROR: " + aceptar.getTextoError());
                 }
                 cont++;
             }
@@ -85,5 +76,9 @@ public class ControladorServicioCargarClientes {
             //Logger.getLogger(ControladorServicioCargaAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public RegistroClientes getRegistroClientes(){
+        return registros;
+    }    
     
 }

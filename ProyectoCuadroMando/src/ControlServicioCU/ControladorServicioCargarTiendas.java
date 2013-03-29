@@ -22,6 +22,7 @@ import javax.swing.JOptionPane;
 public class ControladorServicioCargarTiendas {
     private String ruta;
     public static ContenedorTienda contenedor_tienda = new ContenedorTienda();
+    private RegistroTiendas registros;
     
     public ControladorServicioCargarTiendas(File fichero){
         ruta = fichero.getAbsolutePath();
@@ -30,7 +31,7 @@ public class ControladorServicioCargarTiendas {
         try {
             //
             ProveedorInformacionTiendas lec = new ProveedorInformacionTiendas(ruta, "::", 7);
-            AceptadorTiendas aceptar = new AceptadorTiendas();
+            AceptadorTiendas aceptar = new AceptadorTiendas(this);
             
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
             int aciertos = 0;
@@ -42,7 +43,7 @@ public class ControladorServicioCargarTiendas {
             int tam = tiendas.size();
             int cont = 0;
             for (int i = 0; i < tam; i++) {
-                RegistroTiendas registros = (RegistroTiendas) tiendas.get(i);
+                registros = (RegistroTiendas) tiendas.get(i);
                 Tienda tie = new Tienda(registros.getId_tienda(),
                                           registros.getCalle(), 
                                           registros.getNumero(), 
@@ -58,14 +59,7 @@ public class ControladorServicioCargarTiendas {
                 }else{
                     errores++;
                     RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Tiendas");
-                    System.out.println("ERROR: " + aceptar.getTextoError() + "  -  "+ 
-                                                    registros.getId_tienda()+"::"+
-                                                    registros.getCalle()+"::"+
-                                                    registros.getNumero()+"::"+
-                                                    registros.getCod_Postal()+"::"+
-                                                    registros.getPoblacion()+"::"+
-                                                    registros.getProvincia()+"::"+ 
-                                                    registros.getTelefono());
+                    System.out.println("ERROR: " + aceptar.getTextoError());
                 }
                 cont++;
             }
@@ -81,4 +75,7 @@ public class ControladorServicioCargarTiendas {
         }
     }
     
+    public RegistroTiendas getRegistroTiendas(){
+        return registros;
+    }   
 }

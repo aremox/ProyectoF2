@@ -1,6 +1,5 @@
 package InterfazGraficaUsuarioCU;
 
-import ContenedoresCU.ContenedorAlmacen;
 import ContenedoresCU.ContenedorCliente;
 import ContenedoresCU.ContenedorProducto;
 import ContenedoresCU.ContenedorTienda;

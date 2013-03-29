@@ -35,8 +35,8 @@ public class ProveedorInformacionAlmacenes extends ProveedorInformacion {
             tokens = new StringTokenizer(linea, separadorCampos);
             int pos2 = 0;
             if (tokens.countTokens() != numeroCampos) {
-                System.out.println("ERROR: Linea sin todos los campos  -  "+linea);
-                RegistroLog log = new RegistroLog("ERROR: Linea sin todos los campos","Almacenes");
+                System.out.println("ERROR: Linea de Almacén sin todos los campos ["+linea+"]");
+                RegistroLog log = new RegistroLog("ERROR: Linea de Almacén sin todos los campos ["+linea+"]","Almacenes");
                 errores++;
             } else {
                 while (tokens.hasMoreTokens()) {

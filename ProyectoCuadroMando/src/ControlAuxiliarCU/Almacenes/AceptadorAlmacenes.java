@@ -12,9 +12,10 @@ public class AceptadorAlmacenes {
     
     private String textoError = "";
     private Boolean resAceptar = true;
+    private ControlServicioCU.ControladorServicioCargarAlmacenes controlador;
     
-    public AceptadorAlmacenes(){
-        
+    public AceptadorAlmacenes(ControlServicioCU.ControladorServicioCargarAlmacenes objeto){
+        controlador = objeto;
     }
     public boolean aceptar(Almacen alm){
         textoError = "";
@@ -34,13 +35,13 @@ public class AceptadorAlmacenes {
             }
             else
             {
-                textoError = "Almacen con código postal erróneo";
+                textoError = "El almacén "+ controlador.getRegistroAlmacenes().getId_almacen()+" tiene un código postal erróneo ["+controlador.getRegistroAlmacenes().getCod_postal()+"]";
                 resAceptar = false;
             }
         }
         catch(NumberFormatException nfe)
         {
-            textoError = "Almacen con código postal no numérico";
+            textoError = "Almacen con código postal no numérico";textoError = "El almacén "+ controlador.getRegistroAlmacenes().getId_almacen()+" tiene un código postal no numérico ["+controlador.getRegistroAlmacenes().getCod_postal()+"]";
             resAceptar = false;
         }
         

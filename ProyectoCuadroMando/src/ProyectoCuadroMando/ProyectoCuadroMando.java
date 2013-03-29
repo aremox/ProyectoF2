@@ -12,6 +12,6 @@ import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 public class ProyectoCuadroMando {
 
     public static void main(String[] args) {
-        new VentanaPrincipalCuadroMando();
+        VentanaPrincipalCuadroMando ventanaPrincipalCuadroMando = new VentanaPrincipalCuadroMando();
     }
 }

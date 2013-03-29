@@ -23,7 +23,8 @@ public class ControladorServicioCargarVentas {
 
     private String ruta;
     public static ContenedorVenta contenedor_venta = new ContenedorVenta();
-
+    private RegistroVentas registros;
+    
     public ControladorServicioCargarVentas(File fichero) {
         ruta = fichero.getAbsolutePath();
     }
@@ -32,7 +33,7 @@ public class ControladorServicioCargarVentas {
         try {
             //
             ProveedorInformacionVentas lec = new ProveedorInformacionVentas(ruta, "::", 7);
-            AceptadorVentas aceptar = new AceptadorVentas();
+            AceptadorVentas aceptar = new AceptadorVentas(this);
 
 
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
@@ -45,7 +46,7 @@ public class ControladorServicioCargarVentas {
             int cont = 0;
             for (int i = 0; i < tam; i++) {
 
-                RegistroVentas registros = (RegistroVentas) ventas.get(i);
+                registros = (RegistroVentas) ventas.get(i);
                 Venta ven = new Venta(registros.getId_venta(), 
                                       ControladorServicioCargarClientes.contenedor_cliente.getCliente(registros.getId_cliente()), 
                                       ControladorServicioCargarProductos.contenedor_producto.getProducto(registros.getId_producto()), 
@@ -60,14 +61,7 @@ public class ControladorServicioCargarVentas {
                 } else {
                     errores++;
                     RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Ventas");
-                    System.out.println("ERROR: " + aceptar.getTextoError() + "  -  "+ 
-                                                    registros.getId_venta()+"::"+
-                                                    registros.getId_cliente()+"::"+
-                                                    registros.getId_producto()+"::"+
-                                                    registros.getId_tienda()+"::"+
-                                                    registros.getUnidades()+"::"+
-                                                    registros.getImporte()+"::"+
-                                                    registros.geFecha());
+                    System.out.println("ERROR: " + aceptar.getTextoError());
                 }
                 cont++;
             }
@@ -81,4 +75,8 @@ public class ControladorServicioCargarVentas {
             //Logger.getLogger(ControladorServicioCargaAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public RegistroVentas getRegistroVentas(){
+        return registros;
+    }  
 }

@@ -1,52 +1,52 @@
 :::::::::::Almacenes::::::::::
 
-ERROR: Linea sin todos los campos
+ERROR: Linea de Almacén sin todos los campos [AL0000005::GRAN VIA::08080::934587845::BARCELONA::BARCELONA]
 
 :::::::::::Almacenes::::::::::
 
-Almacen con código postal erróneo
+El almacén AL0000006 tiene un código postal erróneo [99011]
 
 :::::::::::Tiendas::::::::::
 
-ERROR: Linea sin todos los campos
+ERROR: Linea de Tienda sin todos los campos [TI0000006::LE CORTS::08080::934564556::BARCELONA::BARCELONA]
 
 :::::::::::Tiendas::::::::::
 
-No existe un almacén en el mismo codigo postal de la tienda
+La tienda TI0000003 no dispone de ningún Almacén en el mismo código postal [28028]
 
 :::::::::::Tiendas::::::::::
 
-Tienda con código postal no numérico
+La tienda TI0000005 tiene un código postal no numérico [R08080]
 
 :::::::::::Clientes::::::::::
 
-ERROR: Linea sin todos los campos
+ERROR: Linea de Cliente sin todos los campos [CL0000003::MARIO TERESA: GARCIA MUÑOZ   :CALLE FRANCIA :3234:28215:MADRID:MADRID:62587458711]
 
 :::::::::::Clientes::::::::::
 
-Cliente con código postal erróneo
+El cliente CL0000004 tiene un código postal erróneo [283500]
 
 :::::::::::Productos::::::::::
 
-ERROR: Linea sin todos los campos
+ERROR: Linea de Producto sin todos los campos [PR0000007--244,95--FICHA TECNICA 06]
 
 :::::::::::Ventas::::::::::
 
-ERROR: Linea sin todos los campos
+ERROR: Linea de Venta sin todos los campos [VE0000003::CL0000002::PR0000002::TI0000002::8::61.70]
 
 :::::::::::Ventas::::::::::
 
-Venta con incoherencia de datos, no se ha encontrado el cliente asociado a la venta
+Venta VE0000004 con incoherencia de datos, no se ha encontrado el cliente CL0000005 asociado a la venta
 
 :::::::::::Ventas::::::::::
 
-Venta con incoherencia de datos, no se ha encontrado el producto asociado a la venta
+Venta VE0000005 con incoherencia de datos, no se ha encontrado el producto PR0000008 asociado a la venta
 
 :::::::::::Ventas::::::::::
 
-Venta con incoherencia de datos, no se ha encontrado la tienda asociada a la venta
+Venta VE0000006 con incoherencia de datos, no se ha encontrado la tienda TI0000003 asociada a la venta
 
 :::::::::::Ventas::::::::::
 
-Venta con incoherencia de datos, el importe no es numérico
+Venta VE0000007 con incoherencia de datos, el importe [125,70] asociado a la venta no es numérico
 
