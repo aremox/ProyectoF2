@@ -17,7 +17,9 @@ public class AceptadorTiendas {
         
     }
     public boolean aceptar(Tienda tie){
-
+        textoError = "";
+        resAceptar = true;
+        
         return (aceptarCodPostal(tie) && comprobarAlmacen(tie));
     }
     

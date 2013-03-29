@@ -10,7 +10,7 @@ public class Venta {
 
     private String id_venta;
     private Cliente cliente;
-    private Producto articulo;
+    private Producto producto;
     private Tienda tienda;
     private String unidades;
     private String importe;
@@ -19,7 +19,7 @@ public class Venta {
     public Venta(String at1, Cliente at2, Producto at3, Tienda at4, String at5, String at6, String at7) {
         id_venta = at1;
         cliente = at2;
-        articulo = at3;
+        producto = at3;
         tienda = at4;
         unidades = at5;
         importe = at6;
@@ -29,5 +29,21 @@ public class Venta {
     
     public String getId_venta(){
         return id_venta;
+    }
+    
+    public Cliente getCliente(){
+        return cliente;
+    }
+    
+    public Producto getProducto(){
+        return producto;
+    }
+    
+    public Tienda getTienda(){
+        return tienda;
+    }
+    
+    public String getImporte(){
+        return importe;
     }
 }

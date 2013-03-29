@@ -17,7 +17,9 @@ public class AceptadorClientes {
         
     }
     public boolean aceptar(Cliente cli){
-
+        textoError = "";
+        resAceptar = true;
+        
         return (aceptarCodPostal(cli));
     }
     

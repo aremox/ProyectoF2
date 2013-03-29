@@ -1,6 +1,7 @@
 package ControlServicioCU;
 
 import ControlAuxiliarCU.RegistroDatosCarga;
+import ControlAuxiliarCU.RegistroLog;
 import ControlAuxiliarCU.Ventas.AceptadorVentas;
 import ControlAuxiliarCU.Ventas.ProveedorInformacionVentas;
 import ControlAuxiliarCU.Ventas.RegistroVentas;
@@ -57,6 +58,15 @@ public class ControladorServicioCargarVentas {
                     aciertos++;
                 } else {
                     errores++;
+                    RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Ventas");
+                    System.out.println("ERROR: " + aceptar.getTextoError() + "  -  "+ 
+                                                    registros.getId_venta()+"::"+
+                                                    registros.getId_cliente()+"::"+
+                                                    registros.getId_producto()+"::"+
+                                                    registros.getId_tienda()+"::"+
+                                                    registros.getUnidades()+"::"+
+                                                    registros.getImporte()+"::"+
+                                                    registros.geFecha());
                 }
                 cont++;
             }

@@ -17,7 +17,9 @@ public class AceptadorAlmacenes {
         
     }
     public boolean aceptar(Almacen alm){
-
+        textoError = "";
+        resAceptar = true;
+        
         return (aceptarCodPostal(alm));
     }
     
