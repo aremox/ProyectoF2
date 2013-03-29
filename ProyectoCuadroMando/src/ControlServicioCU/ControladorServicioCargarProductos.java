@@ -17,10 +17,10 @@ import javax.swing.JOptionPane;
  *
  */
 
-public class ControladorServicioCargaProductos {
+public class ControladorServicioCargarProductos {
     private String ruta;
     
-    public ControladorServicioCargaProductos(File fichero){
+    public ControladorServicioCargarProductos(File fichero){
         ruta = fichero.getAbsolutePath();
     }
     public void DesarrollarServicio() throws IOException{

@@ -1,6 +1,6 @@
 package InterfazGraficaUsuarioCU;
 
-import ControlServicioCU.ControladorServicioCargarClientes;
+import ControlServicioCU.ControladorServicioCargarTiendas;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -17,12 +17,12 @@ import javax.swing.JFileChooser;
  *
  */
 
-public class ManejadorEventosCargarCliente implements Action {
+public class ManejadorEventosCargarTiendas implements Action {
 
-    private PanelCargarClientes panel;
+    private PanelCargarTiendas panel;
     private File file;
     
-    public ManejadorEventosCargarCliente(PanelCargarClientes objeto){
+    public ManejadorEventosCargarTiendas(PanelCargarTiendas objeto){
         panel = objeto;
     }
     
@@ -45,8 +45,8 @@ public class ManejadorEventosCargarCliente implements Action {
             
         } else if ("Cargar".equals(boton.getText())) {
             try {
-                ControladorServicioCargarClientes controladorClientes = new ControladorServicioCargarClientes(file);
-                controladorClientes.DesarrollarServicio();
+                ControladorServicioCargarTiendas controladorTiendas = new ControladorServicioCargarTiendas(file);
+                controladorTiendas.DesarrollarServicio();
             } catch (IOException ex) {
                 Logger.getLogger(ManejadorEventosCargarAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
             }

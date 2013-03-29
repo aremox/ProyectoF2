@@ -19,10 +19,10 @@ import javax.swing.JOptionPane;
  *
  */
 
-public class ControladorServicioCargaClientes {
+public class ControladorServicioCargarClientes {
     private String ruta;
     
-    public ControladorServicioCargaClientes(File fichero){
+    public ControladorServicioCargarClientes(File fichero){
         ruta = fichero.getAbsolutePath();
     }
     public void DesarrollarServicio() throws IOException{

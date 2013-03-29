@@ -4,7 +4,7 @@
  */
 package InterfazGraficaUsuarioCU;
 
-import ControlServicioCU.ControladorServicioCargaVentas;
+import ControlServicioCU.ControladorServicioCargarVentas;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -48,7 +48,7 @@ public class ManejadorEventosCargarVentas implements Action{
             
         } else if ("Cargar".equals(boton.getText())) {
             try {
-                ControladorServicioCargaVentas controladorVentas = new ControladorServicioCargaVentas(file);
+                ControladorServicioCargarVentas controladorVentas = new ControladorServicioCargarVentas(file);
                 controladorVentas.DesarrollarServicio();
             } catch (IOException ex) {
                 Logger.getLogger(ManejadorEventosCargarVentas.class.getName()).log(Level.SEVERE, null, ex);

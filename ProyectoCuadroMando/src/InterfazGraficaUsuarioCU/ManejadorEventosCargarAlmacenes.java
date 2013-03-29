@@ -4,7 +4,7 @@
  */
 package InterfazGraficaUsuarioCU;
 
-import ControlServicioCU.ControladorServicioCargaAlmacenes;
+import ControlServicioCU.ControladorServicioCargarAlmacenes;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -48,7 +48,7 @@ public class ManejadorEventosCargarAlmacenes implements Action{
             
         } else if ("Cargar".equals(boton.getText())) {
             try {
-                ControladorServicioCargaAlmacenes controladorAlmacenes = new ControladorServicioCargaAlmacenes(file);
+                ControladorServicioCargarAlmacenes controladorAlmacenes = new ControladorServicioCargarAlmacenes(file);
                 controladorAlmacenes.DesarrollarServicio();
             } catch (IOException ex) {
                 Logger.getLogger(ManejadorEventosCargarAlmacenes.class.getName()).log(Level.SEVERE, null, ex);

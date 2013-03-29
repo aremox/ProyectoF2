@@ -20,11 +20,11 @@ import javax.swing.JOptionPane;
  * @author Ivan Arenas
  *
  */
-public class ControladorServicioCargaVentas {
+public class ControladorServicioCargarVentas {
 
     private String ruta;
 
-    public ControladorServicioCargaVentas(File fichero) {
+    public ControladorServicioCargarVentas(File fichero) {
         ruta = fichero.getAbsolutePath();
     }
 

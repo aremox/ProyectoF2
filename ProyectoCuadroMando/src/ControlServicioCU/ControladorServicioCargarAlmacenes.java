@@ -18,10 +18,10 @@ import javax.swing.JOptionPane;
  *
  */
 
-public class ControladorServicioCargaAlmacenes {
+public class ControladorServicioCargarAlmacenes {
     private String ruta;
     
-    public ControladorServicioCargaAlmacenes(File fichero){
+    public ControladorServicioCargarAlmacenes(File fichero){
         ruta = fichero.getAbsolutePath();
     }
     
