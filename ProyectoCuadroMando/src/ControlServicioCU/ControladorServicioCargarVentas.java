@@ -33,7 +33,7 @@ public class ControladorServicioCargarVentas {
         try {
             //
             ProveedorInformacionVentas lec = new ProveedorInformacionVentas(ruta, "::", 7);
-            AceptadorVentas aceptar = new AceptadorVentas(this);
+            AceptadorVentas aceptar = new AceptadorVentas();
 
 
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
