@@ -11,10 +11,9 @@ public class AceptadorVentas {
 
     private String textoError = "";
     private Boolean resAceptar = true;
-    private ControlServicioCU.ControladorServicioCargarVentas controlador;
 
-    public AceptadorVentas(ControlServicioCU.ControladorServicioCargarVentas objeto) {
-        controlador = objeto;
+    public AceptadorVentas() {
+
     }
 
     public boolean aceptar(Venta ven) {
@@ -28,7 +27,8 @@ public class AceptadorVentas {
     private boolean aceptarCliente(Venta ven) {
         if (resAceptar) {
             if (ven.getCliente() == null) {
-                textoError = "Venta "+ controlador.getRegistroVentas().getId_venta() +" con incoherencia de datos, no se ha encontrado el cliente "+controlador.getRegistroVentas().getId_cliente()+" asociado a la venta";
+                
+                textoError = "Venta "+ ven.getId_venta() +" con incoherencia de datos, no se ha encontrado el cliente "+ven.getCliente().getId_cliente()+" asociado a la venta";
                 resAceptar = false;
             }
         }
@@ -38,7 +38,7 @@ public class AceptadorVentas {
     private boolean aceptarProducto(Venta ven) {
         if (resAceptar) {
             if (ven.getProducto() == null) {
-                textoError = "Venta "+ controlador.getRegistroVentas().getId_venta() +" con incoherencia de datos, no se ha encontrado el producto "+controlador.getRegistroVentas().getId_producto()+" asociado a la venta";
+                textoError = "Venta "+ ven.getId_venta() +" con incoherencia de datos, no se ha encontrado el producto "+ven.getProducto().getId_producto()+" asociado a la venta";
                 resAceptar = false;
             }
         }
@@ -48,7 +48,7 @@ public class AceptadorVentas {
     private boolean aceptarTienda(Venta ven) {
         if (resAceptar) {
             if (ven.getTienda() == null) {
-                textoError = "Venta "+ controlador.getRegistroVentas().getId_venta() +" con incoherencia de datos, no se ha encontrado la tienda "+controlador.getRegistroVentas().getId_tienda()+" asociada a la venta";            
+                textoError = "Venta "+ ven.getId_venta() +" con incoherencia de datos, no se ha encontrado la tienda "+ven.getTienda().getId_tienda()+" asociada a la venta";            
                 resAceptar = false;
             }
         }
@@ -60,10 +60,10 @@ public class AceptadorVentas {
             // Comprobamos que el importe es un número
             try {
                 float importe = Float.parseFloat(ven.getImporte());
-                // El importe si es nuérico 
+                // El importe si es numérico 
             } catch (NumberFormatException nfe) {
-                // El importe no es nuérico
-                textoError = "Venta "+ controlador.getRegistroVentas().getId_venta() +" con incoherencia de datos, el importe ["+ controlador.getRegistroVentas().getImporte()+"] asociado a la venta no es numérico";
+                // El importe no es numérico
+                textoError = "Venta "+ ven.getId_venta() +" con incoherencia de datos, el importe ["+ ven.getImporte()+"] asociado a la venta no es numérico";
                 resAceptar = false;
             }
         }
