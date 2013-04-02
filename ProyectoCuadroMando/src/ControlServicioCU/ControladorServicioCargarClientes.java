@@ -31,7 +31,7 @@ public class ControladorServicioCargarClientes {
         try {
             //
             ProveedorInformacionClientes lec = new ProveedorInformacionClientes(ruta, ":", 10);
-            AceptadorClientes aceptar = new AceptadorClientes(this);
+            AceptadorClientes aceptar = new AceptadorClientes();
             
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
             int aciertos = 0;

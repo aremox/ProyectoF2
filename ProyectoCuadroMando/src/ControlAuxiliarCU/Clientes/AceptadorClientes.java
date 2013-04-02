@@ -12,10 +12,10 @@ public class AceptadorClientes {
     
     private String textoError = "";
     private Boolean resAceptar = true;
-    private ControlServicioCU.ControladorServicioCargarClientes controlador;
+    //private ControlServicioCU.ControladorServicioCargarClientes controlador;
     
-    public AceptadorClientes(ControlServicioCU.ControladorServicioCargarClientes objeto){
-        controlador = objeto;
+    public AceptadorClientes(){
+      
     }
     public boolean aceptar(Cliente cli){
         textoError = "";
@@ -35,13 +35,13 @@ public class AceptadorClientes {
             }
             else
             {
-                textoError = "El cliente "+ controlador.getRegistroClientes().getId_cliente()+" tiene un código postal erróneo ["+controlador.getRegistroClientes().getCod_Postal()+"]";
+                textoError = "El cliente "+ cli.getId_cliente()+" tiene un código postal erróneo ["+cli.getCod_Postal()+"]";
                 resAceptar = false;
             }
         }
         catch(NumberFormatException nfe)
         {
-            textoError = "El cliente "+ controlador.getRegistroClientes().getId_cliente()+" tiene un código postal no numérico ["+controlador.getRegistroClientes().getCod_Postal()+"]";
+            textoError = "El cliente "+ cli.getId_cliente()+" tiene un código postal no numérico ["+cli.getCod_Postal()+"]";
             resAceptar = false;
         }
         

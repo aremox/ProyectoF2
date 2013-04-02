@@ -31,7 +31,7 @@ public class ControladorServicioCargarTiendas {
         try {
             //
             ProveedorInformacionTiendas lec = new ProveedorInformacionTiendas(ruta, "::", 7);
-            AceptadorTiendas aceptar = new AceptadorTiendas(this);
+            AceptadorTiendas aceptar = new AceptadorTiendas();
             
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
             int aciertos = 0;
