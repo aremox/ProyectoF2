@@ -77,7 +77,7 @@ public class ControladorServicioCargarClientes {
             
             ficheroCarga.escribirFichero("CLIENTES="+totalLecturas+":"+errores+":"+porcentaje);
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null,"CLIENTES="+totalLecturas+":"+errores+":"+porcentaje,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
+            JOptionPane.showMessageDialog(null,"Archivo de CLIENTES cargado correctamente                 \n\nResultado de la carga: RC="+totalLecturas+" RE="+errores+" IE="+porcentaje+"\n\n ","RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE);    
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

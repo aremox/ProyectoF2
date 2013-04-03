@@ -22,16 +22,6 @@ public class AceptadorClientes {
         resAceptar = true;
         return (aceptarCalle(cli) && aceptarNumeroCalle(cli) && aceptarCodPostal(cli) && aceptarPoblacion(cli) && aceptarProvincia(cli));
     }
-    private String id_cliente;
-    private String dni;
-    private String nombre;
-    private String apellidos;
-    private String calle;
-    private String numero;
-    private String cod_postal;
-    private String poblacion;
-    private String provincia;         
-    private String telefono;
     
     private boolean aceptarCalle (Cliente cli){
          if (resAceptar) {
@@ -83,6 +73,11 @@ public class AceptadorClientes {
         return resAceptar;
     }      
     
+
+    public String getTextoError(){
+        return textoError;
+    }
+
     
     /*private boolean aceptarCodPostal(Cliente cli){
      * // Comprobamos que cod_postal es un número
@@ -106,11 +101,6 @@ public class AceptadorClientes {
      * }
      * 
      * return resAceptar;
-     * }*/
-
-   
-    public String getTextoError(){
-        return textoError;
-    }
+     * }*/    
     
 }

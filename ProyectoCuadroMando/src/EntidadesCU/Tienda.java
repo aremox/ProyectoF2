@@ -33,9 +33,21 @@ public class Tienda {
         return id_tienda;
     }
  
+    public String getCalle(){
+        return calle;
+    }
+    public String getNumero(){
+        return numero;
+    }  
     public String getCod_Postal(){
         return cod_postal;
     }      
+    public String getPoblacion(){
+        return poblacion;
+    }  
+    public String getProvincia(){
+        return provincia;
+    }    
     
     public Almacen getAlmacen(){
         return id_almacen;
