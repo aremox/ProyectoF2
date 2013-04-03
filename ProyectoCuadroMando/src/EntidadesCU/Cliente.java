@@ -36,8 +36,20 @@ public class Cliente {
         return id_cliente;
     }
  
+    public String getCalle(){
+        return calle;
+    }
+    public String getNumero(){
+        return numero;
+    }  
     public String getCod_Postal(){
         return cod_postal;
     }      
+    public String getPoblacion(){
+        return poblacion;
+    }  
+    public String getProvincia(){
+        return provincia;
+    }     
 
 }

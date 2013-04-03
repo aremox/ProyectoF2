@@ -63,7 +63,15 @@ public class ControladorServicioCargarTiendas {
                 cont++;
             }
             
-            float porcentaje = (errores / totalLecturas);
+            // convertimos errores y totalLecturas a double para obener
+            // decimales en la división, al obtener porcentaje
+            double erroresDouble = errores;
+            double totalLecturasDouble = totalLecturas;
+            double porcentaje = (erroresDouble / totalLecturasDouble);
+            
+            // redondeamos a 3 decimales el valor de porcentaje (según ejemplo del proyecto)
+            porcentaje = Math.rint(porcentaje*1000)/1000;
+            
             ficheroCarga.escribirFichero("TIENDAS="+totalLecturas+":"+errores+":"+porcentaje);
             ficheroCarga.cerrarFichero();
             JOptionPane.showMessageDialog(null,"TIENDAS="+totalLecturas+":"+errores+":"+porcentaje,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 

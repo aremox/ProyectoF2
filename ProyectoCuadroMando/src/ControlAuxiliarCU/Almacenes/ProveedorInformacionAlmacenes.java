@@ -37,7 +37,7 @@ public class ProveedorInformacionAlmacenes extends ProveedorInformacion {
             int pos2 = 0;
 
             while (tokens.hasMoreTokens()) {
-                elementos[pos2] = tokens.nextToken();
+                elementos[pos2] = tokens.nextToken().trim();
                 pos2++;
             }
 
