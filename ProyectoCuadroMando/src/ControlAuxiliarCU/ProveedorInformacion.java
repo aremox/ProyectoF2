@@ -20,15 +20,14 @@ public abstract class ProveedorInformacion {
     private File archivo;
     private FileReader flujoEntrada;
     protected String separadorCampos;
-    protected int numeroCampos;
     protected LinkedList<String> lineas;
-    protected int errores=0;
+    protected int totalLecturas=0;
 
-    public ProveedorInformacion(String ruta, String separador, int numero) throws FileNotFoundException {
+    public ProveedorInformacion(String ruta, String separador) throws FileNotFoundException {
         //comprobar archivo
         archivo = new File(ruta);
         separadorCampos = separador;
-        numeroCampos = numero;
+
         try {
             flujoEntrada = new FileReader(archivo);
             if (!archivo.exists()) {
@@ -62,8 +61,8 @@ public abstract class ProveedorInformacion {
         }
     }
     
-    public int getErrores(){
-        return errores;
+    public int getTotalLecturas() {
+        return totalLecturas;
     }
-
+    
 }

@@ -30,15 +30,15 @@ public class ControladorServicioCargarClientes {
     public void DesarrollarServicio() throws IOException{
         try {
             //
-            ProveedorInformacionClientes lec = new ProveedorInformacionClientes(ruta, ":", 10);
+            ProveedorInformacionClientes lec = new ProveedorInformacionClientes(ruta, ":");
             AceptadorClientes aceptar = new AceptadorClientes();
             
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
-            int aciertos = 0;
+            int totalLecturas;
             int errores = 0;
             
             LinkedList<RegistroClientes> clientes = new LinkedList<RegistroClientes>(lec.extraer());
-            errores = lec.getErrores();
+            totalLecturas = lec.getTotalLecturas();
             
             int tam = clientes.size();
             int cont = 0;
@@ -57,19 +57,20 @@ public class ControladorServicioCargarClientes {
 
                 if (aceptar.aceptar(cli)){
                     contenedor_cliente.anadirCliente(cli);
-                    aciertos++;
+
                 }else{
                     errores++;
                     RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Clientes");
-                    System.out.println("ERROR: " + aceptar.getTextoError());
+                    //System.out.println("ERROR: " + aceptar.getTextoError());
                 }
                 cont++;
             }
             
-            int total = aciertos + errores;
-            ficheroCarga.escribirFichero("CLIENTES="+total+":ERROR="+errores);
+           
+            float porcentaje = (errores / totalLecturas);
+            ficheroCarga.escribirFichero("CLIENTES="+totalLecturas+":"+errores+":"+porcentaje);
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null,"CLIENTES="+total+":ERRORES="+errores,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
+            JOptionPane.showMessageDialog(null,"CLIENTES="+totalLecturas+":"+errores+":"+porcentaje,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

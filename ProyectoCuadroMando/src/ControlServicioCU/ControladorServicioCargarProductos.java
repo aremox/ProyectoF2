@@ -27,14 +27,14 @@ public class ControladorServicioCargarProductos {
     public void DesarrollarServicio() throws IOException{
         try {
             //
-            ProveedorInformacionProductos lec = new ProveedorInformacionProductos(ruta, "--", 4);
+            ProveedorInformacionProductos lec = new ProveedorInformacionProductos(ruta, "--");
             
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
-            int aciertos = 0;
+            int totalLecturas;
             int errores = 0;
             
             LinkedList<RegistroProductos> productos = new LinkedList<RegistroProductos>(lec.extraer());
-            errores = lec.getErrores();
+            totalLecturas = lec.getTotalLecturas();
             
             int tam = productos.size();
             int cont = 0;
@@ -47,15 +47,15 @@ public class ControladorServicioCargarProductos {
 
                 // Los productos no necesitan validación
                 contenedor_producto.anadirProducto(pro);
-                aciertos++;
+
                 
                 cont++;
             }
             
-            int total = aciertos + errores;
-            ficheroCarga.escribirFichero("PRODUCTOS="+total+":ERROR="+errores);
+            float porcentaje = (errores / totalLecturas);
+            ficheroCarga.escribirFichero("PRODUCTOS="+totalLecturas+":"+errores+":"+porcentaje);
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null,"PRODUCTOS="+total+":ERRORES="+errores,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
+            JOptionPane.showMessageDialog(null,"PRODUCTOS="+totalLecturas+":"+errores+":"+porcentaje,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

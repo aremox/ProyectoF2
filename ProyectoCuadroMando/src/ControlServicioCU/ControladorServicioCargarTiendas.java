@@ -30,44 +30,43 @@ public class ControladorServicioCargarTiendas {
     public void DesarrollarServicio() throws IOException{
         try {
             //
-            ProveedorInformacionTiendas lec = new ProveedorInformacionTiendas(ruta, "::", 7);
+            ProveedorInformacionTiendas lec = new ProveedorInformacionTiendas(ruta, "::");
             AceptadorTiendas aceptar = new AceptadorTiendas();
             
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
-            int aciertos = 0;
+            int totalLecturas;
             int errores = 0;
             
             LinkedList<RegistroTiendas> tiendas = new LinkedList<RegistroTiendas>(lec.extraer());
-            errores = lec.getErrores();
+            totalLecturas = lec.getTotalLecturas();
             
             int tam = tiendas.size();
             int cont = 0;
             for (int i = 0; i < tam; i++) {
                 registros = (RegistroTiendas) tiendas.get(i);
                 Tienda tie = new Tienda(registros.getId_tienda(),
+                                          ControladorServicioCargarAlmacenes.contenedor_almacen.getAlmacen(registros.getId_almacen()),                  
                                           registros.getCalle(), 
                                           registros.getNumero(), 
                                           registros.getCod_Postal(), 
                                           registros.getPoblacion(), 
                                           registros.getProvincia(), 
-                                          registros.getTelefono(),
-                                          ControladorServicioCargarAlmacenes.contenedor_almacen.getAlmacenCod_Postal(registros.getCod_Postal()));
+                                          registros.getTelefono());
 
                 if (aceptar.aceptar(tie)){
                     contenedor_tienda.anadirTienda(tie);
-                    aciertos++;
                 }else{
                     errores++;
                     RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Tiendas");
-                    System.out.println("ERROR: " + aceptar.getTextoError());
+                    //System.out.println("ERROR: " + aceptar.getTextoError());
                 }
                 cont++;
             }
             
-            int total = aciertos + errores;
-            ficheroCarga.escribirFichero("TIENDAS="+total+":ERROR="+errores);
+            float porcentaje = (errores / totalLecturas);
+            ficheroCarga.escribirFichero("TIENDAS="+totalLecturas+":"+errores+":"+porcentaje);
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null,"TIENDAS="+total+":ERRORES="+errores,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
+            JOptionPane.showMessageDialog(null,"TIENDAS="+totalLecturas+":"+errores+":"+porcentaje,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

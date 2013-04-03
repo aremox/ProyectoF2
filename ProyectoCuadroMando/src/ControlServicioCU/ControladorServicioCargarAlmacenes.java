@@ -31,16 +31,16 @@ public class ControladorServicioCargarAlmacenes {
     public void DesarrollarServicio() throws IOException{
         try {
             //
-            ProveedorInformacionAlmacenes lec= new ProveedorInformacionAlmacenes(ruta, "::", 7);
+            ProveedorInformacionAlmacenes lec= new ProveedorInformacionAlmacenes(ruta, "::");
             AceptadorAlmacenes aceptar = new AceptadorAlmacenes();
             
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
-            int aciertos=0;
+            int totalLecturas;
             int errores=0;
             
             LinkedList<RegistroAlmacenes> almacenes = new LinkedList<RegistroAlmacenes>(lec.extraer());
             
-            errores=lec.getErrores();
+            totalLecturas = lec.getTotalLecturas();
             int tam = almacenes.size();
             int cont = 0;
             for (int i = 0; i < tam; i++) {
@@ -55,18 +55,19 @@ public class ControladorServicioCargarAlmacenes {
 
                 if (aceptar.aceptar(alm)){
                     contenedor_almacen.anadirAlmacen(alm);
-                    aciertos++;
+
                 }else{
                     errores++;
                     RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Almacenes");
-                    System.out.println("ERROR: " + aceptar.getTextoError());
+                    //System.out.println("ERROR: " + aceptar.getTextoError());
                 }
                 cont++;
             }
-            int total = aciertos + errores;
-            ficheroCarga.escribirFichero("ALMACEN="+total+":ERROR="+errores);
+            
+            float porcentaje = (errores / totalLecturas);
+            ficheroCarga.escribirFichero("ALMACEN="+totalLecturas+":"+errores+":"+porcentaje);
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null,"ALMACEN="+total+":ERROR="+errores,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
+            JOptionPane.showMessageDialog(null,"ALMACEN="+totalLecturas+":"+errores+":"+porcentaje,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE);             
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

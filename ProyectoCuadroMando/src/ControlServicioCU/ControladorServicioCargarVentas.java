@@ -32,16 +32,16 @@ public class ControladorServicioCargarVentas {
     public void DesarrollarServicio() throws IOException {
         try {
             //
-            ProveedorInformacionVentas lec = new ProveedorInformacionVentas(ruta, "::", 7);
+            ProveedorInformacionVentas lec = new ProveedorInformacionVentas(ruta, "::");
             AceptadorVentas aceptar = new AceptadorVentas();
 
 
             RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
-            int aciertos = 0;
+            int totalLecturas;
             int errores = 0;
 
             LinkedList<RegistroVentas> ventas = new LinkedList<RegistroVentas>(lec.extraer());
-            errores = lec.getErrores();
+            totalLecturas = lec.getTotalLecturas();
             int tam = ventas.size();
             int cont = 0;
             for (int i = 0; i < tam; i++) {
@@ -57,18 +57,20 @@ public class ControladorServicioCargarVentas {
 
                 if (aceptar.aceptar(ven)) {
                     contenedor_venta.anadirVenta(ven);
-                    aciertos++;
+
                 } else {
                     errores++;
                     RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Ventas");
-                    System.out.println("ERROR: " + aceptar.getTextoError());
+                    //System.out.println("ERROR: " + aceptar.getTextoError());
                 }
                 cont++;
             }
-            int total = aciertos + errores;
-            ficheroCarga.escribirFichero("VENTAS="+total+":ERROR="+errores);
+            
+            float porcentaje = (errores / totalLecturas);
+            ficheroCarga.escribirFichero("VENTAS="+totalLecturas+":"+errores+":"+porcentaje);
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null, "VENTAS="+total+":ERROR="+errores,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE); 
+            JOptionPane.showMessageDialog(null,"VENTAS="+totalLecturas+":"+errores+":"+porcentaje,"RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE);             
+            
 
         } catch (FileNotFoundException ex) {
             //  System.out.rintln("Error en la lectura");

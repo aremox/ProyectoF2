@@ -17,8 +17,8 @@ public class ProveedorInformacionProductos extends ProveedorInformacion {
 
         LinkedList<RegistroProductos> productos;
 
-    public ProveedorInformacionProductos(String absolutePath, String separador, int numero) throws FileNotFoundException {
-        super(absolutePath, separador, numero);
+    public ProveedorInformacionProductos(String absolutePath, String separador) throws FileNotFoundException {
+        super(absolutePath, separador);
     }
 
     public LinkedList extraer() throws IOException {
@@ -30,28 +30,22 @@ public class ProveedorInformacionProductos extends ProveedorInformacion {
         int pos = 0; //Mientras haya elementos 
         
         while (pos <= tam - 1) {
-            elementos = new String[numeroCampos];
             String linea = (String) lineas.get(pos);
             tokens = new StringTokenizer(linea, separadorCampos);
+            elementos = new String[tokens.countTokens()];
             int pos2 = 0;
-            if (tokens.countTokens() != numeroCampos) {
-                System.out.println("ERROR: Linea de Producto sin todos los campos ["+linea+"]");
-                RegistroLog log = new RegistroLog("ERROR: Linea de Producto sin todos los campos ["+linea+"]","Productos");
-                errores++;
-            } else {
-                while (tokens.hasMoreTokens()) {
-                    elementos[pos2] = tokens.nextToken().trim();
-                    pos2++;
-                }
 
-                RegistroProductos registro = new RegistroProductos(elementos[0], elementos[1], elementos[2], elementos[3]);
-                productos.add(registro);
+            while (tokens.hasMoreTokens()) {
+                elementos[pos2] = tokens.nextToken();
+                pos2++;
             }
+
+            RegistroProductos registro = new RegistroProductos(elementos[0], elementos[1], elementos[2], elementos[3]);
+            productos.add(registro);
             pos++;
         }
-
+        totalLecturas = productos.size();
         return productos;
     }
-    
     
 }

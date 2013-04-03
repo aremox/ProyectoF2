@@ -17,8 +17,8 @@ public class ProveedorInformacionClientes extends ProveedorInformacion {
 
         LinkedList<RegistroClientes> clientes;
 
-    public ProveedorInformacionClientes(String absolutePath, String separador, int numero) throws FileNotFoundException {
-        super(absolutePath, separador, numero);
+    public ProveedorInformacionClientes(String absolutePath, String separador) throws FileNotFoundException {
+        super(absolutePath, separador);
     }
 
     public LinkedList extraer() throws IOException {
@@ -30,28 +30,22 @@ public class ProveedorInformacionClientes extends ProveedorInformacion {
         int pos = 0; //Mientras haya elementos 
         
         while (pos <= tam - 1) {
-            elementos = new String[numeroCampos];
             String linea = (String) lineas.get(pos);
             tokens = new StringTokenizer(linea, separadorCampos);
+            elementos = new String[tokens.countTokens()];
             int pos2 = 0;
-            if (tokens.countTokens() != numeroCampos) {
-                System.out.println("ERROR: Linea de Cliente sin todos los campos ["+linea+"]");
-                RegistroLog log = new RegistroLog("ERROR: Linea de Cliente sin todos los campos ["+linea+"]","Clientes");
-                errores++;
-            } else {
-                while (tokens.hasMoreTokens()) {
-                    elementos[pos2] = tokens.nextToken().trim();
-                    pos2++;
-                }
 
-                RegistroClientes registro = new RegistroClientes(elementos[0], elementos[1], elementos[2], elementos[3], elementos[4], elementos[5], elementos[6], elementos[7], elementos[8], elementos[9]);
-                clientes.add(registro);
+            while (tokens.hasMoreTokens()) {
+                elementos[pos2] = tokens.nextToken();
+                pos2++;
             }
+
+            RegistroClientes registro = new RegistroClientes(elementos[0], elementos[1], elementos[2], elementos[3], elementos[4], elementos[5], elementos[6], elementos[7], elementos[8], elementos[9]);
+            clientes.add(registro);
             pos++;
         }
-
+        totalLecturas = clientes.size();
         return clientes;
     }
-    
     
 }

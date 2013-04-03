@@ -18,8 +18,8 @@ public class ProveedorInformacionVentas extends ProveedorInformacion {
 
     LinkedList<RegistroVentas> ventas;
 
-    public ProveedorInformacionVentas(String absolutePath, String separador, int numero) throws FileNotFoundException {
-        super(absolutePath, separador, numero);
+    public ProveedorInformacionVentas(String absolutePath, String separador) throws FileNotFoundException {
+        super(absolutePath, separador);
 
     }
 
@@ -30,27 +30,25 @@ public class ProveedorInformacionVentas extends ProveedorInformacion {
         leerLineas();
         int tam = lineas.size();
         int pos = 0; //Mientras haya elementos 
+        
         while (pos <= tam - 1) {
-            elementos = new String[numeroCampos];
             String linea = (String) lineas.get(pos);
             tokens = new StringTokenizer(linea, separadorCampos);
+            elementos = new String[tokens.countTokens()];
             int pos2 = 0;
-            if (tokens.countTokens() != numeroCampos) {
-                System.out.println("ERROR: Linea de Venta sin todos los campos ["+linea+"]");
-                RegistroLog log = new RegistroLog("ERROR: Linea de Venta sin todos los campos ["+linea+"]","Ventas");
-                errores++;
-            } else {
-                while (tokens.hasMoreTokens()) {
-                    elementos[pos2] = tokens.nextToken().trim();
-                    pos2++;
-                }
 
-                RegistroVentas registro = new RegistroVentas(elementos[0], elementos[1], elementos[2], elementos[3], elementos[4], elementos[5], elementos[6]);
-                ventas.add(registro);
+            while (tokens.hasMoreTokens()) {
+                elementos[pos2] = tokens.nextToken();
+                pos2++;
             }
+
+            RegistroVentas registro = new RegistroVentas(elementos[0], elementos[1], elementos[2], elementos[3], elementos[4], elementos[5], elementos[6]);
+            ventas.add(registro);
             pos++;
         }
-
+        totalLecturas = ventas.size();
         return ventas;
     }
+    
+    
 }
