@@ -50,3 +50,55 @@ Venta VE0000007 con incoherencia de datos, el importe [125,70] asociado a la ven
 
 Venta VE0000008 con incoherencia de datos, el campo IMPORTE está vacío
 
+:::::::::::Almacenes::::::::::
+
+El almacén AL0000006 tiene un código postal no numérico []
+
+:::::::::::Tiendas::::::::::
+
+Tienda TI0000003 con incoherencia de datos, no existe el ALMACÉN asociado
+
+:::::::::::Tiendas::::::::::
+
+Tienda TI0000006 con incoherencia de datos, no existe el ALMACÉN asociado
+
+:::::::::::Clientes::::::::::
+
+Cliente CL0000002 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente CL0000002 con incoherencia de datos, el campo NÚMERO DE CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente CL0000002 con incoherencia de datos, el campo CODIGO POSTAL está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente CL0000002 con incoherencia de datos, el campo POBLACIÓN está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente CL0000002 con incoherencia de datos, el campo PROVINCIA está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente CL0000002 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente CL0000002 con incoherencia de datos, el campo NÚMERO DE CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente CL0000002 con incoherencia de datos, el campo CODIGO POSTAL está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente CL0000002 con incoherencia de datos, el campo POBLACIÓN está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente CL0000002 con incoherencia de datos, el campo PROVINCIA está vacío
+

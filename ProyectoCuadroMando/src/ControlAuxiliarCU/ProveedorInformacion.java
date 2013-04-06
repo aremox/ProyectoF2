@@ -47,8 +47,8 @@ public abstract class ProveedorInformacion {
     }
 
     protected void leerLineas() {
-        String linea = "";
-        lineas=new LinkedList<String>();
+        String linea;
+        lineas=new LinkedList<>();
         try {
             BufferedReader br = new BufferedReader(flujoEntrada); 
             while ((linea = br.readLine()) != null) {
@@ -59,10 +59,6 @@ public abstract class ProveedorInformacion {
             System.out.println("ERROR: En el flujo de lectura");
             JOptionPane.showMessageDialog(null,"Error al intentar leer el archivo","ERROR AL LEER EL ARCHIVO       ", JOptionPane.ERROR_MESSAGE); 
         }
-    }
-    
-    public int getTotalLecturas() {
-        return totalLecturas;
     }
     
 }

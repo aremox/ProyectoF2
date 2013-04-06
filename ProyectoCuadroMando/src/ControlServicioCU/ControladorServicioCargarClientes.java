@@ -6,6 +6,7 @@ import ControlAuxiliarCU.Clientes.ProveedorInformacionClientes;
 import ControlAuxiliarCU.Clientes.RegistroClientes;
 import ControlAuxiliarCU.RegistroDatosCarga;
 import ControlAuxiliarCU.RegistroLog;
+import ControlAuxiliarCU.TratamientoDatosCarga;
 import EntidadesCU.Cliente;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -37,11 +38,11 @@ public class ControladorServicioCargarClientes {
             int totalLecturas;
             int errores = 0;
             
-            LinkedList<RegistroClientes> clientes = new LinkedList<RegistroClientes>(lec.extraer());
-            totalLecturas = lec.getTotalLecturas();
+            LinkedList<RegistroClientes> clientes = new LinkedList<>(lec.extraer());
             
             int tam = clientes.size();
-            int cont = 0;
+            totalLecturas = tam;
+           
             for (int i = 0; i < tam; i++) {
                 registros = (RegistroClientes) clientes.get(i);
                 Cliente cli = new Cliente(registros.getId_cliente(),
@@ -63,22 +64,15 @@ public class ControladorServicioCargarClientes {
                     RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Clientes");
                     //System.out.println("ERROR: " + aceptar.getTextoError());
                 }
-                cont++;
+                
             }
             
-            // convertimos errores y totalLecturas a double para obener
-            // decimales en la división, al obtener porcentaje
-            double erroresDouble = errores;
-            double totalLecturasDouble = totalLecturas;
-            double porcentaje = (erroresDouble / totalLecturasDouble);
+            TratamientoDatosCarga resultados = new TratamientoDatosCarga(errores, totalLecturas);
             
-            // redondeamos a 3 decimales el valor de porcentaje (según ejemplo del proyecto)
-            porcentaje = Math.rint(porcentaje*1000)/1000;
-            
-            ficheroCarga.escribirFichero("CLIENTES="+totalLecturas+":"+errores+":"+porcentaje);
+            ficheroCarga.escribirFichero("CLIENTES="+resultados.getTotalLecturas()+":"+resultados.getErrores()+":"+resultados.getPorcentaje());
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null,"Archivo de CLIENTES cargado correctamente                 \n\nResultado de la carga: RC="+totalLecturas+" RE="+errores+" IE="+porcentaje+"\n\n ","RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE);    
-            
+            JOptionPane.showMessageDialog(null,"Archivo de CLIENTES cargado correctamente                 \n\nResultado de la carga: RC="+resultados.getTotalLecturas()+" RE="+resultados.getErrores()+" IE="+resultados.getPorcentaje()+"\n\n ","RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE);             
+           
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");
             //Logger.getLogger(ControladorServicioCargaAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
