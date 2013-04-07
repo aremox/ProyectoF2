@@ -4,8 +4,8 @@ import ContenedoresCU.ContenedorCliente;
 import ControlAuxiliarCU.Clientes.AceptadorClientes;
 import ControlAuxiliarCU.Clientes.ProveedorInformacionClientes;
 import ControlAuxiliarCU.Clientes.RegistroClientes;
-import ControlAuxiliarCU.RegistroDatosCarga;
-import ControlAuxiliarCU.RegistroLog;
+import ControlAuxiliarCU.ArchivoResultadoCarga;
+import ControlAuxiliarCU.ArchivoLog;
 import ControlAuxiliarCU.TratamientoDatosCarga;
 import EntidadesCU.Cliente;
 import java.io.File;
@@ -34,7 +34,7 @@ public class ControladorServicioCargarClientes {
             ProveedorInformacionClientes lec = new ProveedorInformacionClientes(ruta, ":");
             AceptadorClientes aceptar = new AceptadorClientes();
             
-            RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
+            ArchivoResultadoCarga ficheroCarga = new ArchivoResultadoCarga();
             int totalLecturas;
             int errores = 0;
             
@@ -61,7 +61,7 @@ public class ControladorServicioCargarClientes {
 
                 }else{
                     errores++;
-                    RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Clientes");
+                    ArchivoLog log = new ArchivoLog(aceptar.getTextoError(),"Clientes");
                     //System.out.println("ERROR: " + aceptar.getTextoError());
                 }
                 
@@ -69,7 +69,7 @@ public class ControladorServicioCargarClientes {
             
             TratamientoDatosCarga resultados = new TratamientoDatosCarga(errores, totalLecturas);
             
-            ficheroCarga.escribirFichero("CLIENTES="+resultados.getTotalLecturas()+":"+resultados.getErrores()+":"+resultados.getPorcentaje());
+            ficheroCarga.registrarDatosCarga("CLIENTES="+resultados.getTotalLecturas()+":"+resultados.getErrores()+":"+resultados.getPorcentaje());
             ficheroCarga.cerrarFichero();
             JOptionPane.showMessageDialog(null,"Archivo de CLIENTES cargado correctamente                 \n\nResultado de la carga: RC="+resultados.getTotalLecturas()+" RE="+resultados.getErrores()+" IE="+resultados.getPorcentaje()+"\n\n ","RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE);             
            

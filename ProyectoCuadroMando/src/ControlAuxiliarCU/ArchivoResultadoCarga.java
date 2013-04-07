@@ -11,17 +11,17 @@ import java.io.PrintWriter;
  *
  */
 
-public class RegistroDatosCarga {
+public class ArchivoResultadoCarga {
 
     FileWriter fichero = null;
     PrintWriter pw = null;
 
-    public RegistroDatosCarga() throws IOException {
+    public ArchivoResultadoCarga() throws IOException {
         String ruta = "src//ArchivoDatos//carga.txt";
         fichero = new FileWriter(ruta, true);
     }
 
-    public void escribirFichero(String texto) {
+    public void registrarDatosCarga(String texto) {
 
         pw = new PrintWriter(fichero);
         pw.println(texto);

@@ -3,7 +3,7 @@ package ControlServicioCU;
 import ContenedoresCU.ContenedorProducto;
 import ControlAuxiliarCU.Productos.ProveedorInformacionProductos;
 import ControlAuxiliarCU.Productos.RegistroProductos;
-import ControlAuxiliarCU.RegistroDatosCarga;
+import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.TratamientoDatosCarga;
 import EntidadesCU.Producto;
 import java.io.File;
@@ -30,7 +30,7 @@ public class ControladorServicioCargarProductos {
             //
             ProveedorInformacionProductos lec = new ProveedorInformacionProductos(ruta, "--");
             
-            RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
+            ArchivoResultadoCarga ficheroCarga = new ArchivoResultadoCarga();
             int totalLecturas;
             int errores = 0;
             
@@ -54,7 +54,7 @@ public class ControladorServicioCargarProductos {
             
             TratamientoDatosCarga resultados = new TratamientoDatosCarga(errores, totalLecturas);
             
-            ficheroCarga.escribirFichero("PRODUCTOS="+resultados.getTotalLecturas()+":"+resultados.getErrores()+":"+resultados.getPorcentaje());
+            ficheroCarga.registrarDatosCarga("PRODUCTOS="+resultados.getTotalLecturas()+":"+resultados.getErrores()+":"+resultados.getPorcentaje());
             ficheroCarga.cerrarFichero();
             JOptionPane.showMessageDialog(null,"Archivo de PRODUCTOS cargado correctamente                 \n\nResultado de la carga: RC="+resultados.getTotalLecturas()+" RE="+resultados.getErrores()+" IE="+resultados.getPorcentaje()+"\n\n ","RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE);             
            

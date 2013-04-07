@@ -1,7 +1,7 @@
 package ControlAuxiliarCU.Almacenes;
 
 import ControlAuxiliarCU.ProveedorInformacion;
-import ControlAuxiliarCU.RegistroLog;
+import ControlAuxiliarCU.ArchivoLog;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;

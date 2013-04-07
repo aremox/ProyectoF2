@@ -1,8 +1,8 @@
 package ControlServicioCU;
 
 import ContenedoresCU.ContenedorVenta;
-import ControlAuxiliarCU.RegistroDatosCarga;
-import ControlAuxiliarCU.RegistroLog;
+import ControlAuxiliarCU.ArchivoResultadoCarga;
+import ControlAuxiliarCU.ArchivoLog;
 import ControlAuxiliarCU.TratamientoDatosCarga;
 import ControlAuxiliarCU.Ventas.AceptadorVentas;
 import ControlAuxiliarCU.Ventas.ProveedorInformacionVentas;
@@ -37,7 +37,7 @@ public class ControladorServicioCargarVentas {
             AceptadorVentas aceptar = new AceptadorVentas();
 
 
-            RegistroDatosCarga ficheroCarga = new RegistroDatosCarga();
+            ArchivoResultadoCarga ficheroCarga = new ArchivoResultadoCarga();
             int totalLecturas;
             int errores = 0;
 
@@ -61,7 +61,7 @@ public class ControladorServicioCargarVentas {
 
                 } else {
                     errores++;
-                    RegistroLog log = new RegistroLog(aceptar.getTextoError(),"Ventas");
+                    ArchivoLog log = new ArchivoLog(aceptar.getTextoError(),"Ventas");
                     //System.out.println("ERROR: " + aceptar.getTextoError());
                 }
                 
@@ -69,7 +69,7 @@ public class ControladorServicioCargarVentas {
             
             TratamientoDatosCarga resultados = new TratamientoDatosCarga(errores, totalLecturas);
             
-            ficheroCarga.escribirFichero("VENTAS="+resultados.getTotalLecturas()+":"+resultados.getErrores()+":"+resultados.getPorcentaje());
+            ficheroCarga.registrarDatosCarga("VENTAS="+resultados.getTotalLecturas()+":"+resultados.getErrores()+":"+resultados.getPorcentaje());
             ficheroCarga.cerrarFichero();
             JOptionPane.showMessageDialog(null,"Archivo de VENTAS cargado correctamente                 \n\nResultado de la carga: RC="+resultados.getTotalLecturas()+" RE="+resultados.getErrores()+" IE="+resultados.getPorcentaje()+"\n\n ","RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE);             
            

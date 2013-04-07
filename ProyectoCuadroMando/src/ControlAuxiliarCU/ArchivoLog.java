@@ -11,12 +11,12 @@ import java.io.PrintWriter;
  *
  */
 
-public class RegistroLog {
+public class ArchivoLog {
 
     FileWriter fichero = null;
     PrintWriter pw = null;
 
-    public RegistroLog(String texto, String categoria) throws IOException {
+    public ArchivoLog(String texto, String categoria) throws IOException {
     
             fichero = new FileWriter("src//ArchivoDatos//auditoriacarga.txt", true);
             pw = new PrintWriter(fichero);
@@ -29,7 +29,7 @@ public class RegistroLog {
              }
     }
 
-    RegistroLog() {
+    ArchivoLog() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 }

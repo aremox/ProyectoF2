@@ -9,16 +9,19 @@ package ControlAuxiliarCU;
  * @author ivan
  */
 public class TratamientoDatosCarga {
-    double erroresDouble;
-    double totalLecturasDouble;
+    int totalErrores;
+    int totalLecturas;
     double porcentaje;
     
-  public TratamientoDatosCarga( int errores, int totalLecturas){
+  public TratamientoDatosCarga( int errores, int lecturas){
       // convertimos errores y totalLecturas a double para obener
       // decimales en la división, al obtener porcentaje
-      erroresDouble = errores;
-      totalLecturasDouble = totalLecturas;
+      totalErrores = errores;
+      totalLecturas = lecturas;
+      double erroresDouble = errores;
+      double totalLecturasDouble = lecturas;
       porcentaje = (erroresDouble / totalLecturasDouble);
+      redondear();
       
 }
   
@@ -28,11 +31,11 @@ public class TratamientoDatosCarga {
   }
  
   
-     public double getErrores(){   
-            return erroresDouble;
+     public int getErrores(){   
+            return totalErrores;
 }
-     public double getTotalLecturas(){   
-            return totalLecturasDouble;
+     public int getTotalLecturas(){   
+            return totalLecturas;
 }
      public double getPorcentaje (){   
             return porcentaje;
