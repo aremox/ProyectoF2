@@ -40,7 +40,7 @@ public class PanelCargarClientes extends JPanel{
         this.add(cuadroTextoRuta);
         cuadroTextoRuta.setBounds(205,75,225,30);
 
-        ManejadorEventosCargarCliente evento = new ManejadorEventosCargarCliente(this, objeto);
+        ManejadorEventosCargarClientes evento = new ManejadorEventosCargarClientes(this, objeto);
         
         this.add(botonSelector);
         botonSelector.setBounds(450,75,150,30);

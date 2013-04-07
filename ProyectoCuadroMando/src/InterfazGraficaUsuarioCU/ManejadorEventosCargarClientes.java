@@ -17,14 +17,14 @@ import javax.swing.JFileChooser;
  *
  */
 
-public class ManejadorEventosCargarCliente implements Action {
+public class ManejadorEventosCargarClientes implements Action {
 
     private PanelCargarClientes panel;
     private PanelGeneralOpciones panelGeneral;
     private File file;
     
     
-    public ManejadorEventosCargarCliente(PanelCargarClientes objeto, PanelGeneralOpciones objeto2){
+    public ManejadorEventosCargarClientes(PanelCargarClientes objeto, PanelGeneralOpciones objeto2){
         panel = objeto;
         panelGeneral = objeto2;
     }
