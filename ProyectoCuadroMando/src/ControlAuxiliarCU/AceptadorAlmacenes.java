@@ -1,4 +1,4 @@
-package ControlAuxiliarCU.Almacenes;
+package ControlAuxiliarCU;
 
 import EntidadesCU.Almacen;
 

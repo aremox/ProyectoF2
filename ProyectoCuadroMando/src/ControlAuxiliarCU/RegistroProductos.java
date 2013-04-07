@@ -1,4 +1,4 @@
-package ControlAuxiliarCU.Productos;
+package ControlAuxiliarCU;
 
 /*
  *

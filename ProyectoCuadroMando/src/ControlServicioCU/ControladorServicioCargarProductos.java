@@ -1,8 +1,8 @@
 package ControlServicioCU;
 
 import ContenedoresCU.ContenedorProducto;
-import ControlAuxiliarCU.Productos.ProveedorInformacionProductos;
-import ControlAuxiliarCU.Productos.RegistroProductos;
+import ControlAuxiliarCU.ProveedorInformacionProductos;
+import ControlAuxiliarCU.RegistroProductos;
 import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.TratamientoDatosCarga;
 import EntidadesCU.Producto;
@@ -28,13 +28,13 @@ public class ControladorServicioCargarProductos {
     public void DesarrollarServicio() throws IOException{
         try {
             //
-            ProveedorInformacionProductos lec = new ProveedorInformacionProductos(ruta, "--");
+            ProveedorInformacionProductos lec = new ProveedorInformacionProductos("--");
             
             ArchivoResultadoCarga ficheroCarga = new ArchivoResultadoCarga();
             int totalLecturas;
             int errores = 0;
             
-            LinkedList<RegistroProductos> productos = new LinkedList<>(lec.extraer());
+            LinkedList<RegistroProductos> productos = new LinkedList<>(lec.extraer(ruta));
             
             
             int tam = productos.size();

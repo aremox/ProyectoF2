@@ -1,9 +1,9 @@
 package ControlServicioCU;
 
 import ContenedoresCU.ContenedorCliente;
-import ControlAuxiliarCU.Clientes.AceptadorClientes;
-import ControlAuxiliarCU.Clientes.ProveedorInformacionClientes;
-import ControlAuxiliarCU.Clientes.RegistroClientes;
+import ControlAuxiliarCU.AceptadorClientes;
+import ControlAuxiliarCU.ProveedorInformacionClientes;
+import ControlAuxiliarCU.RegistroClientes;
 import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ArchivoLog;
 import ControlAuxiliarCU.TratamientoDatosCarga;
@@ -31,14 +31,14 @@ public class ControladorServicioCargarClientes {
     public void DesarrollarServicio() throws IOException{
         try {
             //
-            ProveedorInformacionClientes lec = new ProveedorInformacionClientes(ruta, ":");
+            ProveedorInformacionClientes lec = new ProveedorInformacionClientes(":");
             AceptadorClientes aceptar = new AceptadorClientes();
             
             ArchivoResultadoCarga ficheroCarga = new ArchivoResultadoCarga();
             int totalLecturas;
             int errores = 0;
             
-            LinkedList<RegistroClientes> clientes = new LinkedList<>(lec.extraer());
+            LinkedList<RegistroClientes> clientes = new LinkedList<>(lec.extraer(ruta));
             
             int tam = clientes.size();
             totalLecturas = tam;

@@ -3,9 +3,9 @@ package ControlServicioCU;
 import ContenedoresCU.ContenedorTienda;
 import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ArchivoLog;
-import ControlAuxiliarCU.Tiendas.AceptadorTiendas;
-import ControlAuxiliarCU.Tiendas.ProveedorInformacionTiendas;
-import ControlAuxiliarCU.Tiendas.RegistroTiendas;
+import ControlAuxiliarCU.AceptadorTiendas;
+import ControlAuxiliarCU.ProveedorInformacionTiendas;
+import ControlAuxiliarCU.RegistroTiendas;
 import ControlAuxiliarCU.TratamientoDatosCarga;
 import EntidadesCU.Tienda;
 import java.io.File;
@@ -31,14 +31,14 @@ public class ControladorServicioCargarTiendas {
     public void DesarrollarServicio() throws IOException{
         try {
             //
-            ProveedorInformacionTiendas lec = new ProveedorInformacionTiendas(ruta, "::");
+            ProveedorInformacionTiendas lec = new ProveedorInformacionTiendas("::");
             AceptadorTiendas aceptar = new AceptadorTiendas();
             
             ArchivoResultadoCarga ficheroCarga = new ArchivoResultadoCarga();
             int totalLecturas;
             int errores = 0;
             
-            LinkedList<RegistroTiendas> tiendas = new LinkedList<>(lec.extraer());
+            LinkedList<RegistroTiendas> tiendas = new LinkedList<>(lec.extraer(ruta));
          
             
             int tam = tiendas.size();

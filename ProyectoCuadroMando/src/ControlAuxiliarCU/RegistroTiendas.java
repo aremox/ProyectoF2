@@ -1,4 +1,4 @@
-package ControlAuxiliarCU.Tiendas;
+package ControlAuxiliarCU;
 
 /*
  *

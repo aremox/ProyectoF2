@@ -4,9 +4,9 @@ import ContenedoresCU.ContenedorVenta;
 import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ArchivoLog;
 import ControlAuxiliarCU.TratamientoDatosCarga;
-import ControlAuxiliarCU.Ventas.AceptadorVentas;
-import ControlAuxiliarCU.Ventas.ProveedorInformacionVentas;
-import ControlAuxiliarCU.Ventas.RegistroVentas;
+import ControlAuxiliarCU.AceptadorVentas;
+import ControlAuxiliarCU.ProveedorInformacionVentas;
+import ControlAuxiliarCU.RegistroVentas;
 import EntidadesCU.Venta;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -33,7 +33,7 @@ public class ControladorServicioCargarVentas {
     public void DesarrollarServicio() throws IOException {
         try {
             //
-            ProveedorInformacionVentas lec = new ProveedorInformacionVentas(ruta, "::");
+            ProveedorInformacionVentas lec = new ProveedorInformacionVentas("::");
             AceptadorVentas aceptar = new AceptadorVentas();
 
 
@@ -41,7 +41,7 @@ public class ControladorServicioCargarVentas {
             int totalLecturas;
             int errores = 0;
 
-            LinkedList<RegistroVentas> ventas = new LinkedList<>(lec.extraer());
+            LinkedList<RegistroVentas> ventas = new LinkedList<>(lec.extraer(ruta));
            
             int tam = ventas.size();
             totalLecturas = tam;

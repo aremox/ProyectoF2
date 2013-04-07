@@ -1,4 +1,4 @@
-package ControlAuxiliarCU.Clientes;
+package ControlAuxiliarCU;
 
 /*
  *
