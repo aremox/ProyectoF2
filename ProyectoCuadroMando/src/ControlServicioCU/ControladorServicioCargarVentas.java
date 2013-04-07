@@ -57,7 +57,7 @@ public class ControladorServicioCargarVentas {
                                       registros.geFecha());
 
                 if (aceptar.validar(ven)) {
-                    contenedor_venta.anadirVenta(ven);
+                    contenedor_venta.almacenar(ven);
 
                 } else {
                     errores++;

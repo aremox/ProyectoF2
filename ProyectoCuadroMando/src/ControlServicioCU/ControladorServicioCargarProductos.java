@@ -48,7 +48,7 @@ public class ControladorServicioCargarProductos {
                                             registros.getFicha_tecnica());
 
                 // Los productos no necesitan validación
-                contenedor_producto.anadirProducto(pro);
+                contenedor_producto.almacenar(pro);
 
             }
             

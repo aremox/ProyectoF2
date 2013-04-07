@@ -57,7 +57,7 @@ public class ControladorServicioCargarClientes {
                                           registros.getTelefono());
 
                 if (aceptar.validar(cli)){
-                    contenedor_cliente.anadirCliente(cli);
+                    contenedor_cliente.almacenar(cli);
 
                 }else{
                     errores++;

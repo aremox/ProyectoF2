@@ -17,7 +17,7 @@ public class ContenedorCliente {
         lista = new LinkedList<Cliente>();
     }
 
-    public void anadirCliente(Cliente cli) {
+    public void almacenar(Cliente cli) {
         lista.add(cli);
     }
 

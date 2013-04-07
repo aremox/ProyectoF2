@@ -17,7 +17,7 @@ public class ContenedorProducto {
         lista = new LinkedList<Producto>();
     }
 
-    public void anadirProducto(Producto pro) {
+    public void almacenar(Producto pro) {
         lista.add(pro);
     }
 

@@ -17,7 +17,7 @@ public class ContenedorAlmacen {
         lista = new LinkedList<Almacen>();
     }
 
-    public void anadirAlmacen(Almacen alm) {
+    public void almacenar(Almacen alm) {
         lista.add(alm);
     }
 

@@ -56,7 +56,7 @@ public class ControladorServicioCargarAlmacenes {
                                           registros.getProvincia());
 
                 if (aceptar.validar(alm)){
-                    contenedor_almacen.anadirAlmacen(alm);
+                    contenedor_almacen.almacenar(alm);
 
                 }else{
                     errores++;

@@ -55,7 +55,7 @@ public class ControladorServicioCargarTiendas {
                                           registros.getTelefono());
 
                 if (aceptar.validar(tie)){
-                    contenedor_tienda.anadirTienda(tie);
+                    contenedor_tienda.almacenar(tie);
                 }else{
                     errores++;
                     ArchivoLog log = new ArchivoLog(aceptar.getTextoError(),"Tiendas");
