@@ -23,7 +23,7 @@ public class ProveedorInformacionAlmacenes extends ProveedorInformacion {
     @Override
      public LinkedList extraer(String ruta) {
         archivo = new File(ruta);
-        almacenes = new LinkedList<RegistroAlmacenes>();
+        almacenes = new LinkedList<>();
 
         try {
             if (comprobarFlujo()) {

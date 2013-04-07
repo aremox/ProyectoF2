@@ -72,6 +72,6 @@ public abstract class ProveedorInformacion {
      * @param absolutePath
      * @return
      */
-    public abstract LinkedList extraer(String absolutePath);
+    abstract LinkedList extraer(String absolutePath);
     
 }

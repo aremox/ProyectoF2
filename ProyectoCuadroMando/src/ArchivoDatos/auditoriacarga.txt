@@ -54,3 +54,7 @@ Venta VE0000008 con incoherencia de datos, el campo IMPORTE está vacío
 
 El almacén AL0000006 tiene un código postal no numérico []
 
+:::::::::::Almacenes::::::::::
+
+El almacén AL0000006 tiene un código postal no numérico []
+
