@@ -43,7 +43,7 @@ public class ProveedorInformacionClientes extends ProveedorInformacion {
             clientes.add(registro);
             pos++;
         }
-        totalLecturas = clientes.size();
+       
         return clientes;
     }
     

@@ -4,8 +4,8 @@ import ContenedoresCU.ContenedorAlmacen;
 import ControlAuxiliarCU.Almacenes.AceptadorAlmacenes;
 import ControlAuxiliarCU.Almacenes.ProveedorInformacionAlmacenes;
 import ControlAuxiliarCU.Almacenes.RegistroAlmacenes;
-import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ArchivoLog;
+import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.TratamientoDatosCarga;
 import EntidadesCU.Almacen;
 import java.io.File;
@@ -76,10 +76,6 @@ public class ControladorServicioCargarAlmacenes {
           //  System.out.println("Error en la lectura");
             //Logger.getLogger(ControladorServicioCargaAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
-    public RegistroAlmacenes getRegistroAlmacenes(){
-        return registros;
     }
     
 }

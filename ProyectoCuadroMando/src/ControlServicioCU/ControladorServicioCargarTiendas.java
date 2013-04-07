@@ -76,7 +76,5 @@ public class ControladorServicioCargarTiendas {
         }
     }
     
-    public RegistroTiendas getRegistroTiendas(){
-        return registros;
-    }   
+  
 }

@@ -79,7 +79,5 @@ public class ControladorServicioCargarVentas {
         }
     }
     
-    public RegistroVentas getRegistroVentas(){
-        return registros;
-    }  
+   
 }

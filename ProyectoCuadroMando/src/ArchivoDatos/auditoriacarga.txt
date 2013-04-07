@@ -1,0 +1,4 @@
+:::::::::::Almacenes::::::::::
+
+El almacén AL0000006 tiene un código postal no numérico []
+

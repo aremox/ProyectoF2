@@ -79,8 +79,4 @@ public class ControladorServicioCargarClientes {
         }
     }
 
-    public RegistroClientes getRegistroClientes(){
-        return registros;
-    }    
-    
 }

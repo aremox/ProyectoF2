@@ -44,7 +44,7 @@ public class ProveedorInformacionProductos extends ProveedorInformacion {
             productos.add(registro);
             pos++;
         }
-        totalLecturas = productos.size();
+        
         return productos;
     }
     

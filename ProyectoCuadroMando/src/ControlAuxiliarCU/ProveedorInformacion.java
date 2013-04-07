@@ -21,7 +21,7 @@ public abstract class ProveedorInformacion {
     private FileReader flujoEntrada;
     protected String separadorCampos;
     protected LinkedList<String> lineas;
-    protected int totalLecturas=0;
+   
 
     public ProveedorInformacion(String ruta, String separador) throws FileNotFoundException {
         //comprobar archivo
