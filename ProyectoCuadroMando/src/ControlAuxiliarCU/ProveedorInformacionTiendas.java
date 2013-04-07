@@ -29,7 +29,7 @@ public class ProveedorInformacionTiendas extends ProveedorInformacion {
             if (comprobarFlujo()) {
                 String[] elementos;
                 StringTokenizer tokens;
-                leerLineas();
+                leerLineaRegistro();
                 int tam = lineas.size();
                 int pos = 0; //Mientras haya elementos 
 

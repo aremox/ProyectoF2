@@ -52,7 +52,7 @@ public abstract class ProveedorInformacion {
          }
     }
 
-    protected void leerLineas() {
+    protected void leerLineaRegistro() {
         String linea;
         lineas=new LinkedList<>();
         try {
@@ -67,6 +67,11 @@ public abstract class ProveedorInformacion {
         }
     }
     
-    abstract LinkedList extraer(String absolutePath);
+    /**
+     *
+     * @param absolutePath
+     * @return
+     */
+    public abstract LinkedList extraer(String absolutePath);
     
 }
