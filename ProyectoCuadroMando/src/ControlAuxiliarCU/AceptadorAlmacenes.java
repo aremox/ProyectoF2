@@ -15,7 +15,7 @@ public class AceptadorAlmacenes {
     
     public AceptadorAlmacenes(){
     }
-    public boolean aceptar(Almacen alm){
+    public boolean validar(Almacen alm){
         textoError = "";
         resAceptar = true;
         

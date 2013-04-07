@@ -55,13 +55,13 @@ public class ControladorServicioCargarAlmacenes {
                                           registros.getMunicipio(), 
                                           registros.getProvincia());
 
-                if (aceptar.aceptar(alm)){
+                if (aceptar.validar(alm)){
                     contenedor_almacen.anadirAlmacen(alm);
 
                 }else{
                     errores++;
                     ArchivoLog log = new ArchivoLog(aceptar.getTextoError(),"Almacenes");
-                    //System.out.println("ERROR: " + aceptar.getTextoError());
+                    //System.out.println("ERROR: " + validar.getTextoError());
                 }
                 
             }

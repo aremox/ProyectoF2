@@ -56,13 +56,13 @@ public class ControladorServicioCargarClientes {
                                           registros.getProvincia(), 
                                           registros.getTelefono());
 
-                if (aceptar.aceptar(cli)){
+                if (aceptar.validar(cli)){
                     contenedor_cliente.anadirCliente(cli);
 
                 }else{
                     errores++;
                     ArchivoLog log = new ArchivoLog(aceptar.getTextoError(),"Clientes");
-                    //System.out.println("ERROR: " + aceptar.getTextoError());
+                    //System.out.println("ERROR: " + validar.getTextoError());
                 }
                 
             }

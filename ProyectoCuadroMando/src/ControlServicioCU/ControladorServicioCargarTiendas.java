@@ -54,12 +54,12 @@ public class ControladorServicioCargarTiendas {
                                           registros.getProvincia(), 
                                           registros.getTelefono());
 
-                if (aceptar.aceptar(tie)){
+                if (aceptar.validar(tie)){
                     contenedor_tienda.anadirTienda(tie);
                 }else{
                     errores++;
                     ArchivoLog log = new ArchivoLog(aceptar.getTextoError(),"Tiendas");
-                    //System.out.println("ERROR: " + aceptar.getTextoError());
+                    //System.out.println("ERROR: " + validar.getTextoError());
                 }
                 
             }

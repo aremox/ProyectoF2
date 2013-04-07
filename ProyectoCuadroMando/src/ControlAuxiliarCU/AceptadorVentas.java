@@ -15,7 +15,7 @@ public class AceptadorVentas {
     public AceptadorVentas() {
     }
 
-    public boolean aceptar(Venta ven) {
+    public boolean validar(Venta ven) {
         textoError = "";
         resAceptar = true;
 

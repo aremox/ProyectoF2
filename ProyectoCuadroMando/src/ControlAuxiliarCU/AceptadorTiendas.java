@@ -17,7 +17,7 @@ public class AceptadorTiendas {
     public AceptadorTiendas(){
         //controlador = objeto;
     }
-    public boolean aceptar(Tienda tie){
+    public boolean validar(Tienda tie){
         textoError = "";
         resAceptar = true;
         

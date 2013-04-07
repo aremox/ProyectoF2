@@ -17,7 +17,7 @@ public class AceptadorClientes {
     public AceptadorClientes(){
       
     }
-    public boolean aceptar(Cliente cli){
+    public boolean validar(Cliente cli){
         textoError = "";
         resAceptar = true;
         return (aceptarCalle(cli) && aceptarNumeroCalle(cli) && aceptarCodPostal(cli) && aceptarPoblacion(cli) && aceptarProvincia(cli));

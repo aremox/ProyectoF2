@@ -56,13 +56,13 @@ public class ControladorServicioCargarVentas {
                                       registros.getImporte(), 
                                       registros.geFecha());
 
-                if (aceptar.aceptar(ven)) {
+                if (aceptar.validar(ven)) {
                     contenedor_venta.anadirVenta(ven);
 
                 } else {
                     errores++;
                     ArchivoLog log = new ArchivoLog(aceptar.getTextoError(),"Ventas");
-                    //System.out.println("ERROR: " + aceptar.getTextoError());
+                    //System.out.println("ERROR: " + validar.getTextoError());
                 }
                 
             }
