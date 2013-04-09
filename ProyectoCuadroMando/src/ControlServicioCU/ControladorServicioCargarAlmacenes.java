@@ -12,7 +12,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
-import javax.swing.JOptionPane;
 
 /*
  *
@@ -70,7 +69,7 @@ public class ControladorServicioCargarAlmacenes {
             
             ficheroCarga.registrarDatosCarga("ALMACEN="+resultados.getTotalLecturas()+":"+resultados.getErrores()+":"+resultados.getPorcentaje());
             ficheroCarga.cerrarFichero();
-            JOptionPane.showMessageDialog(null,"Archivo de ALMACENES cargado correctamente                 \n\nResultado de la carga: RC="+resultados.getTotalLecturas()+" RE="+resultados.getErrores()+" IE="+resultados.getPorcentaje()+"\n\n ","RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE);             
+            
             
         } catch (FileNotFoundException ex) {
           //  System.out.println("Error en la lectura");

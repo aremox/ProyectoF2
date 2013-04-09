@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /*
  *
@@ -55,6 +56,7 @@ public class ManejadorEventosCargarAlmacenes implements Action{
             try {
                 ControladorServicioCargarAlmacenes controladorAlmacenes = new ControladorServicioCargarAlmacenes(file);
                 controladorAlmacenes.DesarrollarServicio();
+                JOptionPane.showMessageDialog(null,"Archivo de ALMACENES cargado correctamente                  ","RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE);             
                 panel.setTextCuadroTextoRuta("");
                 panel.setEnabledBotonCargar(Boolean.FALSE);
             } catch (IOException ex) {

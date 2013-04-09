@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 
 /*
@@ -57,6 +58,7 @@ public class ManejadorEventosCargarVentas implements Action{
             try {
                 ControladorServicioCargarVentas controladorVentas = new ControladorServicioCargarVentas(file);
                 controladorVentas.DesarrollarServicio();
+                JOptionPane.showMessageDialog(null,"Archivo de VENTAS cargado correctamente                  ","RESULTADO DE LA CARGA       ", JOptionPane.INFORMATION_MESSAGE);
                 panel.setTextCuadroTextoRuta("");
                 panel.setEnabledBotonCargar(Boolean.FALSE);
             } catch (IOException ex) {
