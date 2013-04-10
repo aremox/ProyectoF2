@@ -36,21 +36,21 @@ public class PanelCargarProductos extends JPanel{
     
         this.setLayout(null);
         this.add(etiquetaArchivo);
-        etiquetaArchivo.setBounds(65,75,130,30);
+        etiquetaArchivo.setBounds(200,165,120,30);
         this.add(cuadroTextoRuta);
-        cuadroTextoRuta.setBounds(205,75,225,30);
+        cuadroTextoRuta.setBounds(330,165,225,30);
 
         ManejadorEventosCargarProductos evento = new ManejadorEventosCargarProductos(this, objeto);
         
         this.add(botonSelector);
-        botonSelector.setBounds(450,75,150,30);
+        botonSelector.setBounds(575,165,150,30);
         botonSelector.addActionListener(evento);
         this.add(botonCancelar);
         botonCancelar.addActionListener(evento);
-        botonCancelar.setBounds(350,225,150,30);
+        botonCancelar.setBounds(510,380,150,30);
         this.add(botonCargar);
         botonCargar.addActionListener(evento);
-        botonCargar.setBounds(510,225,150,30);
+        botonCargar.setBounds(670,380,150,30);
         botonCargar.setEnabled(false);
        
     }
