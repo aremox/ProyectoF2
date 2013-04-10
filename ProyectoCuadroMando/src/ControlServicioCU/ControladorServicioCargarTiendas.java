@@ -1,6 +1,6 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorTienda;
+import ContenedoresCU.ContenedorTiendas;
 import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ArchivoLog;
 import ControlAuxiliarCU.AceptadorTiendas;
@@ -22,7 +22,7 @@ import java.util.LinkedList;
 
 public class ControladorServicioCargarTiendas {
     private String ruta;
-    public static ContenedorTienda contenedor_tienda = new ContenedorTienda();
+    public static ContenedorTiendas contenedor_tienda = new ContenedorTiendas();
     private RegistroTiendas registros;
     
     public ControladorServicioCargarTiendas(File fichero){

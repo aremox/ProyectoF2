@@ -1,6 +1,6 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorProducto;
+import ContenedoresCU.ContenedorProductos;
 import ControlAuxiliarCU.ProveedorInformacionProductos;
 import ControlAuxiliarCU.RegistroProductos;
 import ControlAuxiliarCU.ArchivoResultadoCarga;
@@ -20,7 +20,7 @@ import java.util.LinkedList;
 
 public class ControladorServicioCargarProductos {
     private String ruta;
-    public static ContenedorProducto contenedor_producto = new ContenedorProducto();
+    public static ContenedorProductos contenedor_producto = new ContenedorProductos();
     
     public ControladorServicioCargarProductos(File fichero){
         ruta = fichero.getAbsolutePath();

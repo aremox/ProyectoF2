@@ -1,9 +1,8 @@
 package InterfazGraficaUsuarioCU;
 
+import ControlServicioCU.ControladorServicioEliminarDatosCarga;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
-import java.io.File;
-import java.io.IOException;
 import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -17,8 +16,6 @@ import javax.swing.JOptionPane;
 
 public class ManejadorEventosEliminarDatosCarga implements Action {
 
-    private File file;
-    
     
     public ManejadorEventosEliminarDatosCarga(){
 
@@ -30,14 +27,10 @@ public class ManejadorEventosEliminarDatosCarga implements Action {
 
         if ("Eliminar datos de carga".equals(boton.getText())) {
  
-            //try {
-                //ControladorServicioCargarClientes controladorClientes = new ControladorServicioCargarClientes(file);
-                //controladorClientes.DesarrollarServicio();
-                JOptionPane.showMessageDialog(null,"Eliminar datos de Carga                                    ","ELIMINAR DATOS DE CARGA", JOptionPane.INFORMATION_MESSAGE);             
+            ControladorServicioEliminarDatosCarga controladorEliminarDatos = new ControladorServicioEliminarDatosCarga();
+            controladorEliminarDatos.DesarrollarServicio();
+            JOptionPane.showMessageDialog(null,"Datos eliminados correctamente                            ","ELIMINAR DATOS DE CARGA", JOptionPane.INFORMATION_MESSAGE);             
 
-            //} catch (IOException ex) {
-            //    Logger.getLogger(ManejadorEventosCargarAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
-            //}
         }
 
 

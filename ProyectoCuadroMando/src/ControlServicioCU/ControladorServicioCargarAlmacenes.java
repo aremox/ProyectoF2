@@ -1,6 +1,6 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorAlmacen;
+import ContenedoresCU.ContenedorAlmacenes;
 import ControlAuxiliarCU.AceptadorAlmacenes;
 import ControlAuxiliarCU.ProveedorInformacionAlmacenes;
 import ControlAuxiliarCU.RegistroAlmacenes;
@@ -21,7 +21,7 @@ import java.util.LinkedList;
 
 public class ControladorServicioCargarAlmacenes {
     private String ruta;
-    public static ContenedorAlmacen contenedor_almacen = new ContenedorAlmacen();
+    public static ContenedorAlmacenes contenedor_almacen = new ContenedorAlmacenes();
     private RegistroAlmacenes registros;
     
     public ControladorServicioCargarAlmacenes(File fichero){

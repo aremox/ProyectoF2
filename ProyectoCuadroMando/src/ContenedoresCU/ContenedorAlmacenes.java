@@ -1,5 +1,6 @@
 package ContenedoresCU;
 
+import ControlServicioCU.ControladorServicioCargarAlmacenes;
 import EntidadesCU.Almacen;
 import java.util.LinkedList;
 
@@ -9,11 +10,11 @@ import java.util.LinkedList;
  *
  */
 
-public class ContenedorAlmacen {
+public class ContenedorAlmacenes {
 
     private LinkedList<Almacen> lista;
 
-    public  ContenedorAlmacen() {
+    public  ContenedorAlmacenes() {
         lista = new LinkedList<Almacen>();
     }
 
@@ -36,4 +37,12 @@ public class ContenedorAlmacen {
         return alm_resultado;
     }
     
+    public void borrarElementos() {
+        ControladorServicioCargarAlmacenes.contenedor_almacen.clear();
+    }
+   
+    public void clear(){
+        lista.clear();
+    }
 }
+

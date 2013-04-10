@@ -1,5 +1,6 @@
 package ContenedoresCU;
 
+import ControlServicioCU.ControladorServicioCargarProductos;
 import EntidadesCU.Producto;
 import java.util.LinkedList;
 
@@ -9,11 +10,11 @@ import java.util.LinkedList;
  *
  */
 
-public class ContenedorProducto {
+public class ContenedorProductos {
 
     private LinkedList<Producto> lista;
 
-    public ContenedorProducto() {
+    public ContenedorProductos() {
         lista = new LinkedList<Producto>();
     }
 
@@ -35,4 +36,14 @@ public class ContenedorProducto {
         }
         return pro_resultado;
     }
+
+        
+   public void borrarElementos() {
+        ControladorServicioCargarProductos.contenedor_producto.clear();
+    }
+   
+    public void clear(){
+        lista.clear();
+    }
+
 }

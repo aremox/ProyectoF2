@@ -1,6 +1,6 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorVenta;
+import ContenedoresCU.ContenedorVentas;
 import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ArchivoLog;
 import ControlAuxiliarCU.TratamientoDatosCarga;
@@ -23,7 +23,7 @@ import java.util.LinkedList;
 public class ControladorServicioCargarVentas {
 
     private String ruta;
-    public static ContenedorVenta contenedor_venta = new ContenedorVenta();
+    public static ContenedorVentas contenedor_venta = new ContenedorVentas();
     private RegistroVentas registros;
     
     public ControladorServicioCargarVentas(File fichero) {

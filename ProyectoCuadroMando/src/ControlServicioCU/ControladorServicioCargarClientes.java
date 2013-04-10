@@ -1,6 +1,6 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorCliente;
+import ContenedoresCU.ContenedorClientes;
 import ControlAuxiliarCU.AceptadorClientes;
 import ControlAuxiliarCU.ProveedorInformacionClientes;
 import ControlAuxiliarCU.RegistroClientes;
@@ -22,7 +22,7 @@ import java.util.LinkedList;
 
 public class ControladorServicioCargarClientes {
     private String ruta;
-    public static ContenedorCliente contenedor_cliente = new ContenedorCliente();
+    public static ContenedorClientes contenedor_cliente = new ContenedorClientes();
     private RegistroClientes registros;
     
     public ControladorServicioCargarClientes(File fichero){
