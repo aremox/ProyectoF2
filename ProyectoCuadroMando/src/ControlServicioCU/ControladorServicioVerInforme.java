@@ -5,6 +5,7 @@
 package ControlServicioCU;
 
 import ContenedoresCU.ContenedorAlmacenes;
+import ControlAuxiliarCU.AuditoriaCarga;
 import ControlAuxiliarCU.RegistroAlmacenes;
 import java.io.File;
 
@@ -15,12 +16,13 @@ import java.io.File;
 public class ControladorServicioVerInforme {
     
     private String ruta;
+    private AuditoriaCarga audiCarga;
     
     public void ControladorServicioVerInforme(File fichero){
          ruta = fichero.getAbsolutePath();
     }
     
-    public void DesarrollarServicio(){
-        
+    public AuditoriaCarga DesarrollarServicio(){
+        return audiCarga;
     }
 }
