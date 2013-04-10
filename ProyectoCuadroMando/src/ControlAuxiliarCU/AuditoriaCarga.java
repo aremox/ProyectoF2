@@ -4,6 +4,8 @@
  */
 package ControlAuxiliarCU;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author ivan
@@ -14,13 +16,14 @@ public class AuditoriaCarga {
     private RegistroCarga regClie;
     private RegistroCarga regTien;
     private RegistroCarga regProd;
+    private LinkedList registros;
     
     public void auditoriaCarga(){
-        
+        LinkedList<RegistroCarga> registros;
     }
     
     public void asociarRegistroCarga(RegistroCarga reg){
-        
+        registros.add(reg);
     }
     public RegistroCarga obtenerAuditoriaCargaAlmacen(){
         return regAlm;

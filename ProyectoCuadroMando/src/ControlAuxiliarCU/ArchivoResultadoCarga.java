@@ -56,6 +56,7 @@ public class ArchivoResultadoCarga {
         String linea, linea2;
         String carga = null;
         StringTokenizer tokens, tokens2;
+        int[] elementos = null;
         
 
         BufferedReader br = new BufferedReader(flujoEntrada);
@@ -67,15 +68,15 @@ public class ArchivoResultadoCarga {
                     carga = tokens.nextToken().trim();
                    
                     tokens2 = new StringTokenizer(tokens.nextToken().trim(), ":");
-                    int[] elementos = new int[tokens2.countTokens()];
+                    elementos = new int[tokens2.countTokens()];
                     int pos = 0;
                     while (tokens2.hasMoreTokens()) {
-                        elementos[pos] = Integer.parseInt(tokens.nextToken().trim());
+                        elementos[pos] = Integer.parseInt(tokens2.nextToken().trim());
                         pos++;
                     }
                 }
                 RegistroCarga regCar = new RegistroCarga(carga, elementos[0], elementos[1],elementos[2]);
-                    
+                audtCarga.asociarRegistroCarga(regCar);    
             }
         }
 
