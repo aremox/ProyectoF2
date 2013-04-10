@@ -21,7 +21,7 @@ import java.util.LinkedList;
 
 public class ControladorServicioCargarAlmacenes {
     private String ruta;
-    public static ContenedorAlmacenes contenedor_almacen = new ContenedorAlmacenes();
+    private ContenedorAlmacenes contenedor_almacen = new ContenedorAlmacenes();
     private RegistroAlmacenes registros;
     
     public ControladorServicioCargarAlmacenes(File fichero){

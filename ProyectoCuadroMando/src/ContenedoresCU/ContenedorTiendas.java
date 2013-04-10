@@ -12,7 +12,7 @@ import java.util.LinkedList;
 
 public class ContenedorTiendas {
 
-    private LinkedList<Tienda> lista;
+    private static LinkedList<Tienda> lista;
 
     public ContenedorTiendas() {
         lista = new LinkedList<Tienda>();
@@ -22,7 +22,7 @@ public class ContenedorTiendas {
         lista.add(tie);
     }
 
-    public Tienda getTienda(String id) {
+    public static Tienda getTienda(String id) {
         Tienda tie_resultado = null;
         int tam = lista.size();
         //int cont = 0;
@@ -36,13 +36,8 @@ public class ContenedorTiendas {
         }
         return tie_resultado;
     }
-
-        
-   public void borrarElementos() {
-        ControladorServicioCargarTiendas.contenedor_tienda.clear();
-    }
    
-    public void clear(){
+    public static void borrarElementos(){
         lista.clear();
     }
 

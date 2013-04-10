@@ -1,5 +1,8 @@
 package ControlServicioCU;
 
+import ContenedoresCU.ContenedorClientes;
+import ContenedoresCU.ContenedorProductos;
+import ContenedoresCU.ContenedorTiendas;
 import ContenedoresCU.ContenedorVentas;
 import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ArchivoLog;
@@ -23,7 +26,7 @@ import java.util.LinkedList;
 public class ControladorServicioCargarVentas {
 
     private String ruta;
-    public static ContenedorVentas contenedor_venta = new ContenedorVentas();
+    private ContenedorVentas contenedor_venta = new ContenedorVentas();
     private RegistroVentas registros;
     
     public ControladorServicioCargarVentas(File fichero) {
@@ -49,9 +52,9 @@ public class ControladorServicioCargarVentas {
 
                 registros = (RegistroVentas) ventas.get(i);
                 Venta ven = new Venta(registros.getId_venta(), 
-                                      ControladorServicioCargarClientes.contenedor_cliente.getCliente(registros.getId_cliente()), 
-                                      ControladorServicioCargarProductos.contenedor_producto.getProducto(registros.getId_producto()), 
-                                      ControladorServicioCargarTiendas.contenedor_tienda.getTienda(registros.getId_tienda()), 
+                                      ContenedorClientes.getCliente(registros.getId_cliente()),
+                                      ContenedorProductos.getProducto(registros.getId_producto()), 
+                                      ContenedorTiendas.getTienda(registros.getId_tienda()), 
                                       registros.getUnidades(), 
                                       registros.getImporte(), 
                                       registros.geFecha());

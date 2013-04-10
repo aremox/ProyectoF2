@@ -12,7 +12,7 @@ import java.util.LinkedList;
 
 public class ContenedorClientes {
 
-    private LinkedList<Cliente> lista;
+    private static LinkedList<Cliente> lista;
 
     public ContenedorClientes() {
         lista = new LinkedList<Cliente>();
@@ -22,7 +22,7 @@ public class ContenedorClientes {
         lista.add(cli);
     }
 
-    public Cliente getCliente(String id) {
+    public static Cliente getCliente(String id) {
         Cliente cli_resultado = null;
         int tam = lista.size();
         //int cont = 0;
@@ -37,11 +37,8 @@ public class ContenedorClientes {
         return cli_resultado;
     }
     
-   public void borrarElementos() {
-        ControladorServicioCargarClientes.contenedor_cliente.clear();
-    }
    
-    public void clear(){
+    public static void borrarElementos(){
         lista.clear();
     }
     

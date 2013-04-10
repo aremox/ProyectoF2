@@ -20,22 +20,30 @@ public class ControladorServicioEliminarDatosCarga {
     }
 
     public void DesarrollarServicio(){
-
-        ContenedorTiendas tiendas = new ContenedorTiendas();
-        tiendas.borrarElementos();
-                
-        ContenedorAlmacenes almacenes = new ContenedorAlmacenes();
-        almacenes.borrarElementos();
-        
-        ContenedorClientes clientes = new ContenedorClientes();
-        clientes.borrarElementos();
-        
-        ContenedorProductos productos = new ContenedorProductos();
-        productos.borrarElementos();
-        
-        ContenedorVentas ventas = new ContenedorVentas();
-        ventas.borrarElementos();
-        
+        borrarVentas();    
+        borrarTienda();
+        borrarAlmacen();
+        borrarClientes();
+        borrarProductos();   
+    
+    }
+    
+    
+    private void borrarTienda(){
+    ContenedorTiendas.borrarElementos();
+    }
+    
+     private void borrarAlmacen(){
+    ContenedorAlmacenes.borrarElementos();
+    }
+     private void borrarVentas(){
+    ContenedorVentas.borrarElementos();
+    }
+     private void borrarClientes(){
+    ContenedorClientes.borrarElementos();
+    }
+     private void borrarProductos(){
+    ContenedorProductos.borrarElementos();
     }
 }
 

@@ -12,7 +12,7 @@ import java.util.LinkedList;
 
 public class ContenedorAlmacenes {
 
-    private LinkedList<Almacen> lista;
+    private static LinkedList<Almacen> lista;
 
     public  ContenedorAlmacenes() {
         lista = new LinkedList<Almacen>();
@@ -22,7 +22,7 @@ public class ContenedorAlmacenes {
         lista.add(alm);
     }
 
-    public Almacen getAlmacen(String id) {
+    public static Almacen getAlmacen(String id) {
         Almacen alm_resultado = null;
         int tam = lista.size();
         int cont = 0;
@@ -36,12 +36,8 @@ public class ContenedorAlmacenes {
         }
         return alm_resultado;
     }
-    
-    public void borrarElementos() {
-        ControladorServicioCargarAlmacenes.contenedor_almacen.clear();
-    }
    
-    public void clear(){
+    public static void borrarElementos(){
         lista.clear();
     }
 }

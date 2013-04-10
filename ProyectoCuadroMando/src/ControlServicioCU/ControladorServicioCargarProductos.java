@@ -20,7 +20,7 @@ import java.util.LinkedList;
 
 public class ControladorServicioCargarProductos {
     private String ruta;
-    public static ContenedorProductos contenedor_producto = new ContenedorProductos();
+    private ContenedorProductos contenedor_producto = new ContenedorProductos();
     
     public ControladorServicioCargarProductos(File fichero){
         ruta = fichero.getAbsolutePath();

@@ -22,7 +22,7 @@ import java.util.LinkedList;
 
 public class ControladorServicioCargarClientes {
     private String ruta;
-    public static ContenedorClientes contenedor_cliente = new ContenedorClientes();
+    private ContenedorClientes contenedor_cliente = new ContenedorClientes();
     private RegistroClientes registros;
     
     public ControladorServicioCargarClientes(File fichero){

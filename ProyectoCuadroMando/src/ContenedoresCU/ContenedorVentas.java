@@ -12,7 +12,7 @@ import java.util.LinkedList;
 
 public class ContenedorVentas {
 
-    private LinkedList<Venta> lista;
+    private static LinkedList<Venta> lista;
 
     public ContenedorVentas() {
         lista = new LinkedList<Venta>();
@@ -22,7 +22,7 @@ public class ContenedorVentas {
         lista.add(ven);
     }
 
-    public Venta getVenta(String id) {
+    public static Venta getVenta(String id) {
         Venta ven_resultado = null;
         int tam = lista.size();
         int cont = 0;
@@ -37,11 +37,7 @@ public class ContenedorVentas {
         return ven_resultado;
     }
     
-   public void borrarElementos() {
-        ControladorServicioCargarVentas.contenedor_venta.clear();
-    }
-   
-    public void clear(){
+    public static void borrarElementos(){
         lista.clear();
     }
     

@@ -1,5 +1,6 @@
 package ControlServicioCU;
 
+import ContenedoresCU.ContenedorAlmacenes;
 import ContenedoresCU.ContenedorTiendas;
 import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ArchivoLog;
@@ -22,7 +23,7 @@ import java.util.LinkedList;
 
 public class ControladorServicioCargarTiendas {
     private String ruta;
-    public static ContenedorTiendas contenedor_tienda = new ContenedorTiendas();
+    private ContenedorTiendas contenedor_tienda = new ContenedorTiendas();
     private RegistroTiendas registros;
     
     public ControladorServicioCargarTiendas(File fichero){
@@ -46,7 +47,8 @@ public class ControladorServicioCargarTiendas {
             for (int i = 0; i < tam; i++) {
                 registros = (RegistroTiendas) tiendas.get(i);
                 Tienda tie = new Tienda(registros.getId_tienda(),
-                                          ControladorServicioCargarAlmacenes.contenedor_almacen.getAlmacen(registros.getId_almacen()),                  
+                                          //ControladorServicioCargarAlmacenes.contenedor_almacen.getAlmacen(registros.getId_almacen()),                  
+                                          ContenedorAlmacenes.getAlmacen(registros.getId_almacen()),
                                           registros.getCalle(), 
                                           registros.getNumero(), 
                                           registros.getCod_Postal(), 
