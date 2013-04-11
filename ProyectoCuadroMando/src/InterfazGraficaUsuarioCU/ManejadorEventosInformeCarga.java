@@ -19,11 +19,11 @@ import javax.swing.JLabel;
  *
  */
 
-public class ManejadorEventosVerInformeCarga implements Action {
+public class ManejadorEventosInformeCarga implements Action {
 
    
     
-    public ManejadorEventosVerInformeCarga(){
+    public ManejadorEventosInformeCarga(){
 
     }
     
@@ -48,7 +48,7 @@ public class ManejadorEventosVerInformeCarga implements Action {
                 JOptionPane.showMessageDialog(null,messageLabel,"INFORME DE CARGA       ", JOptionPane.PLAIN_MESSAGE);            
 
             } catch (IOException ex) {
-                Logger.getLogger(ManejadorEventosVerInformeCarga.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ManejadorEventosInformeCarga.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

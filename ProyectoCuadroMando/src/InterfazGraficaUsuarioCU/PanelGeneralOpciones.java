@@ -23,7 +23,7 @@ public class PanelGeneralOpciones extends JTabbedPane {
         PanelCargarTiendas tabD = new PanelCargarTiendas(this);
         PanelCargarAlmacenes tabE = new PanelCargarAlmacenes(this);
         PanelEliminarDatosCarga tabF = new PanelEliminarDatosCarga();
-        PanelVerInformeCarga tabG = new PanelVerInformeCarga();
+        PanelInformeCarga tabG = new PanelInformeCarga();
         
         tabA.setSize( 100,100);
         this.addTab( "Carga de clientes" , tabA );

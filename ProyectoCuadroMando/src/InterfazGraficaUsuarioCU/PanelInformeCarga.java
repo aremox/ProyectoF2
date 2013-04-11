@@ -12,18 +12,18 @@ import javax.swing.JPanel;
  *
  */
 
-public class PanelVerInformeCarga extends JPanel{
+public class PanelInformeCarga extends JPanel{
 
     private JButton botonVerInforme;
 
 
-    public PanelVerInformeCarga(){
+    public PanelInformeCarga(){
         //Establecer tamaño y otros parámetros
         //Inicializar controles
 
         botonVerInforme = new JButton("Ver informe de carga");
     
-        ManejadorEventosVerInformeCarga evento = new ManejadorEventosVerInformeCarga();
+        ManejadorEventosInformeCarga evento = new ManejadorEventosInformeCarga();
         
         this.setLayout(null);
         this.add(botonVerInforme);
