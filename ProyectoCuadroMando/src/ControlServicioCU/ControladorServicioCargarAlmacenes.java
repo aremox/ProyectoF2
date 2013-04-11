@@ -67,7 +67,7 @@ public class ControladorServicioCargarAlmacenes {
             
             TratamientoDatosCarga resultados = new TratamientoDatosCarga(errores, totalLecturas);
             
-            ficheroCarga.registrarDatosCarga("ALMACEN="+resultados.getTotalLecturas()+":"+resultados.getErrores()+":"+resultados.getPorcentaje());
+            ficheroCarga.registrarDatosCarga("ALMACENES="+resultados.getTotalLecturas()+":"+resultados.getErrores()+":"+resultados.getPorcentaje());
             ficheroCarga.cerrarFichero();
             
             

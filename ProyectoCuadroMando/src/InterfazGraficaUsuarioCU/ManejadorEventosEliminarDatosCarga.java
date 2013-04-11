@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 /*
  *
+ * @author Ivan Arenas
  * @author Javier Roncero
  *
  */

@@ -39,7 +39,9 @@ public class ContenedorClientes {
     
    
     public static void borrarElementos(){
-        lista.clear();
+        if (null != lista) {
+            lista.clear();
+        }
     }
     
 }

@@ -1,47 +1,69 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ControlAuxiliarCU;
 
 import java.util.LinkedList;
 
-/**
+/*
  *
- * @author ivan
+ * @author Ivan Arenas
+ * @author Javier Roncero
+ *
  */
+
+
 public class AuditoriaCarga {
     private RegistroCarga regAlm;
     private RegistroCarga regVent;
     private RegistroCarga regClie;
     private RegistroCarga regTien;
     private RegistroCarga regProd;
-    private LinkedList registros;
-    
+    private LinkedList registros  = new LinkedList<>();
+
+   
     public void auditoriaCarga(){
-        LinkedList<RegistroCarga> registros;
+        //registros = new LinkedList<>();
     }
     
     public void asociarRegistroCarga(RegistroCarga reg){
         registros.add(reg);
     }
+    
+    private RegistroCarga buscarRegistroCarga(String nombre){
+        int tam = registros.size();
+        int cont;
+        
+        RegistroCarga regResultado = null;
+        for (cont = 0; cont < tam; cont++){
+            RegistroCarga registro = (RegistroCarga) registros.get(cont);
+            if (registro.getCarga().equals(nombre)){
+                regResultado = registro;
+                break;
+            }
+        }
+        return regResultado;
+    }
+        
     public RegistroCarga obtenerAuditoriaCargaAlmacen(){
+        regAlm = buscarRegistroCarga("ALMACENES");
         return regAlm;
     }
     
     public RegistroCarga obtenerAuditoriaCargaVentas(){
+        regVent = buscarRegistroCarga("VENTAS");
         return regVent;
     }
     
     public RegistroCarga obtenerAuditoriaCargaClientes(){
+        regClie = buscarRegistroCarga("CLIENTES");
         return regClie;
     }
     
     public RegistroCarga obtenerAuditoriaCargaTiendas(){
+        regTien = buscarRegistroCarga("TIENDAS");
         return regTien;
     }
     
     public RegistroCarga obtenerAuditoriaCargaProductos(){
+        regProd = buscarRegistroCarga("PRODUCTOS");
         return regProd;
     }
     

@@ -9,6 +9,8 @@ import javax.swing.UIManager;
  * @author Javier Roncero
  *
  */
+
+
 public class ProyectoCuadroMando {
 
     public static void main(String[] args) {

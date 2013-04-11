@@ -1,13 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ControlAuxiliarCU;
 
-/**
+/*
  *
- * @author ivan
+ * @author Ivan Arenas
+ * @author Javier Roncero
+ *
  */
+
 public class RegistroCarga {
     private String carga;
     private int Error;
@@ -35,5 +34,10 @@ public class RegistroCarga {
     
     public int getNRegistrosLeidos(){
         return NRegistrosLeidos;
+    }
+    
+    public String getTextoInformeCarga(){
+        String textoInforme = getCarga() + " : " + getNRegistrosAceptados() + " (error " + getError() + "%)";
+        return textoInforme;
     }
 }

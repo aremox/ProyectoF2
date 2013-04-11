@@ -39,7 +39,9 @@ public class ContenedorProductos {
 
 
     public static void borrarElementos(){
-        lista.clear();
+        if (null != lista) {
+            lista.clear();
+        }
     }
 
 }

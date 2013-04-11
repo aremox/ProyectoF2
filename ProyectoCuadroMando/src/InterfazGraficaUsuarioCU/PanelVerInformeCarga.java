@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 
 /*
  *
+ * @author Ivan Arenas
  * @author Javier Roncero
  *
  */

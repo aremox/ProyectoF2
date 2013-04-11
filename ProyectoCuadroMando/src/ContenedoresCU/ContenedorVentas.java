@@ -9,7 +9,6 @@ import java.util.LinkedList;
  * @author Ivan Arenas
  *
  */
-
 public class ContenedorVentas {
 
     private static LinkedList<Venta> lista;
@@ -36,10 +35,10 @@ public class ContenedorVentas {
         }
         return ven_resultado;
     }
-    
-    public static void borrarElementos(){
-        lista.clear();
+
+    public static void borrarElementos() {
+        if (null != lista) {
+            lista.clear();
+        }
     }
-    
-    
 }

@@ -38,7 +38,9 @@ public class ContenedorAlmacenes {
     }
    
     public static void borrarElementos(){
-        lista.clear();
+        if (null != lista) {
+            lista.clear();
+        }
     }
 }
 

@@ -1,27 +1,27 @@
 package InterfazGraficaUsuarioCU;
 
-import ControlServicioCU.ControladorServicioCargarClientes;
+import ControlServicioCU.ControladorServicioInformeCarga;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
-import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JLabel;
 
 
 /*
  *
+ * @author Ivan Arenas
  * @author Javier Roncero
  *
  */
 
 public class ManejadorEventosVerInformeCarga implements Action {
 
-    private File file;
-    
+   
     
     public ManejadorEventosVerInformeCarga(){
 
@@ -30,20 +30,27 @@ public class ManejadorEventosVerInformeCarga implements Action {
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton boton = (JButton) e.getSource(); 
-
         if ("Ver informe de carga".equals(boton.getText())) {
- 
-            //try {
-                //ControladorServicioCargarClientes controladorClientes = new ControladorServicioCargarClientes(file);
-                //controladorClientes.DesarrollarServicio();
-                JOptionPane.showMessageDialog(null,"Informe de Carga                  ","INFORME DE CARGA       ", JOptionPane.INFORMATION_MESSAGE);             
+            ControladorServicioInformeCarga controladorInformeCarga = new ControladorServicioInformeCarga();
+            try {
+                String lineaAlmacen = controladorInformeCarga.DesarrollarServicio().obtenerAuditoriaCargaAlmacen().getTextoInformeCarga();
+                String lineaTiendas = controladorInformeCarga.DesarrollarServicio().obtenerAuditoriaCargaTiendas().getTextoInformeCarga();
+                String lineaClientes = controladorInformeCarga.DesarrollarServicio().obtenerAuditoriaCargaClientes().getTextoInformeCarga();
+                String lineaProductos = controladorInformeCarga.DesarrollarServicio().obtenerAuditoriaCargaProductos().getTextoInformeCarga();
+                String lineaVentas = controladorInformeCarga.DesarrollarServicio().obtenerAuditoriaCargaVentas().getTextoInformeCarga();
+                
+                // Opción normal
+                //JOptionPane.showMessageDialog(null,"\n\n"+lineaClientes+"\n"+lineaProductos+"\n"+lineaTiendas+"\n"+lineaAlmacen+"\n"+lineaVentas+"\n\n\n\n","INFORME DE CARGA       ", JOptionPane.PLAIN_MESSAGE);             
+                
+                // Opción centrado en el MessageDialog con HTML
+                String message = "<html><body><div width='400px' height='200px' align='center'><br/><br/><br/><br/><br/>"+lineaClientes+"<br/><br/>"+lineaProductos+"<br/><br/>"+lineaTiendas+"<br/><br/>"+lineaAlmacen+"<br/><br/>"+lineaVentas+"</div></body></html>";
+                JLabel messageLabel = new JLabel(message);
+                JOptionPane.showMessageDialog(null,messageLabel,"INFORME DE CARGA       ", JOptionPane.PLAIN_MESSAGE);            
 
-            //} catch (IOException ex) {
-            //    Logger.getLogger(ManejadorEventosCargarAlmacenes.class.getName()).log(Level.SEVERE, null, ex);
-            //}
+            } catch (IOException ex) {
+                Logger.getLogger(ManejadorEventosVerInformeCarga.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-
-
     }
     
 
