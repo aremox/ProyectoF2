@@ -9,35 +9,36 @@ package ControlAuxiliarCU;
 
 public class RegistroCarga {
     private String carga;
-    private int Error;
-    private int NRegistrosAceptados;
-    private int NRegistrosLeidos;
+    private double indiceError;
+    private int nRegistroErroneos;
+    private int nRegistrosLeidos;
     
-    public RegistroCarga(String car, int err, int nra, int nrl){
+    public RegistroCarga(String car, double err, int nre, int nrl){
         carga = car;
-        Error = err;
-        NRegistrosAceptados = nra;
-        NRegistrosLeidos = nrl;
+        indiceError = err;
+        nRegistroErroneos = nre;
+        nRegistrosLeidos = nrl;
     }
     
     public String getCarga(){
         return carga;
     }
     
-    public int getError(){
-        return Error;
+    public double getError(){
+        return indiceError;
     }
     
-    public int getNRegistrosAceptados(){
-        return NRegistrosAceptados;
+    public int getNRegistroErroneos(){
+        return nRegistroErroneos;
     }
     
     public int getNRegistrosLeidos(){
-        return NRegistrosLeidos;
+        return nRegistrosLeidos;
     }
     
     public String getTextoInformeCarga(){
-        String textoInforme = getCarga() + " : " + getNRegistrosAceptados() + " (error " + getError() + "%)";
+        //String textoInforme = getCarga() + " : " + getNRegistrosAceptados() + " (error " + getError() + "%)";
+        String textoInforme = getCarga() + ":" + getNRegistrosLeidos() + ":" + getNRegistroErroneos() + ":" + getError();
         return textoInforme;
     }
 }

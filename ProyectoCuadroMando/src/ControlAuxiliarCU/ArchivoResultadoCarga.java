@@ -78,12 +78,13 @@ public class ArchivoResultadoCarga {
                     int TotalLeidos = Integer.parseInt(elementos[0]);
                     int TotalErrores = Integer.parseInt(elementos[1]);
                     double PorcentajeFallos = Double.parseDouble(elementos[2]);
-                    int CargadosConExito = TotalLeidos - TotalErrores;
-                    double CargadosConExitoDouble = CargadosConExito;
-                    double TotalLeidosDouble = TotalLeidos;
-                    int Errores = 100 - (int)((CargadosConExitoDouble / TotalLeidosDouble) * 100);
+                    //int CargadosConExito = TotalLeidos - TotalErrores;
+                    //double CargadosConExitoDouble = CargadosConExito;
+                    //double TotalLeidosDouble = TotalLeidos;
+                    //int Errores = 100 - (int)((CargadosConExitoDouble / TotalLeidosDouble) * 100);
+                    //RegistroCarga regCar = new RegistroCarga(carga, Errores, CargadosConExito, TotalLeidos);
                     
-                    RegistroCarga regCar = new RegistroCarga(carga, Errores, CargadosConExito, TotalLeidos);
+                    RegistroCarga regCar = new RegistroCarga(carga, PorcentajeFallos, TotalErrores, TotalLeidos);
                     audtCarga.asociarRegistroCarga(regCar);
                 //}
             }
