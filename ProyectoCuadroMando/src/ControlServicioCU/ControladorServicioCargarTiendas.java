@@ -52,9 +52,9 @@ public class ControladorServicioCargarTiendas {
                                           registros.getCalle(), 
                                           registros.getNumero(), 
                                           registros.getCod_Postal(), 
+                                          registros.getTelefono(),
                                           registros.getPoblacion(), 
-                                          registros.getProvincia(), 
-                                          registros.getTelefono());
+                                          registros.getProvincia());
 
                 if (aceptar.validar(tie)){
                     contenedor_tienda.almacenar(tie);

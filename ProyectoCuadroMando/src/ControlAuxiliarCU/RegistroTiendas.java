@@ -17,7 +17,7 @@ public class RegistroTiendas {
     private String provincia;         
     private String telefono;
 
-    public RegistroTiendas(String at_id_tienda, String at_id_almacen, String at_calle, String at_numero, String at_cod_postal, String at_poblacion, String at_provincia, String at_telefono) {
+    public RegistroTiendas(String at_id_tienda, String at_id_almacen, String at_calle, String at_numero, String at_cod_postal, String at_telefono, String at_poblacion, String at_provincia) {
         id_tienda = at_id_tienda;
         id_almacen = at_id_almacen;
         calle = at_calle;

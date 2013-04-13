@@ -18,7 +18,7 @@ public class Tienda {
 
 
 
-    public Tienda(String at_id_tienda, Almacen at_id_almacen, String at_calle, String at_numero, String at_cod_postal, String at_poblacion, String at_provincia, String at_telefono) {
+    public Tienda(String at_id_tienda, Almacen at_id_almacen, String at_calle, String at_numero, String at_cod_postal, String at_telefono, String at_poblacion, String at_provincia) {
         id_tienda = at_id_tienda;
         id_almacen = at_id_almacen;
         calle = at_calle;
