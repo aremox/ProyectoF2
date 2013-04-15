@@ -48,13 +48,13 @@ public class ControladorServicioCargarTiendas {
                 registros = (RegistroTiendas) tiendas.get(i);
                 Tienda tie = new Tienda(registros.getId_tienda(),
                                           //ControladorServicioCargarAlmacenes.contenedor_almacen.getAlmacen(registros.getId_almacen()),                  
-                                          ContenedorAlmacenes.getAlmacen(registros.getId_almacen()),
                                           registros.getCalle(), 
                                           registros.getNumero(), 
                                           registros.getCod_Postal(), 
                                           registros.getTelefono(),
                                           registros.getPoblacion(), 
-                                          registros.getProvincia());
+                                          registros.getProvincia(), 
+                                          ContenedorAlmacenes.getAlmacen(registros.getId_almacen()));
 
                 if (aceptar.validar(tie)){
                     contenedor_tienda.almacenar(tie);

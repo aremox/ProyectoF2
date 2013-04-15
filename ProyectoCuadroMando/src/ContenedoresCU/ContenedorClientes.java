@@ -1,6 +1,5 @@
 package ContenedoresCU;
 
-import ControlServicioCU.ControladorServicioCargarClientes;
 import EntidadesCU.Cliente;
 import java.util.LinkedList;
 

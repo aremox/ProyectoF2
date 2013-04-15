@@ -18,15 +18,15 @@ public class Tienda {
 
 
 
-    public Tienda(String at_id_tienda, Almacen at_id_almacen, String at_calle, String at_numero, String at_cod_postal, String at_telefono, String at_poblacion, String at_provincia) {
+    public Tienda(String at_id_tienda, String at_calle, String at_numero, String at_cod_postal, String at_telefono, String at_poblacion, String at_provincia, Almacen at_id_almacen) {
         id_tienda = at_id_tienda;
-        id_almacen = at_id_almacen;
         calle = at_calle;
         numero = at_numero;
         cod_postal = at_cod_postal;
         poblacion = at_poblacion;
         provincia = at_provincia;
         telefono = at_telefono;
+        id_almacen = at_id_almacen;
     }
     
     public String getId_tienda(){

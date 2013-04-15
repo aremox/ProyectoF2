@@ -17,15 +17,15 @@ public class RegistroTiendas {
     private String provincia;         
     private String telefono;
 
-    public RegistroTiendas(String at_id_tienda, String at_id_almacen, String at_calle, String at_numero, String at_cod_postal, String at_telefono, String at_poblacion, String at_provincia) {
+    public RegistroTiendas(String at_id_tienda, String at_calle, String at_numero, String at_cod_postal, String at_telefono, String at_poblacion, String at_provincia, String at_id_almacen) {
         id_tienda = at_id_tienda;
-        id_almacen = at_id_almacen;
         calle = at_calle;
         numero = at_numero;
         cod_postal = at_cod_postal;
         poblacion = at_poblacion;
         provincia = at_provincia;
         telefono = at_telefono;
+        id_almacen = at_id_almacen;
     }
     
     

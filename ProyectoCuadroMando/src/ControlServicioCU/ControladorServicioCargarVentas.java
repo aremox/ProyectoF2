@@ -36,7 +36,7 @@ public class ControladorServicioCargarVentas {
     public void DesarrollarServicio() throws IOException {
         try {
             //
-            ProveedorInformacionVentas lec = new ProveedorInformacionVentas("::");
+            ProveedorInformacionVentas lec = new ProveedorInformacionVentas(":");
             AceptadorVentas aceptar = new AceptadorVentas();
 
 
