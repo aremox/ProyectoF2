@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.StringTokenizer;
 
 /*
@@ -28,9 +29,9 @@ public class ArchivoResultadoCarga {
     }
 
     public void registrarDatosCarga(String texto) {
-
+           Date fecha = new Date();
         pw = new PrintWriter(fichero);
-        pw.println(texto);
+        pw.println(texto+":"+fecha.toString());
         pw.println("");
 
     }

@@ -1,5 +1,6 @@
 package ControlAuxiliarCU;
 
+import EntidadesCU.Producto;
 import EntidadesCU.Venta;
 
 /*
@@ -40,6 +41,7 @@ public class AceptadorVentas {
                 textoError = "Venta " + ven.getId_venta() + " con incoherencia de datos, no se ha encontrado el PRODUCTO asociado a la venta";
                 resAceptar = false;
             }
+          
         }
         return resAceptar;
     }
@@ -59,7 +61,7 @@ public class AceptadorVentas {
             // Comprobamos si está vacío
             if ("".equals(ven.getImporte())) {
                 textoError = "Venta " + ven.getId_venta() + " con incoherencia de datos, el campo IMPORTE está vacío";
-                resAceptar = false;                
+                resAceptar = false;
             } else {
                 // Importe no está vacío
                 // Comprobamos que el importe es un número

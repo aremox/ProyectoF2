@@ -16,11 +16,11 @@ public class AuditoriaCarga {
     private RegistroCarga regClie;
     private RegistroCarga regTien;
     private RegistroCarga regProd;
-    private LinkedList registros  = new LinkedList<>();
+    private LinkedList<RegistroCarga> registros = new LinkedList<RegistroCarga>();
 
    
     public void auditoriaCarga(){
-        //registros = new LinkedList<>();
+        //LinkedList<RegistroCarga> registros = new LinkedList<RegistroCarga>();
     }
     
     public void asociarRegistroCarga(RegistroCarga reg){

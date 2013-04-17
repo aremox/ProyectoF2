@@ -23,5 +23,8 @@ public class Producto {
     public String getId_producto(){
         return id_producto;
     }
+    public String getId_Categoria(){
+        return categoria;
+    }
 
 }
