@@ -51,5 +51,17 @@ public class ContenedorAlmacenesSingleton {
             coleccionElementos.clear();
         }
     }
+    
+     public void grabarElementos() {
+  
+        int tam = coleccionElementos.size();
+        
+        for (int i = 0; i < tam; i++) {
+            Almacen alm = (Almacen) coleccionElementos.get(i);
+            alm.grabar();
+            
+        }
+       
+    }
 }
 

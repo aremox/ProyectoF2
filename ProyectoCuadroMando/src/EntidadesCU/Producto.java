@@ -26,5 +26,8 @@ public class Producto {
     public String getId_Categoria(){
         return categoria;
     }
+    public void grabar(){
+        
+    }
 
 }

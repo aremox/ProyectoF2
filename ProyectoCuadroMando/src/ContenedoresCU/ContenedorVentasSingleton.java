@@ -10,11 +10,11 @@ import java.util.LinkedList;
  */
 public class ContenedorVentasSingleton {
 
-    private LinkedList<Venta> lista;
+    private LinkedList<Venta> coleccionElementos;
     private static ContenedorVentasSingleton _instancia;
 
     private ContenedorVentasSingleton() {
-        lista = new LinkedList<Venta>();
+        coleccionElementos = new LinkedList<Venta>();
     }
     
     public static ContenedorVentasSingleton getInstancia(){ 
@@ -26,15 +26,15 @@ public class ContenedorVentasSingleton {
     }
 
     public void almacenar(Venta ven) {
-        lista.add(ven);
+        coleccionElementos.add(ven);
     }
 
     public Venta getVenta(String id) {
         Venta ven_resultado = null;
-        int tam = lista.size();
+        int tam = coleccionElementos.size();
         int cont = 0;
         for (int i = 0; i < tam; i++) {
-            Venta ven = (Venta) lista.get(i);
+            Venta ven = (Venta) coleccionElementos.get(i);
             if (ven.getId_venta().equals(id)) {
                 ven_resultado = ven;
                 break;
@@ -45,8 +45,16 @@ public class ContenedorVentasSingleton {
     }
 
     public void borrarElementos() {
-        if (null != lista) {
-            lista.clear();
+        if (null != coleccionElementos) {
+            coleccionElementos.clear();
         }
     }
+    public void grabarElementos() {
+        int tam = coleccionElementos.size();
+        
+        for (int i = 0; i < tam; i++) {
+            Venta elemento = (Venta) coleccionElementos.get(i);
+            elemento.grabar();
+        }
+   }
 }

@@ -15,10 +15,10 @@ import javax.swing.JOptionPane;
  *
  */
 
-public class ManejadorEventosEliminarDatosCarga implements Action {
+public class ManejadorEventosEliminarrDatosCarga implements Action {
 
     
-    public ManejadorEventosEliminarDatosCarga(){
+    public ManejadorEventosEliminarrDatosCarga(){
 
     }
     

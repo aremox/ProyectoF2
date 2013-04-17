@@ -50,5 +50,13 @@ public class ContenedorTiendasSingleton {
             coleccionElementos.clear();
         }
     }
+    public void grabarElementos() {
+        int tam = coleccionElementos.size();
+        
+        for (int i = 0; i < tam; i++) {
+            Tienda elemento = (Tienda) coleccionElementos.get(i);
+            elemento.grabar();
+        }
+   }
 
 }

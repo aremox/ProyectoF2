@@ -52,6 +52,9 @@ public class Tienda {
     public Almacen getAlmacen(){
         return id_almacen;
     }
+    public void grabar(){
+        
+    }
     
     
 }

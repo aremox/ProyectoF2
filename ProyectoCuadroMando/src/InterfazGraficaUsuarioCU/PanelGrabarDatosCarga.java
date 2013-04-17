@@ -12,18 +12,18 @@ import javax.swing.JPanel;
  *
  */
 
-public class PanelEliminarDatosCarga extends JPanel{
+public class PanelGrabarDatosCarga extends JPanel{
 
     private JButton botonVerInforme;
 
 
-    public PanelEliminarDatosCarga(){
+    public PanelGrabarDatosCarga(){
         //Establecer tamaño y otros parámetros
         //Inicializar controles
 
-        botonVerInforme = new JButton("Eliminar datos de carga");
+        botonVerInforme = new JButton("Grabar datos de carga");
     
-        ManejadorEventosEliminarrDatosCarga evento = new ManejadorEventosEliminarrDatosCarga();
+        ManejadorEventosGrabarDatosCarga evento = new ManejadorEventosGrabarDatosCarga();
         
         this.setLayout(null);
         this.add(botonVerInforme);

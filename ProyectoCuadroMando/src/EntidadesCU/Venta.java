@@ -46,4 +46,7 @@ public class Venta {
     public String getImporte(){
         return importe;
     }
+    public void grabar(){
+        
+    }
 }

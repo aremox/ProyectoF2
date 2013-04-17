@@ -51,5 +51,13 @@ public class ContenedorClientesSingleton {
             coleccionElementos.clear();
         }
     }
+    public void grabarElementos() {
+        int tam = coleccionElementos.size();
+        
+        for (int i = 0; i < tam; i++) {
+            Cliente elemento = (Cliente) coleccionElementos.get(i);
+            elemento.grabar();
+        }
+   }
     
 }

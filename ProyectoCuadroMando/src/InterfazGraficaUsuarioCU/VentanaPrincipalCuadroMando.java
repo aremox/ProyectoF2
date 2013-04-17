@@ -23,7 +23,7 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action {
         this.getContentPane().setLayout(new BorderLayout());
         this.setSize(900, 600);
         this.setTitle("Proyecto Cuadro de Mando");
-        this.setResizable(false);
+        this.setResizable(true);
         //Centramos la ventana en la pantalla
         this.setLocationRelativeTo(null);
         //

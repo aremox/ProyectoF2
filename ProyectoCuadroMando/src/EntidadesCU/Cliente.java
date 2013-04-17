@@ -50,6 +50,9 @@ public class Cliente {
     }  
     public String getProvincia(){
         return provincia;
-    }     
+    }   
+    public void grabar(){
+        
+    }
 
 }

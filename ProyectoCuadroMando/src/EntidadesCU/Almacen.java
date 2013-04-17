@@ -46,5 +46,8 @@ public class Almacen {
     public String getProvincia(){
         return provincia;
     }
+    public void grabar(){
+        
+    }
 
 }

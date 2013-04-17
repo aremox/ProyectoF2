@@ -24,6 +24,7 @@ public class PanelGeneralOpciones extends JTabbedPane {
         PanelCargarAlmacenes tabE = new PanelCargarAlmacenes(this);
         PanelEliminarDatosCarga tabF = new PanelEliminarDatosCarga();
         PanelInformeCarga tabG = new PanelInformeCarga();
+        PanelGrabarDatosCarga tabH = new PanelGrabarDatosCarga();
         
         tabA.setSize( 100,100);
         this.addTab( "Carga de clientes" , tabA );
@@ -46,6 +47,9 @@ public class PanelGeneralOpciones extends JTabbedPane {
          
         tabG.setSize( 100,100 );
          this.addTab( "Ver informe de carga" , tabG ); 
+        
+        tabH.setSize( 100,100 );
+         this.addTab( "Grabar datos de carga" , tabH ); 
          
     }
 
