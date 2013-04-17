@@ -1,6 +1,6 @@
 package InterfazGraficaUsuarioCU;
 
-import ControlServicioCU.ControladorServicioEliminarDatosCarga;
+import ControlServicioCU.ControladorServicioGrabarDatosCarga;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import javax.swing.Action;
@@ -28,8 +28,8 @@ public class ManejadorEventosGrabarDatosCarga implements Action {
 
         if ("Grabar datos de carga".equals(boton.getText())) {
  
-            //ControladorServicioGrabarDatosCarga controladorGrabarDatos = new ControladorServicioGrabarDatosCarga();
-            //controladorGrabarDatos.DesarrollarServicio();
+            ControladorServicioGrabarDatosCarga controladorGrabarDatos = new ControladorServicioGrabarDatosCarga();
+            controladorGrabarDatos.DesarrollarServicio();
             JOptionPane.showMessageDialog(null,"Datos grabados correctamente                            ","GRABAR DATOS DE CARGA", JOptionPane.INFORMATION_MESSAGE);             
 
         }

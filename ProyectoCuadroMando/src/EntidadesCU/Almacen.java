@@ -1,5 +1,8 @@
 package EntidadesCU;
 
+import ControlAuxiliarCU.ControladorConexionDB;
+import java.sql.Connection;
+
 /*
  *
  * @author Ivan Arenas
@@ -47,7 +50,8 @@ public class Almacen {
         return provincia;
     }
     public void grabar(){
-        
+        ControladorConexionDB controlDB = new ControladorConexionDB();
+        Connection con = controlDB.obtenerConexion();
     }
 
 }

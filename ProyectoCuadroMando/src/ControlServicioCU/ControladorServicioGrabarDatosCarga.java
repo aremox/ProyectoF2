@@ -21,30 +21,15 @@ public class ControladorServicioGrabarDatosCarga {
     }
 
     public void DesarrollarServicio(){
-        borrarVentas();    
-        borrarTienda();
-        borrarAlmacen();
-        borrarClientes();
-        borrarProductos();   
+        grabarAlmacen();
+          
     
     }
     
     
-    private void borrarTienda(){
-    ContenedorTiendasSingleton.getInstancia().borrarElementos();
+     private void grabarAlmacen(){
+    ContenedorAlmacenesSingleton.getInstancia().grabarElementos();
     }
     
-     private void borrarAlmacen(){
-    ContenedorAlmacenesSingleton.getInstancia().borrarElementos();
-    }
-     private void borrarVentas(){
-    ContenedorVentasSingleton.getInstancia().borrarElementos();
-    }
-     private void borrarClientes(){
-    ContenedorClientesSingleton.getInstancia().borrarElementos();
-    }
-     private void borrarProductos(){
-    ContenedorProductosSingleton.getInstancia().borrarElementos();
-    }
 }
 
