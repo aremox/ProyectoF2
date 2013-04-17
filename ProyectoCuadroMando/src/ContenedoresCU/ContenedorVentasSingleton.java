@@ -1,6 +1,5 @@
 package ContenedoresCU;
 
-import ControlServicioCU.ControladorServicioCargarVentas;
 import EntidadesCU.Venta;
 import java.util.LinkedList;
 
@@ -9,19 +8,28 @@ import java.util.LinkedList;
  * @author Ivan Arenas
  *
  */
-public class ContenedorVentas {
+public class ContenedorVentasSingleton {
 
-    private static LinkedList<Venta> lista;
+    private LinkedList<Venta> lista;
+    private static ContenedorVentasSingleton _instancia;
 
-    public ContenedorVentas() {
+    private ContenedorVentasSingleton() {
         lista = new LinkedList<Venta>();
+    }
+    
+    public static ContenedorVentasSingleton getInstancia(){ 
+        if (_instancia == null) { 
+            //Si la instancia no se ha creado crearla 
+            _instancia = new ContenedorVentasSingleton(); 
+        } 
+        return _instancia; 
     }
 
     public void almacenar(Venta ven) {
         lista.add(ven);
     }
 
-    public static Venta getVenta(String id) {
+    public Venta getVenta(String id) {
         Venta ven_resultado = null;
         int tam = lista.size();
         int cont = 0;
@@ -36,7 +44,7 @@ public class ContenedorVentas {
         return ven_resultado;
     }
 
-    public static void borrarElementos() {
+    public void borrarElementos() {
         if (null != lista) {
             lista.clear();
         }

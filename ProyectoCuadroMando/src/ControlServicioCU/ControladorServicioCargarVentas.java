@@ -1,15 +1,15 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorClientes;
-import ContenedoresCU.ContenedorProductos;
-import ContenedoresCU.ContenedorTiendas;
-import ContenedoresCU.ContenedorVentas;
-import ControlAuxiliarCU.ArchivoResultadoCarga;
-import ControlAuxiliarCU.ArchivoLog;
-import ControlAuxiliarCU.TratamientoDatosCarga;
+import ContenedoresCU.ContenedorClientesSingleton;
+import ContenedoresCU.ContenedorProductosSingleton;
+import ContenedoresCU.ContenedorTiendasSingleton;
+import ContenedoresCU.ContenedorVentasSingleton;
 import ControlAuxiliarCU.AceptadorVentas;
+import ControlAuxiliarCU.ArchivoLog;
+import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ProveedorInformacionVentas;
 import ControlAuxiliarCU.RegistroVentas;
+import ControlAuxiliarCU.TratamientoDatosCarga;
 import EntidadesCU.Venta;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,7 +26,7 @@ import java.util.LinkedList;
 public class ControladorServicioCargarVentas {
 
     private String ruta;
-    private ContenedorVentas contenedor_venta = new ContenedorVentas();
+    private ContenedorVentasSingleton contenedor_venta = ContenedorVentasSingleton.getInstancia();
     private RegistroVentas registros;
     
     public ControladorServicioCargarVentas(File fichero) {
@@ -52,9 +52,9 @@ public class ControladorServicioCargarVentas {
 
                 registros = (RegistroVentas) ventas.get(i);
                 Venta ven = new Venta(registros.getId_venta(), 
-                                      ContenedorClientes.getCliente(registros.getId_cliente()),
-                                      ContenedorProductos.getProducto(registros.getId_producto()), 
-                                      ContenedorTiendas.getTienda(registros.getId_tienda()), 
+                                      ContenedorClientesSingleton.getInstancia().getCliente(registros.getId_cliente()),
+                                      ContenedorProductosSingleton.getInstancia().getProducto(registros.getId_producto()), 
+                                      ContenedorTiendasSingleton.getInstancia().getTienda(registros.getId_tienda()), 
                                       registros.getUnidades(), 
                                       registros.getImporte(), 
                                       registros.geFecha());

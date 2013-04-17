@@ -1,10 +1,10 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorAlmacenes;
-import ContenedoresCU.ContenedorTiendas;
-import ControlAuxiliarCU.ArchivoResultadoCarga;
-import ControlAuxiliarCU.ArchivoLog;
+import ContenedoresCU.ContenedorAlmacenesSingleton;
+import ContenedoresCU.ContenedorTiendasSingleton;
 import ControlAuxiliarCU.AceptadorTiendas;
+import ControlAuxiliarCU.ArchivoLog;
+import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ProveedorInformacionTiendas;
 import ControlAuxiliarCU.RegistroTiendas;
 import ControlAuxiliarCU.TratamientoDatosCarga;
@@ -23,7 +23,7 @@ import java.util.LinkedList;
 
 public class ControladorServicioCargarTiendas {
     private String ruta;
-    private ContenedorTiendas contenedor_tienda = new ContenedorTiendas();
+    private ContenedorTiendasSingleton contenedor_tienda = ContenedorTiendasSingleton.getInstancia();
     private RegistroTiendas registros;
     
     public ControladorServicioCargarTiendas(File fichero){
@@ -53,8 +53,8 @@ public class ControladorServicioCargarTiendas {
                                           registros.getCod_Postal(), 
                                           registros.getTelefono(),
                                           registros.getPoblacion(), 
-                                          registros.getProvincia(), 
-                                          ContenedorAlmacenes.getAlmacen(registros.getId_almacen()));
+                                          registros.getProvincia(),
+                                          ContenedorAlmacenesSingleton.getInstancia().getAlmacen(registros.getId_almacen()));
 
                 if (aceptar.validar(tie)){
                     contenedor_tienda.almacenar(tie);

@@ -1,11 +1,11 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorAlmacenes;
+import ContenedoresCU.ContenedorAlmacenesSingleton;
 import ControlAuxiliarCU.AceptadorAlmacenes;
-import ControlAuxiliarCU.ProveedorInformacionAlmacenes;
-import ControlAuxiliarCU.RegistroAlmacenes;
 import ControlAuxiliarCU.ArchivoLog;
 import ControlAuxiliarCU.ArchivoResultadoCarga;
+import ControlAuxiliarCU.ProveedorInformacionAlmacenes;
+import ControlAuxiliarCU.RegistroAlmacenes;
 import ControlAuxiliarCU.TratamientoDatosCarga;
 import EntidadesCU.Almacen;
 import java.io.File;
@@ -21,7 +21,7 @@ import java.util.LinkedList;
 
 public class ControladorServicioCargarAlmacenes {
     private String ruta;
-    private ContenedorAlmacenes contenedor_almacen = new ContenedorAlmacenes();
+    private ContenedorAlmacenesSingleton contenedor_almacen = ContenedorAlmacenesSingleton.getInstancia();
     private RegistroAlmacenes registros;
     
     public ControladorServicioCargarAlmacenes(File fichero){

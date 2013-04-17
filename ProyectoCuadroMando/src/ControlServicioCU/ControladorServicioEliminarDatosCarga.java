@@ -1,10 +1,10 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorAlmacenes;
-import ContenedoresCU.ContenedorClientes;
-import ContenedoresCU.ContenedorProductos;
-import ContenedoresCU.ContenedorTiendas;
-import ContenedoresCU.ContenedorVentas;
+import ContenedoresCU.ContenedorAlmacenesSingleton;
+import ContenedoresCU.ContenedorClientesSingleton;
+import ContenedoresCU.ContenedorProductosSingleton;
+import ContenedoresCU.ContenedorTiendasSingleton;
+import ContenedoresCU.ContenedorVentasSingleton;
 
 
 /*
@@ -31,20 +31,20 @@ public class ControladorServicioEliminarDatosCarga {
     
     
     private void borrarTienda(){
-    ContenedorTiendas.borrarElementos();
+    ContenedorTiendasSingleton.getInstancia().borrarElementos();
     }
     
      private void borrarAlmacen(){
-    ContenedorAlmacenes.borrarElementos();
+    ContenedorAlmacenesSingleton.getInstancia().borrarElementos();
     }
      private void borrarVentas(){
-    ContenedorVentas.borrarElementos();
+    ContenedorVentasSingleton.getInstancia().borrarElementos();
     }
      private void borrarClientes(){
-    ContenedorClientes.borrarElementos();
+    ContenedorClientesSingleton.getInstancia().borrarElementos();
     }
      private void borrarProductos(){
-    ContenedorProductos.borrarElementos();
+    ContenedorProductosSingleton.getInstancia().borrarElementos();
     }
 }
 

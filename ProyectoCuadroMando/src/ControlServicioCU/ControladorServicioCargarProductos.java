@@ -1,9 +1,9 @@
 package ControlServicioCU;
 
-import ContenedoresCU.ContenedorProductos;
+import ContenedoresCU.ContenedorProductosSingleton;
+import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ProveedorInformacionProductos;
 import ControlAuxiliarCU.RegistroProductos;
-import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.TratamientoDatosCarga;
 import EntidadesCU.Producto;
 import java.io.File;
@@ -20,7 +20,7 @@ import java.util.LinkedList;
 
 public class ControladorServicioCargarProductos {
     private String ruta;
-    private ContenedorProductos contenedor_producto = new ContenedorProductos();
+    private ContenedorProductosSingleton contenedor_producto = ContenedorProductosSingleton.getInstancia();
     
     public ControladorServicioCargarProductos(File fichero){
         ruta = fichero.getAbsolutePath();
