@@ -1,0 +1,7 @@
+private String id_almacen;
+    private String calle;
+    private String numero;
+    private String cod_postal;
+    private String telefono;
+    private String municipio;
+    private String provincia;

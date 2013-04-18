@@ -1,10 +1,9 @@
 package ControlServicioCU;
 
 import ContenedoresCU.ContenedorAlmacenesSingleton;
-import ContenedoresCU.ContenedorClientesSingleton;
-import ContenedoresCU.ContenedorProductosSingleton;
-import ContenedoresCU.ContenedorTiendasSingleton;
-import ContenedoresCU.ContenedorVentasSingleton;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /*
@@ -21,13 +20,17 @@ public class ControladorServicioGrabarDatosCarga {
     }
 
     public void DesarrollarServicio(){
-        grabarAlmacen();
+        try {
+            grabarAlmacen();
+        } catch (SQLException ex) {
+            Logger.getLogger(ControladorServicioGrabarDatosCarga.class.getName()).log(Level.SEVERE, null, ex);
+        }
           
     
     }
     
     
-     private void grabarAlmacen(){
+     private void grabarAlmacen() throws SQLException{
     ContenedorAlmacenesSingleton.getInstancia().grabarElementos();
     }
     

@@ -6,12 +6,14 @@ package ControlAuxiliarCU;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
  * @author ivan
  */
 public class ControladorConexionDB {
+    Connection con;
     public ControladorConexionDB(){
         
     }
@@ -24,15 +26,19 @@ public class ControladorConexionDB {
                     String user = "ivan";
                     String password = "123456";
  
-                    Connection con = DriverManager.getConnection(url, user, password);
+                    con = DriverManager.getConnection(url, user, password);
  
                     return con;
  
             }
-            catch(Exception e)
+            catch(ClassNotFoundException | SQLException e)
             {
                    System.out.println(e.getMessage());
             }
         return null;
+    }
+    
+    public void cerrar() throws SQLException{
+        con.close();
     }
 }
