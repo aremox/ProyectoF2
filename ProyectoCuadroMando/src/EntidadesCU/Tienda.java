@@ -1,5 +1,10 @@
 package EntidadesCU;
 
+import ControlAuxiliarCU.ControladorConexionDB;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /*
  *
  * @author Javier Roncero
@@ -15,7 +20,15 @@ public class Tienda {
     private String poblacion;
     private String provincia;         
     private String telefono;
-
+    private static final String INSERT 
+            = "INSERT INTO TIENDAS " 
+            + "(id_almacen, calle, numero, cod_postal, poblacion, provincia, telefono," 
+            + "id_tienda) VALUES(?, ?, ?, ?, ?, ?, ?, ?)"; 
+    private static final String UPDATE 
+            = "UPDATE TIENDAS SET id_almacen = ?, calle = ?, numero = ?, cod_postal = ?, poblacion = ?, provincia = ?, telefono = ?," 
+            + " id_tienda = ?" 
+            + " WHERE id_tienda = ?";
+    private boolean saved = false;
 
 
     public Tienda(String at_id_tienda, String at_calle, String at_numero, String at_cod_postal, String at_telefono, String at_poblacion, String at_provincia, Almacen at_id_almacen) {
@@ -52,9 +65,45 @@ public class Tienda {
     public Almacen getAlmacen(){
         return id_almacen;
     }
-    public void grabar(){
-        
+    
+    
+    public void grabar() throws SQLException { 
+    ControladorConexionDB controlDB = new ControladorConexionDB();
+        try (Connection connection = controlDB.obtenerConexion()) {
+            if (saved) { 
+                try (PreparedStatement statement = connection.prepareStatement(UPDATE)) {
+                    statement.setString(1, id_almacen.getId_almacen()); 
+                    statement.setString(2, calle); 
+                    statement.setString(3, numero); 
+                    statement.setString(4, cod_postal); 
+                    statement.setInt(5, Integer.parseInt(poblacion)); 
+                    statement.setInt(6, Integer.parseInt(provincia)); 
+                    statement.setString(7, telefono);
+                    statement.setString(8, id_tienda);
+                    statement.executeUpdate();
+                } 
+            } 
+             
+            else { 
+                try (PreparedStatement statement = connection.prepareStatement(INSERT)) {
+                    statement.setString(1, id_almacen.getId_almacen()); 
+                    statement.setString(2, calle); 
+                    statement.setString(3, numero); 
+                    statement.setString(4, cod_postal); 
+                    statement.setInt(5, Integer.parseInt(poblacion)); 
+                    statement.setInt(6, Integer.parseInt(provincia)); 
+                    statement.setString(7, telefono);
+                    statement.setString(8, id_tienda);
+                    statement.executeUpdate();
+                } 
+                // Indicate that the information now exists 
+                // in the database. 
+                saved = true; 
+            }
+            connection.close();
+        } 
     }
+
     
     
 }

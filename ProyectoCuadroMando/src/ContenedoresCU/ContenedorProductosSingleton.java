@@ -1,6 +1,7 @@
 package ContenedoresCU;
 
 import EntidadesCU.Producto;
+import java.sql.SQLException;
 import java.util.LinkedList;
 
 /*
@@ -51,7 +52,7 @@ public class ContenedorProductosSingleton {
             coleccionElementos.clear();
         }
     }
-    public void grabarElementos() {
+    public void grabarElementos() throws SQLException {
         int tam = coleccionElementos.size();
         
         for (int i = 0; i < tam; i++) {

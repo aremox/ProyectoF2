@@ -1,7 +1,7 @@
-Fri Apr 19 11:36:28 CEST 2013 : Apache Derby Network Server - 10.8.1.2 - (1095077) se ha iniciado y está listo para aceptar conexiones en el puerto 1527
+Fri Apr 19 20:43:28 CEST 2013 : Apache Derby Network Server - 10.8.1.2 - (1095077) se ha iniciado y está listo para aceptar conexiones en el puerto 1527
 ----------------------------------------------------------------
-Fri Apr 19 11:36:29 CEST 2013:
- Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instancia a816c00e-013e-21a6-ee26-ffffc2f6d07f 
+Fri Apr 19 20:43:29 CEST 2013:
+ Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instancia a816c00e-013e-239b-b9da-ffffc2f6d07f 
 en el directorio de base de datos /home/ivan/NetBeansProjects/ProyectoF2/ProyectoCuadroMando/database/cuadro_mando  con el cargador de clases sun.misc.Launcher$AppClassLoader@668387
 
 java.vendor=Oracle Corporation

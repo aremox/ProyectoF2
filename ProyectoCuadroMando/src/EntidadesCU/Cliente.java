@@ -27,9 +27,9 @@ public class Cliente {
             + "(dni, nombre, apellidos, calle, " 
             + "numero, cod_postal, poblacion, provincia, telefono, id_cliente) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
     private static final String UPDATE 
-            = "UPDATE CLIENTES SET id_cliente = ?, dni = ?, " 
+            = "UPDATE CLIENTES SET dni = ?, " 
             + "nombre = ?, apellidos = ?, calle = ?, numero = ?, " 
-            + "cod_postal = ?, poblacion = ?, provincia = ?, telefono = ? WHERE id_cliente = ?";
+            + "cod_postal = ?, poblacion = ?, provincia = ?, telefono = ?, id_cliente = ?  WHERE id_cliente = ?";
     private boolean saved = false;
 
 

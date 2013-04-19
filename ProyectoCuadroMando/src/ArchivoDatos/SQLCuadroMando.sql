@@ -26,7 +26,7 @@ create table clientes (
 create table productos (
     id_producto varchar(20),
     categoria varchar(20),
-    precio numeric(15),  
+    precio numeric(15,2),  
     ficha_tecnica varchar(20),
     PRIMARY KEY (id_producto)
 );
@@ -40,7 +40,7 @@ create table tiendas (
     poblacion varchar(20),
     provincia varchar(20),         
     telefono numeric(15),
-    PRIMARY KEY (id_producto)
+    PRIMARY KEY (id_tienda)
 );
 
 create table ventas (
