@@ -1,5 +1,10 @@
 package EntidadesCU;
 
+import ControlAuxiliarCU.ControladorConexionDB;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /*
  *
  * @author Javier Roncero
@@ -17,6 +22,15 @@ public class Cliente {
     private String poblacion;
     private String provincia;         
     private String telefono;
+    private static final String INSERT 
+            = "INSERT INTO CLIENTES " 
+            + "(dni, nombre, apellidos, calle, " 
+            + "numero, cod_postal, poblacion, provincia, telefono, id_cliente) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
+    private static final String UPDATE 
+            = "UPDATE CLIENTES SET id_cliente = ?, dni = ?, " 
+            + "nombre = ?, apellidos = ?, calle = ?, numero = ?, " 
+            + "cod_postal = ?, poblacion = ?, provincia = ?, telefono = ? WHERE id_cliente = ?";
+    private boolean saved = false;
 
 
     public Cliente(String at_id_cliente, String at_dni, String at_nombre, String at_apellidos, String at_calle, String at_numero, String at_cod_postal, String at_poblacion, String at_provincia, String at_telefono) {
@@ -51,8 +65,45 @@ public class Cliente {
     public String getProvincia(){
         return provincia;
     }   
-    public void grabar(){
-        
+    public void grabar() throws SQLException { 
+    ControladorConexionDB controlDB = new ControladorConexionDB();
+        try (Connection connection = controlDB.obtenerConexion()) {
+            if (saved) { 
+                try (PreparedStatement statement = connection.prepareStatement(UPDATE)) {
+                    statement.setString(1, dni); 
+                    statement.setString(2, nombre); 
+                    statement.setString(3, apellidos); 
+                    statement.setString(4, calle); 
+                    statement.setInt(5, Integer.parseInt(numero)); 
+                    statement.setInt(6, Integer.parseInt(cod_postal)); 
+                    statement.setString(7, poblacion);
+                    statement.setString(8, provincia);
+                    statement.setLong(9, Long.parseLong(telefono));
+                    statement.setString(10, id_cliente);
+                    statement.executeUpdate();
+                } 
+            } 
+             
+            else { 
+                try (PreparedStatement statement = connection.prepareStatement(INSERT)) {
+                    statement.setString(1, dni); 
+                    statement.setString(2, nombre); 
+                    statement.setString(3, apellidos); 
+                    statement.setString(4, calle); 
+                    statement.setInt(5, Integer.parseInt(numero)); 
+                    statement.setInt(6, Integer.parseInt(cod_postal)); 
+                    statement.setString(7, poblacion);
+                    statement.setString(8, provincia);
+                    statement.setLong(9, Long.parseLong(telefono));
+                    statement.setString(10, id_cliente);
+                    statement.executeUpdate();
+                } 
+                // Indicate that the information now exists 
+                // in the database. 
+                saved = true; 
+            }
+            connection.close();
+        } 
     }
 
 }

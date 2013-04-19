@@ -1,21 +1,7 @@
-Thu Apr 18 12:29:33 CEST 2013 : Apache Derby Network Server - 10.8.1.2 - (1095077) se ha iniciado y está listo para aceptar conexiones en el puerto 1527
+Fri Apr 19 11:36:28 CEST 2013 : Apache Derby Network Server - 10.8.1.2 - (1095077) se ha iniciado y está listo para aceptar conexiones en el puerto 1527
 ----------------------------------------------------------------
-Thu Apr 18 12:29:33 CEST 2013:
- Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instancia a816c00e-013e-1cb1-2c0e-ffffc2f6d07f 
-en el directorio de base de datos /home/ivan/NetBeansProjects/ProyectoF2/ProyectoCuadroMando/database/cuadro_mando  con el cargador de clases sun.misc.Launcher$AppClassLoader@668387
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_15-b03
-user.dir=/home/ivan/glassfish-3.1.2.2/javadb
-derby.system.home=/home/ivan/NetBeansProjects/ProyectoF2/ProyectoCuadroMando/database
-Cargador de clases de base de datos iniciado - derby.database.classpath=''
-----------------------------------------------------------------
-Thu Apr 18 12:29:56 CEST 2013:
-Cerrando instancia a816c00e-013e-1cb1-2c0e-ffffc2f6d07f con cargador de clases /home/ivan/NetBeansProjects/ProyectoF2/ProyectoCuadroMando/database/cuadro_mando 
-Thu Apr 18 12:29:56 CEST 2013 Thread[DRDAConnThread_4,5,main] (DATABASE = cuadro_mando), (DRDAID = {2}), Conclusión de la base de datos 'cuadro_mando'.
-----------------------------------------------------------------
-Thu Apr 18 12:30:11 CEST 2013:
- Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instancia 6c44409f-013e-1cb1-2c0e-ffffc2f6d07f 
+Fri Apr 19 11:36:29 CEST 2013:
+ Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instancia a816c00e-013e-21a6-ee26-ffffc2f6d07f 
 en el directorio de base de datos /home/ivan/NetBeansProjects/ProyectoF2/ProyectoCuadroMando/database/cuadro_mando  con el cargador de clases sun.misc.Launcher$AppClassLoader@668387
 
 java.vendor=Oracle Corporation

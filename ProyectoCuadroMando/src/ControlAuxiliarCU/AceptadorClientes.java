@@ -39,6 +39,10 @@ public class AceptadorClientes {
                 textoError = "Cliente "+ cli.getId_cliente() +" con incoherencia de datos, el campo NÚMERO DE CALLE está vacío";
                 resAceptar = false;
             }
+            if(!cli.getNumero().matches("[0-9]*")){
+                textoError = "Cliente "+ cli.getId_cliente() +" con incoherencia de datos, el campo NÚMERO CALLE no es un numero";
+                   resAceptar = false;
+            }
         }
         return resAceptar;
     }    

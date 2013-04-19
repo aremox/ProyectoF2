@@ -25,9 +25,9 @@ public class Almacen {
             + "(calle, numero, cod_postal, telefono, municipio, " 
             + "provincia, id_almacen) VALUES(?, ?, ?, ?, ?, ?, ?)"; 
     private static final String UPDATE 
-            = "UPDATE almacenes SET id_almacen = ?, calle = ?, " 
+            = "UPDATE almacenes SET calle = ?, " 
             + "numero = ?, cod_postal = ?, telefono = ?, municipio = ?, " 
-            + "provincia = ? WHERE id_almacen = ?";
+            + "provincia = ?, id_almacen = ? WHERE id_almacen = ?";
     private boolean saved = false;
     
 
