@@ -28,6 +28,8 @@ public class Tienda {
             = "UPDATE TIENDAS SET id_almacen = ?, calle = ?, numero = ?, cod_postal = ?, poblacion = ?, provincia = ?, telefono = ?," 
             + " id_tienda = ?" 
             + " WHERE id_tienda = ?";
+    private static final String borrar = "delete from tiendas where id_tienda = ?"; 
+           
     private boolean saved = false;
 
 
@@ -65,7 +67,16 @@ public class Tienda {
     public Almacen getAlmacen(){
         return id_almacen;
     }
-    
+    public void borrar() throws SQLException { 
+        ControladorConexionDB controlDB = new ControladorConexionDB();
+        try (Connection connection = controlDB.obtenerConexion()) {
+            try (PreparedStatement statement = connection.prepareStatement(borrar)) {
+                statement.setString(1, id_tienda);
+                statement.executeUpdate();
+            }
+            connection.close();
+        }
+    }
     
     public void grabar() throws SQLException { 
     ControladorConexionDB controlDB = new ControladorConexionDB();
@@ -74,11 +85,11 @@ public class Tienda {
                 try (PreparedStatement statement = connection.prepareStatement(UPDATE)) {
                     statement.setString(1, id_almacen.getId_almacen()); 
                     statement.setString(2, calle); 
-                    statement.setString(3, numero); 
-                    statement.setString(4, cod_postal); 
-                    statement.setInt(5, Integer.parseInt(poblacion)); 
-                    statement.setInt(6, Integer.parseInt(provincia)); 
-                    statement.setString(7, telefono);
+                    statement.setInt(3, Integer.parseInt(numero)); 
+                    statement.setInt(4, Integer.parseInt(cod_postal)); 
+                    statement.setString(5, poblacion); 
+                    statement.setString(6, provincia); 
+                    statement.setLong(7, Long.parseLong(telefono));
                     statement.setString(8, id_tienda);
                     statement.executeUpdate();
                 } 
@@ -88,11 +99,11 @@ public class Tienda {
                 try (PreparedStatement statement = connection.prepareStatement(INSERT)) {
                     statement.setString(1, id_almacen.getId_almacen()); 
                     statement.setString(2, calle); 
-                    statement.setString(3, numero); 
-                    statement.setString(4, cod_postal); 
-                    statement.setInt(5, Integer.parseInt(poblacion)); 
-                    statement.setInt(6, Integer.parseInt(provincia)); 
-                    statement.setString(7, telefono);
+                    statement.setInt(3, Integer.parseInt(numero)); 
+                    statement.setInt(4, Integer.parseInt(cod_postal)); 
+                    statement.setString(5, poblacion); 
+                    statement.setString(6, provincia); 
+                    statement.setLong(7, Long.parseLong(telefono));
                     statement.setString(8, id_tienda);
                     statement.executeUpdate();
                 } 

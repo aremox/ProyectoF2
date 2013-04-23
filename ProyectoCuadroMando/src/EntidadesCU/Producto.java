@@ -24,6 +24,7 @@ public class Producto {
             = "UPDATE PRODUCTOS SET categoria = ?, precio = ?, " 
             + "ficha_tecnica = ?, id_producto = ?" 
             + " WHERE id_producto = ?";
+     private static final String borrar = "delete from PRODUCTOS where id_producto = ?"; 
     private boolean saved = false;
 
 
@@ -39,6 +40,17 @@ public class Producto {
     }
     public String getId_Categoria(){
         return categoria;
+    }
+    
+     public void borrar() throws SQLException { 
+        ControladorConexionDB controlDB = new ControladorConexionDB();
+        try (Connection connection = controlDB.obtenerConexion()) {
+            try (PreparedStatement statement = connection.prepareStatement(borrar)) {
+                statement.setString(1, id_producto);
+                statement.executeUpdate();
+            }
+            connection.close();
+        }
     }
     
     public void grabar() throws SQLException { 

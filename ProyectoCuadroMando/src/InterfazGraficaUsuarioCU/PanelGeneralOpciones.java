@@ -12,7 +12,7 @@ import javax.swing.JTabbedPane;
  */
 
 public class PanelGeneralOpciones extends JTabbedPane {
-    private File directorioActual = null;
+    private File directorioActual = new File("src//ArchivoDatos//");
 
     public PanelGeneralOpciones() {
         //Crear un panel por cada pestaña

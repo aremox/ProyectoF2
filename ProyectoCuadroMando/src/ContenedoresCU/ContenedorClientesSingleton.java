@@ -47,8 +47,13 @@ public class ContenedorClientesSingleton {
     }
     
    
-    public void borrarElementos(){
+    public void borrarElementos() throws SQLException{
         if (null != coleccionElementos) {
+            int tam = coleccionElementos.size();
+        for (int i = 0; i < tam; i++) {
+            Cliente elemento = (Cliente) coleccionElementos.get(i);
+            elemento.borrar();
+        }
             coleccionElementos.clear();
         }
     }

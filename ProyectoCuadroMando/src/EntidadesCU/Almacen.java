@@ -25,9 +25,10 @@ public class Almacen {
             + "(calle, numero, cod_postal, telefono, municipio, " 
             + "provincia, id_almacen) VALUES(?, ?, ?, ?, ?, ?, ?)"; 
     private static final String UPDATE 
-            = "UPDATE almacenes SET calle = ?, " 
+            = "UPDATE ALMACENES SET calle = ?, " 
             + "numero = ?, cod_postal = ?, telefono = ?, municipio = ?, " 
             + "provincia = ?, id_almacen = ? WHERE id_almacen = ?";
+    private static final String borrar = "delete from ALMACENES where id_almacen = ?"; 
     private boolean saved = false;
     
 
@@ -61,10 +62,16 @@ public class Almacen {
     public String getProvincia(){
         return provincia;
     }
-   /* public void grabar(){
+   public void borrar() throws SQLException { 
         ControladorConexionDB controlDB = new ControladorConexionDB();
-        Connection con = controlDB.obtenerConexion();
-    }*/
+        try (Connection connection = controlDB.obtenerConexion()) {
+            try (PreparedStatement statement = connection.prepareStatement(borrar)) {
+                statement.setString(1, id_almacen);
+                statement.executeUpdate();
+            }
+            connection.close();
+        }
+    }
     
     public void grabar() throws SQLException { 
     ControladorConexionDB controlDB = new ControladorConexionDB();

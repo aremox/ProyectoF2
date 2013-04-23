@@ -1,3 +1,8 @@
+drop table ventas;
+drop table tiendas;
+drop table almacenes;
+drop table clientes;
+drop table productos;
 create table almacenes (
     id_almacen varchar(20),
     calle varchar(50),
@@ -50,9 +55,15 @@ create table ventas (
     tienda varchar(20),
     unidades numeric(15),
     importe DECIMAL(10,2),
-    fecha date,
-    PRIMARY KEY (id_producto)
+    fecha varchar(20),
+    PRIMARY KEY (id_venta)
 );
 
 alter table ventas
 add FOREIGN KEY (TIENDA) REFERENCES TIENDAS;
+alter table ventas
+add FOREIGN KEY (cliente) REFERENCES clientes;
+alter table ventas
+add FOREIGN KEY (producto) REFERENCES productos;
+alter table tiendas
+add FOREIGN KEY (id_almacen) REFERENCES almacenes;

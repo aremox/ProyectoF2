@@ -4,7 +4,9 @@ import ContenedoresCU.ContenedorAlmacenesSingleton;
 import ContenedoresCU.ContenedorClientesSingleton;
 import ContenedoresCU.ContenedorProductosSingleton;
 import ContenedoresCU.ContenedorTiendasSingleton;
+import ContenedoresCU.ContenedorVentasSingleton;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,12 +24,13 @@ public class ControladorServicioGrabarDatosCarga {
     public ControladorServicioGrabarDatosCarga(){
     }
 
-    public void DesarrollarServicio(){
+    public void DesarrollarServicio() throws ParseException{
         try {
             grabarAlmacen();
             grabarTienda();
-            //grabarCliente();
-            //grabarProducto();
+            grabarCliente();
+            grabarProducto();
+            grabarVenta();
             
         } catch (SQLException ex) {
             Logger.getLogger(ControladorServicioGrabarDatosCarga.class.getName()).log(Level.SEVERE, null, ex);
@@ -48,6 +51,9 @@ public class ControladorServicioGrabarDatosCarga {
     }
     private void grabarProducto() throws SQLException{
     ContenedorProductosSingleton.getInstancia().grabarElementos();
+    }
+    private void grabarVenta() throws SQLException, ParseException{
+    ContenedorVentasSingleton.getInstancia().grabarElementos();
     }
     
     

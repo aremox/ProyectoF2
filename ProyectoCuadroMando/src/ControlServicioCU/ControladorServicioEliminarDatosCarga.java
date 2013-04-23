@@ -5,6 +5,7 @@ import ContenedoresCU.ContenedorClientesSingleton;
 import ContenedoresCU.ContenedorProductosSingleton;
 import ContenedoresCU.ContenedorTiendasSingleton;
 import ContenedoresCU.ContenedorVentasSingleton;
+import java.sql.SQLException;
 
 
 /*
@@ -20,7 +21,7 @@ public class ControladorServicioEliminarDatosCarga {
     public ControladorServicioEliminarDatosCarga(){
     }
 
-    public void DesarrollarServicio(){
+    public void DesarrollarServicio() throws SQLException{
         borrarVentas();    
         borrarTienda();
         borrarAlmacen();
@@ -30,20 +31,20 @@ public class ControladorServicioEliminarDatosCarga {
     }
     
     
-    private void borrarTienda(){
+    private void borrarTienda() throws SQLException{
     ContenedorTiendasSingleton.getInstancia().borrarElementos();
     }
     
-     private void borrarAlmacen(){
+     private void borrarAlmacen() throws SQLException{
     ContenedorAlmacenesSingleton.getInstancia().borrarElementos();
     }
-     private void borrarVentas(){
+     private void borrarVentas() throws SQLException{
     ContenedorVentasSingleton.getInstancia().borrarElementos();
     }
-     private void borrarClientes(){
+     private void borrarClientes() throws SQLException{
     ContenedorClientesSingleton.getInstancia().borrarElementos();
     }
-     private void borrarProductos(){
+     private void borrarProductos() throws SQLException{
     ContenedorProductosSingleton.getInstancia().borrarElementos();
     }
 }

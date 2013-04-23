@@ -30,6 +30,7 @@ public class Cliente {
             = "UPDATE CLIENTES SET dni = ?, " 
             + "nombre = ?, apellidos = ?, calle = ?, numero = ?, " 
             + "cod_postal = ?, poblacion = ?, provincia = ?, telefono = ?, id_cliente = ?  WHERE id_cliente = ?";
+     private static final String borrar = "delete from CLIENTES where id_cliente = ?"; 
     private boolean saved = false;
 
 
@@ -64,7 +65,19 @@ public class Cliente {
     }  
     public String getProvincia(){
         return provincia;
-    }   
+    }
+    
+     public void borrar() throws SQLException { 
+        ControladorConexionDB controlDB = new ControladorConexionDB();
+        try (Connection connection = controlDB.obtenerConexion()) {
+            try (PreparedStatement statement = connection.prepareStatement(borrar)) {
+                statement.setString(1, id_cliente);
+                statement.executeUpdate();
+            }
+            connection.close();
+        }
+    }
+     
     public void grabar() throws SQLException { 
     ControladorConexionDB controlDB = new ControladorConexionDB();
         try (Connection connection = controlDB.obtenerConexion()) {

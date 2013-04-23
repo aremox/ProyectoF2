@@ -1,6 +1,8 @@
 package ContenedoresCU;
 
 import EntidadesCU.Venta;
+import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.LinkedList;
 
 /*
@@ -44,12 +46,18 @@ public class ContenedorVentasSingleton {
         return ven_resultado;
     }
 
-    public void borrarElementos() {
+    public void borrarElementos() throws SQLException {
         if (null != coleccionElementos) {
+            int tam = coleccionElementos.size();
+
+            for (int i = 0; i < tam; i++) {
+                Venta elemento = (Venta) coleccionElementos.get(i);
+                elemento.borrar();
+            }
             coleccionElementos.clear();
         }
     }
-    public void grabarElementos() {
+    public void grabarElementos() throws SQLException, ParseException {
         int tam = coleccionElementos.size();
         
         for (int i = 0; i < tam; i++) {

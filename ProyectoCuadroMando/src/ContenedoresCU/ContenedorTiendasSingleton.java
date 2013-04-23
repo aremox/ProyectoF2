@@ -1,6 +1,7 @@
 package ContenedoresCU;
 
 import EntidadesCU.Tienda;
+import java.sql.SQLException;
 import java.util.LinkedList;
 
 /*
@@ -8,7 +9,6 @@ import java.util.LinkedList;
  * @author Javier Roncero
  *
  */
-
 public class ContenedorTiendasSingleton {
 
     private LinkedList<Tienda> coleccionElementos;
@@ -17,13 +17,13 @@ public class ContenedorTiendasSingleton {
     private ContenedorTiendasSingleton() {
         coleccionElementos = new LinkedList<>();
     }
-    
-    public static ContenedorTiendasSingleton getInstancia(){ 
-        if (_instancia == null) { 
+
+    public static ContenedorTiendasSingleton getInstancia() {
+        if (_instancia == null) {
             //Si la instancia no se ha creado crearla 
-            _instancia = new ContenedorTiendasSingleton(); 
-        } 
-        return _instancia; 
+            _instancia = new ContenedorTiendasSingleton();
+        }
+        return _instancia;
     }
 
     public void almacenar(Tienda tie) {
@@ -44,19 +44,25 @@ public class ContenedorTiendasSingleton {
         }
         return tie_resultado;
     }
-   
-    public void borrarElementos(){
+
+    public void borrarElementos() throws SQLException {
         if (null != coleccionElementos) {
+            int tam = coleccionElementos.size();
+
+            for (int i = 0; i < tam; i++) {
+                Tienda elemento = (Tienda) coleccionElementos.get(i);
+                elemento.borrar();
+            }
             coleccionElementos.clear();
         }
     }
-    public void grabarElementos() {
+
+    public void grabarElementos() throws SQLException {
         int tam = coleccionElementos.size();
-        
+
         for (int i = 0; i < tam; i++) {
             Tienda elemento = (Tienda) coleccionElementos.get(i);
             elemento.grabar();
         }
-   }
-
+    }
 }

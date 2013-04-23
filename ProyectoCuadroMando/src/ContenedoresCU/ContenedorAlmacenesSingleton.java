@@ -47,8 +47,14 @@ public class ContenedorAlmacenesSingleton {
         return alm_resultado;
     }
    
-    public void borrarElementos(){
+    public void borrarElementos() throws SQLException{
         if (null != coleccionElementos) {
+            int tam = coleccionElementos.size();
+
+            for (int i = 0; i < tam; i++) {
+                Almacen elemento = (Almacen) coleccionElementos.get(i);
+                elemento.borrar();
+            }
             coleccionElementos.clear();
         }
     }

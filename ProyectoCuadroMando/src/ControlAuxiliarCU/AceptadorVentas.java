@@ -1,6 +1,5 @@
 package ControlAuxiliarCU;
 
-import EntidadesCU.Producto;
 import EntidadesCU.Venta;
 
 /*
