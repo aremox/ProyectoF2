@@ -62,14 +62,20 @@ public class ContenedorAlmacenesSingleton {
      public void grabarElementos() throws SQLException {
   
         int tam = coleccionElementos.size();
-        
+        int contador;
         
         for (int i = 0; i < tam; i++) {
             Almacen alm = (Almacen) coleccionElementos.get(i);
             alm.grabar();
+            contador = i;
             
         }
        
     }
+     
+     public LinkedList getAlmacenes(){
+        return coleccionElementos;
+         
+     }
 }
 

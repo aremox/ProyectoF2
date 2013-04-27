@@ -28,8 +28,7 @@ public class Venta {
             + "(cliente, producto, tienda, unidades, importe, fecha, " 
             + "id_venta) VALUES(?, ?, ?, ?, ?, ?, ?)"; 
     private static final String UPDATE 
-            = "UPDATE ventas SET ventas = ?, producto = ?, tienda = ?, unidades = ?, importe = ?, fecha = ?," 
-            + " id_venta = ?" 
+            = "UPDATE ventas SET ventas = ?, producto = ?, tienda = ?, unidades = ?, importe = ?, fecha = ?" 
             + " WHERE id_venta = ?";
     private static final String borrar = "delete from ventas where id_venta = ?";
     private boolean saved = false;

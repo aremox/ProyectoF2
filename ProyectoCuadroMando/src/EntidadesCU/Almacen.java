@@ -4,6 +4,8 @@ import ControlAuxiliarCU.ControladorConexionDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  *
@@ -27,7 +29,7 @@ public class Almacen extends GeoEntidad{
     private static final String UPDATE 
             = "UPDATE ALMACENES SET calle = ?, " 
             + "numero = ?, cod_postal = ?, telefono = ?, municipio = ?, " 
-            + "provincia = ?,x=?,y=?, id_almacen = ? WHERE id_almacen = ?";
+            + "provincia = ?,x=?,y=? WHERE id_almacen = ?";
     private static final String borrar = "delete from ALMACENES where id_almacen = ?"; 
     private boolean saved = false;
     
@@ -76,43 +78,42 @@ public class Almacen extends GeoEntidad{
     
     public void grabar() throws SQLException { 
     ControladorConexionDB controlDB = new ControladorConexionDB();
-        try (Connection connection = controlDB.obtenerConexion()) {
-            if (saved) { 
-                try (PreparedStatement statement = connection.prepareStatement(UPDATE)) {
-                    statement.setString(1, calle); 
-                    statement.setInt(2, numero); 
-                    statement.setInt(3, cod_postal); 
-                    statement.setDouble(4, telefono); 
-                    statement.setString(5, municipio); 
-                    statement.setString(6, provincia); 
-                    statement.setInt(7, x); 
-                    statement.setInt(8, y); 
-                    statement.setString(9, id_almacen); 
-                    statement.executeUpdate();
-                } 
-            } 
-             
-            else { 
-                try (PreparedStatement statement = connection.prepareStatement(INSERT)) {
-                    statement.setString(1, calle); 
-                    statement.setInt(2, numero); 
-                    statement.setInt(3, cod_postal); 
-                    statement.setDouble(4, telefono); 
-                    statement.setString(5, municipio); 
-                    statement.setString(6, provincia);
-                    statement.setInt(7, x); 
-                    statement.setInt(8, y); 
-                    statement.setString(9, id_almacen); 
-                    statement.executeUpdate();
-                } 
-                // Indicate that the information now exists 
-                // in the database. 
-                saved = true; 
-            }
-            connection.close();
-        } 
-    } 
-     
-
     
+           Connection connection = controlDB.obtenerConexion();
+                if (saved) { 
+            try (PreparedStatement statement2 = connection.prepareStatement(UPDATE)) {
+                statement2.setString(1, calle); 
+                statement2.setInt(2, numero); 
+                statement2.setInt(3, cod_postal); 
+                statement2.setDouble(4, telefono); 
+                statement2.setString(5, municipio); 
+                statement2.setString(6, provincia); 
+                statement2.setInt(7, x); 
+                statement2.setInt(8, y); 
+                statement2.setString(9, id_almacen); 
+                statement2.executeUpdate();
+            }
+                    } 
+                else { 
+            try (PreparedStatement statement = connection.prepareStatement(INSERT)) {
+                statement.setString(1, calle); 
+                statement.setInt(2, numero); 
+                statement.setInt(3, cod_postal); 
+                statement.setDouble(4, telefono); 
+                statement.setString(5, municipio); 
+                statement.setString(6, provincia);
+                statement.setInt(7, x); 
+                statement.setInt(8, y); 
+                statement.setString(9, id_almacen); 
+                statement.executeUpdate();
+            }
+                    // Indicate that the information now exists 
+                    // in the database. 
+                    saved = true; 
+                }
+            }
+        
+       
+               
 }
+    

@@ -29,7 +29,7 @@ public class Cliente extends GeoEntidad{
     private static final String UPDATE 
             = "UPDATE CLIENTES SET dni = ?, " 
             + "nombre = ?, apellidos = ?, calle = ?, numero = ?, " 
-            + "cod_postal = ?, poblacion = ?, provincia = ?, telefono = ?,x=?,y=?, id_cliente = ?  WHERE id_cliente = ?";
+            + "cod_postal = ?, poblacion = ?, provincia = ?, telefono = ?,x=?,y=? WHERE id_cliente = ?";
      private static final String borrar = "delete from CLIENTES where id_cliente = ?"; 
     private boolean saved = false;
 

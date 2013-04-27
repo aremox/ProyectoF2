@@ -65,5 +65,9 @@ public class ContenedorClientesSingleton {
             elemento.grabar();
         }
    }
+    public LinkedList getClientes(){
+        return coleccionElementos;
+         
+     }
     
 }

@@ -6,6 +6,8 @@ import ContenedoresCU.ContenedorProductosSingleton;
 import ContenedoresCU.ContenedorTiendasSingleton;
 import ContenedoresCU.ContenedorVentasSingleton;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /*
@@ -21,12 +23,16 @@ public class ControladorServicioEliminarDatosCarga {
     public ControladorServicioEliminarDatosCarga(){
     }
 
-    public void DesarrollarServicio() throws SQLException{
-        borrarVentas();    
-        borrarTienda();
-        borrarAlmacen();
-        borrarClientes();
-        borrarProductos();   
+    public void DesarrollarServicio() {
+        try {
+            borrarVentas();    
+            borrarTienda();
+            borrarAlmacen();
+            borrarClientes();   
+            borrarProductos();
+        } catch (SQLException ex) {
+            Logger.getLogger(ControladorServicioEliminarDatosCarga.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
     }
     

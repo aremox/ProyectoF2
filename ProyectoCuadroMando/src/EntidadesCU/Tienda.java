@@ -25,8 +25,7 @@ public class Tienda extends GeoEntidad {
             + "(id_almacen, calle, numero, cod_postal, poblacion, provincia, telefono, x, y," 
             + "id_tienda) VALUES(?, ?, ?, ?, ?, ?, ?, ?,?,?)"; 
     private static final String UPDATE 
-            = "UPDATE TIENDAS SET id_almacen = ?, calle = ?, numero = ?, cod_postal = ?, poblacion = ?, provincia = ?, telefono = ?,x=?,y=?," 
-            + " id_tienda = ?" 
+            = "UPDATE TIENDAS SET id_almacen = ?, calle = ?, numero = ?, cod_postal = ?, poblacion = ?, provincia = ?, telefono = ?,x=?,y=?" 
             + " WHERE id_tienda = ?";
     private static final String borrar = "delete from tiendas where id_tienda = ?"; 
            

@@ -24,7 +24,7 @@ public class ControladorServicioGrabarDatosCarga {
     public ControladorServicioGrabarDatosCarga(){
     }
 
-    public void DesarrollarServicio() throws ParseException{
+    public void DesarrollarServicio() {
         try {
             grabarAlmacen();
             grabarTienda();
@@ -32,7 +32,7 @@ public class ControladorServicioGrabarDatosCarga {
             grabarProducto();
             grabarVenta();
             
-        } catch (SQLException ex) {
+        } catch (ParseException | SQLException ex) {
             Logger.getLogger(ControladorServicioGrabarDatosCarga.class.getName()).log(Level.SEVERE, null, ex);
         }
           

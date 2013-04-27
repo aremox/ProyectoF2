@@ -22,7 +22,7 @@ public class Producto {
             + "id_producto) VALUES(?, ?, ?, ?)"; 
     private static final String UPDATE 
             = "UPDATE PRODUCTOS SET categoria = ?, precio = ?, " 
-            + "ficha_tecnica = ?, id_producto = ?" 
+            + "ficha_tecnica = ?" 
             + " WHERE id_producto = ?";
      private static final String borrar = "delete from PRODUCTOS where id_producto = ?"; 
     private boolean saved = false;
