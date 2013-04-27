@@ -11,7 +11,7 @@ import java.sql.SQLException;
  *
  */
 
-public class Cliente {
+public class Cliente extends GeoEntidad{
     private String id_cliente;
     private String dni;
     private String nombre;
@@ -25,16 +25,17 @@ public class Cliente {
     private static final String INSERT 
             = "INSERT INTO CLIENTES " 
             + "(dni, nombre, apellidos, calle, " 
-            + "numero, cod_postal, poblacion, provincia, telefono, id_cliente) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
+            + "numero, cod_postal, poblacion, provincia, telefono,x,y, id_cliente) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)"; 
     private static final String UPDATE 
             = "UPDATE CLIENTES SET dni = ?, " 
             + "nombre = ?, apellidos = ?, calle = ?, numero = ?, " 
-            + "cod_postal = ?, poblacion = ?, provincia = ?, telefono = ?, id_cliente = ?  WHERE id_cliente = ?";
+            + "cod_postal = ?, poblacion = ?, provincia = ?, telefono = ?,x=?,y=?, id_cliente = ?  WHERE id_cliente = ?";
      private static final String borrar = "delete from CLIENTES where id_cliente = ?"; 
     private boolean saved = false;
 
 
     public Cliente(String at_id_cliente, String at_dni, String at_nombre, String at_apellidos, String at_calle, String at_numero, String at_cod_postal, String at_poblacion, String at_provincia, String at_telefono) {
+        super();
         id_cliente = at_id_cliente;
         dni = at_dni;
         nombre = at_nombre;
@@ -92,7 +93,9 @@ public class Cliente {
                     statement.setString(7, poblacion);
                     statement.setString(8, provincia);
                     statement.setLong(9, Long.parseLong(telefono));
-                    statement.setString(10, id_cliente);
+                    statement.setInt(10, x);
+                    statement.setInt(11, y);
+                    statement.setString(12, id_cliente);
                     statement.executeUpdate();
                 } 
             } 
@@ -108,7 +111,9 @@ public class Cliente {
                     statement.setString(7, poblacion);
                     statement.setString(8, provincia);
                     statement.setLong(9, Long.parseLong(telefono));
-                    statement.setString(10, id_cliente);
+                    statement.setInt(10, x);
+                    statement.setInt(11, y);
+                    statement.setString(12, id_cliente);
                     statement.executeUpdate();
                 } 
                 // Indicate that the information now exists 

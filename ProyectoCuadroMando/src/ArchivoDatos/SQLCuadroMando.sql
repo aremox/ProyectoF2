@@ -11,6 +11,8 @@ create table almacenes (
     telefono numeric(15),
     municipio varchar(20),
     provincia varchar(20),
+    x numeric(5),
+    y numeric(5),
     PRIMARY KEY (id_almacen)
 );
 
@@ -25,6 +27,8 @@ create table clientes (
     poblacion varchar(20),
     provincia varchar(20),         
     telefono numeric(15),
+    x numeric(5),
+    y numeric(5),
     PRIMARY KEY (id_cliente)
 );
 
@@ -45,6 +49,8 @@ create table tiendas (
     poblacion varchar(20),
     provincia varchar(20),         
     telefono numeric(15),
+    x numeric(5),
+    y numeric(5),
     PRIMARY KEY (id_tienda)
 );
 

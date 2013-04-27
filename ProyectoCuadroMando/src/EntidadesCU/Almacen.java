@@ -11,7 +11,7 @@ import java.sql.SQLException;
  *
  */
 
-public class Almacen {
+public class Almacen extends GeoEntidad{
 
     private String id_almacen;
     private String calle;
@@ -22,17 +22,18 @@ public class Almacen {
     private String provincia;
     private static final String INSERT 
             = "INSERT INTO ALMACENES " 
-            + "(calle, numero, cod_postal, telefono, municipio, " 
-            + "provincia, id_almacen) VALUES(?, ?, ?, ?, ?, ?, ?)"; 
+            + "(calle, numero, cod_postal, telefono, municipio,provincia,x,y, " 
+            + " id_almacen) VALUES(?, ?, ?, ?, ?, ?, ?,?,?)"; 
     private static final String UPDATE 
             = "UPDATE ALMACENES SET calle = ?, " 
             + "numero = ?, cod_postal = ?, telefono = ?, municipio = ?, " 
-            + "provincia = ?, id_almacen = ? WHERE id_almacen = ?";
+            + "provincia = ?,x=?,y=?, id_almacen = ? WHERE id_almacen = ?";
     private static final String borrar = "delete from ALMACENES where id_almacen = ?"; 
     private boolean saved = false;
     
 
     public Almacen(String pid_almacenes, String pcalle, String pnumero, String pcod_postal, String ptelefono, String pmunicipio, String pprovincia) {
+        super();
         id_almacen = pid_almacenes;
         calle = pcalle;
         numero = Integer.parseInt(pnumero);
@@ -84,7 +85,9 @@ public class Almacen {
                     statement.setDouble(4, telefono); 
                     statement.setString(5, municipio); 
                     statement.setString(6, provincia); 
-                    statement.setString(7, id_almacen); 
+                    statement.setInt(7, x); 
+                    statement.setInt(8, y); 
+                    statement.setString(9, id_almacen); 
                     statement.executeUpdate();
                 } 
             } 
@@ -96,8 +99,10 @@ public class Almacen {
                     statement.setInt(3, cod_postal); 
                     statement.setDouble(4, telefono); 
                     statement.setString(5, municipio); 
-                    statement.setString(6, provincia); 
-                    statement.setString(7, id_almacen); 
+                    statement.setString(6, provincia);
+                    statement.setInt(7, x); 
+                    statement.setInt(8, y); 
+                    statement.setString(9, id_almacen); 
                     statement.executeUpdate();
                 } 
                 // Indicate that the information now exists 
