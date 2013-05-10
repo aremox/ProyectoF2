@@ -1,6 +1,6 @@
 package ContenedoresCU;
 
-import EntidadesCU.Almacen;
+import EntidadesCU.Almacen_ADO;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
@@ -12,7 +12,7 @@ import java.util.LinkedList;
 
 public class ContenedorAlmacenesSingleton {
 
-    private LinkedList<Almacen> coleccionElementos;
+    private LinkedList<Almacen_ADO> coleccionElementos;
     //private LinkedList<Cliente> coleccionElementos;
     private static ContenedorAlmacenesSingleton _instancia;
 
@@ -28,16 +28,16 @@ public class ContenedorAlmacenesSingleton {
         return _instancia; 
     }
 
-    public void almacenar(Almacen alm) {
+    public void almacenar(Almacen_ADO alm) {
         coleccionElementos.add(alm);
     }
 
-    public Almacen getAlmacen(String id) {
-        Almacen alm_resultado = null;
+    public Almacen_ADO getAlmacen(String id) {
+        Almacen_ADO alm_resultado = null;
         int tam = coleccionElementos.size();
         
         for (int i = 0; i < tam; i++) {
-            Almacen alm = (Almacen) coleccionElementos.get(i);
+            Almacen_ADO alm = (Almacen_ADO) coleccionElementos.get(i);
             if (alm.getId_almacen().equals(id)) {
                 alm_resultado = alm;
                 break;
@@ -52,7 +52,7 @@ public class ContenedorAlmacenesSingleton {
             int tam = coleccionElementos.size();
 
             for (int i = 0; i < tam; i++) {
-                Almacen elemento = (Almacen) coleccionElementos.get(i);
+                Almacen_ADO elemento = (Almacen_ADO) coleccionElementos.get(i);
                 elemento.borrar();
             }
             coleccionElementos.clear();
@@ -65,7 +65,7 @@ public class ContenedorAlmacenesSingleton {
         int contador;
         
         for (int i = 0; i < tam; i++) {
-            Almacen alm = (Almacen) coleccionElementos.get(i);
+            Almacen_ADO alm = (Almacen_ADO) coleccionElementos.get(i);
             alm.grabar();
             contador = i;
             

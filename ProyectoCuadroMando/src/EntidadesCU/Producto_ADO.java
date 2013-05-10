@@ -11,7 +11,7 @@ import java.sql.SQLException;
  *
  */
 
-public class Producto {
+public class Producto_ADO {
     private String id_producto;
     private String categoria;
     private String precio;         
@@ -28,7 +28,7 @@ public class Producto {
     private boolean saved = false;
 
 
-    public Producto(String at_id_producto, String at_categoria, String at_precio, String at_ficha_tecnica) {
+    public Producto_ADO(String at_id_producto, String at_categoria, String at_precio, String at_ficha_tecnica) {
         id_producto = at_id_producto;
         categoria = at_categoria;
         precio = at_precio;

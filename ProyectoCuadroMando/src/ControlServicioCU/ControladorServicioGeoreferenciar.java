@@ -7,9 +7,9 @@ package ControlServicioCU;
 import ContenedoresCU.ContenedorAlmacenesSingleton;
 import ContenedoresCU.ContenedorClientesSingleton;
 import ContenedoresCU.ContenedorTiendasSingleton;
-import EntidadesCU.Almacen;
-import EntidadesCU.Cliente;
-import EntidadesCU.Tienda;
+import EntidadesCU.Almacen_ADO;
+import EntidadesCU.Cliente_ADO;
+import EntidadesCU.Tienda_ADO;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,7 +38,7 @@ public class ControladorServicioGeoreferenciar {
         try {
             int tam = ContenedorAlmacenesSingleton.getInstancia().getAlmacenes().size();
                 for (int i = 0; i < tam; i++) {
-                   Almacen elemento = (Almacen) ContenedorAlmacenesSingleton.getInstancia().getAlmacenes().get(i);
+                   Almacen_ADO elemento = (Almacen_ADO) ContenedorAlmacenesSingleton.getInstancia().getAlmacenes().get(i);
                    IGeoReferenciador geo = GeoReferenciadorFactory.crear();
                    int[] ref = geo.georeferenciar(elemento.getCod_postal(), elemento.getCalle(), elemento.getProvincia());
                    elemento.setX(ref[0]);          
@@ -55,7 +55,7 @@ public class ControladorServicioGeoreferenciar {
             int tam = ContenedorTiendasSingleton.getInstancia().getTiendas().size();
                
                for (int i = 0; i < tam; i++) {
-                   Tienda elemento = (Tienda) ContenedorTiendasSingleton.getInstancia().getTiendas().get(i);
+                   Tienda_ADO elemento = (Tienda_ADO) ContenedorTiendasSingleton.getInstancia().getTiendas().get(i);
                   IGeoReferenciador geo = GeoReferenciadorFactory.crear();
                   int[] ref = geo.georeferenciar(elemento.getCod_Postal(), elemento.getCalle(), elemento.getProvincia());
                   elemento.setX(ref[0]);
@@ -70,11 +70,11 @@ public class ControladorServicioGeoreferenciar {
         try {
             int tam = ContenedorClientesSingleton.getInstancia().getClientes().size();
                 for (int i = 0; i < tam; i++) {
-                    Cliente elemento = (Cliente) ContenedorClientesSingleton.getInstancia().getClientes().get(i);
+                    Cliente_ADO elemento = (Cliente_ADO) ContenedorClientesSingleton.getInstancia().getClientes().get(i);
                    IGeoReferenciador geo = GeoReferenciadorFactory.crear();
                    int[] ref = geo.georeferenciar(elemento.getCod_Postal(), elemento.getCalle(), elemento.getProvincia());
                    elemento.setX(ref[0]);
-                   elemento.setY(ref[0]);          
+                   elemento.setY(ref[1]);          
                 }
              ContenedorClientesSingleton.getInstancia().grabarElementos();
         } catch (SQLException ex) {

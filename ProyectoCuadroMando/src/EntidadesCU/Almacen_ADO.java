@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  *
  */
 
-public class Almacen extends GeoEntidad{
+public class Almacen_ADO extends GeoEntidad{
 
     private String id_almacen;
     private String calle;
@@ -34,7 +34,7 @@ public class Almacen extends GeoEntidad{
     private boolean saved = false;
     
 
-    public Almacen(String pid_almacenes, String pcalle, String pnumero, String pcod_postal, String ptelefono, String pmunicipio, String pprovincia) {
+    public Almacen_ADO(String pid_almacenes, String pcalle, String pnumero, String pcod_postal, String ptelefono, String pmunicipio, String pprovincia) {
         super();
         id_almacen = pid_almacenes;
         calle = pcalle;

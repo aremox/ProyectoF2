@@ -5,6 +5,7 @@
 package controllerMVC;
 
 import ContenedoresCU.ContenedorClientesSingleton;
+import EntidadesCU.Cliente_ADO;
 import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,7 +39,14 @@ public class ControllerMVCMapaClientes implements ActionListener {
             
             
             //2.-Procesar y confifurar el mapa con la colección de figuras geometricas
-            
+           int tam = ContenedorClientesSingleton.getInstancia().getClientes().size();
+                for (int i = 0; i < tam; i++) {
+                   Cliente_ADO elemento = (Cliente_ADO) ContenedorClientesSingleton.getInstancia().getClientes().get(i);
+                       mapaclientes.representar(elemento);     
+                } 
+        // 
+       // pintar el mapa
+       
            
             mapaclientes.generarGrafico(); //Generar el mapa
             

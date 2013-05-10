@@ -1,6 +1,6 @@
 package ContenedoresCU;
 
-import EntidadesCU.Producto;
+import EntidadesCU.Producto_ADO;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
@@ -12,11 +12,11 @@ import java.util.LinkedList;
 
 public class ContenedorProductosSingleton {
 
-    private LinkedList<Producto> coleccionElementos;
+    private LinkedList<Producto_ADO> coleccionElementos;
     private static ContenedorProductosSingleton _instancia;
 
     private ContenedorProductosSingleton() {
-        coleccionElementos = new LinkedList<Producto>();
+        coleccionElementos = new LinkedList<Producto_ADO>();
     }
     
     public static ContenedorProductosSingleton getInstancia(){ 
@@ -27,16 +27,16 @@ public class ContenedorProductosSingleton {
         return _instancia; 
     }
 
-    public void almacenar(Producto pro) {
+    public void almacenar(Producto_ADO pro) {
         coleccionElementos.add(pro);
     }
 
-    public Producto getProducto(String id) {
-        Producto pro_resultado = null;
+    public Producto_ADO getProducto(String id) {
+        Producto_ADO pro_resultado = null;
         int tam = coleccionElementos.size();
         //int cont = 0;
         for (int i = 0; i < tam; i++) {
-            Producto pro = (Producto) coleccionElementos.get(i);
+            Producto_ADO pro = (Producto_ADO) coleccionElementos.get(i);
             if (pro.getId_producto().equals(id)) {
                 pro_resultado = pro;
                 break;
@@ -52,7 +52,7 @@ public class ContenedorProductosSingleton {
             int tam = coleccionElementos.size();
         
         for (int i = 0; i < tam; i++) {
-            Producto elemento = (Producto) coleccionElementos.get(i);
+            Producto_ADO elemento = (Producto_ADO) coleccionElementos.get(i);
             elemento.borrar();
         }
             coleccionElementos.clear();
@@ -62,7 +62,7 @@ public class ContenedorProductosSingleton {
         int tam = coleccionElementos.size();
         
         for (int i = 0; i < tam; i++) {
-            Producto elemento = (Producto) coleccionElementos.get(i);
+            Producto_ADO elemento = (Producto_ADO) coleccionElementos.get(i);
             elemento.grabar();
         }
    }

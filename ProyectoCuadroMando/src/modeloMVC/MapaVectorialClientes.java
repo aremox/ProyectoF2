@@ -4,6 +4,8 @@
  */
 package modeloMVC;
 
+import ContenedoresCU.ContenedorClientesSingleton;
+import EntidadesCU.Cliente_ADO;
 import EntidadesCU.GeoEntidad;
 import java.awt.Color;
 import java.awt.Rectangle;
@@ -20,7 +22,7 @@ public class MapaVectorialClientes extends MapaVectorialBase implements IMapaRep
     @Override
     public boolean representar(GeoEntidad entidad) {
         // Crear tipo de geometría  y asignar posición (x,y)        
-        Rectangle cuadrado1 = new Rectangle(20,20, 10, 10);
+        Rectangle cuadrado1 = new Rectangle(entidad.getX(),entidad.getY(), 5, 5);
         geometrias.add(cuadrado1);
         return true;
     }
@@ -28,8 +30,11 @@ public class MapaVectorialClientes extends MapaVectorialBase implements IMapaRep
     @Override
     public void generarGrafico() {
        //Por cada geometria operación draw en la coordenadas asinadas
-        
-        Rectangle cuadrado1 = new Rectangle(20,20, 20, 20);        
-        grafico2d.draw(cuadrado1);
+        int tam = geometrias.size();
+                for (int i = 0; i < tam; i++){
+                       grafico2d.draw(geometrias.get(i));  
+                } 
+              
+       
     }
 }

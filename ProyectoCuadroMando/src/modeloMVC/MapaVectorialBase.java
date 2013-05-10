@@ -36,7 +36,7 @@ public abstract class MapaVectorialBase {
         Graphics2D graficoComposicion = this.imagenCartograficabase.createGraphics();
         //establecer contexto del grafico
         graficoComposicion.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        String mapa = "src\\imagenbase\\mapa.jpg";
+        String mapa = "src//imagenbase//mapa.jpg";
         //obtener la imagen de fondo
         File fichero = new File(mapa);
         try {

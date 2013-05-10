@@ -11,7 +11,7 @@ import java.sql.SQLException;
  *
  */
 
-public class Cliente extends GeoEntidad{
+public class Cliente_ADO extends GeoEntidad{
     private String id_cliente;
     private String dni;
     private String nombre;
@@ -34,7 +34,7 @@ public class Cliente extends GeoEntidad{
     private boolean saved = false;
 
 
-    public Cliente(String at_id_cliente, String at_dni, String at_nombre, String at_apellidos, String at_calle, String at_numero, String at_cod_postal, String at_poblacion, String at_provincia, String at_telefono) {
+    public Cliente_ADO(String at_id_cliente, String at_dni, String at_nombre, String at_apellidos, String at_calle, String at_numero, String at_cod_postal, String at_poblacion, String at_provincia, String at_telefono) {
         super();
         id_cliente = at_id_cliente;
         dni = at_dni;

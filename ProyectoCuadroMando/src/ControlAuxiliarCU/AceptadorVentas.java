@@ -1,6 +1,6 @@
 package ControlAuxiliarCU;
 
-import EntidadesCU.Venta;
+import EntidadesCU.Venta_ADO;
 
 /*
  *
@@ -15,7 +15,7 @@ public class AceptadorVentas {
     public AceptadorVentas() {
     }
 
-    public boolean validar(Venta ven) {
+    public boolean validar(Venta_ADO ven) {
         textoError = "";
         resAceptar = true;
 
@@ -23,7 +23,7 @@ public class AceptadorVentas {
 
     }
 
-    private boolean aceptarCliente(Venta ven) {
+    private boolean aceptarCliente(Venta_ADO ven) {
         if (resAceptar) {
             if (ven.getCliente() == null) {
 
@@ -34,7 +34,7 @@ public class AceptadorVentas {
         return resAceptar;
     }
 
-    private boolean aceptarProducto(Venta ven) {
+    private boolean aceptarProducto(Venta_ADO ven) {
         if (resAceptar) {
             if (ven.getProducto() == null) {
                 textoError = "Venta " + ven.getId_venta() + " con incoherencia de datos, no se ha encontrado el PRODUCTO asociado a la venta";
@@ -45,7 +45,7 @@ public class AceptadorVentas {
         return resAceptar;
     }
 
-    private boolean aceptarTienda(Venta ven) {
+    private boolean aceptarTienda(Venta_ADO ven) {
         if (resAceptar) {
             if (ven.getTienda() == null) {
                 textoError = "Venta " + ven.getId_venta() + " con incoherencia de datos, no se ha encontrado la TIENDA asociada a la venta";
@@ -55,7 +55,7 @@ public class AceptadorVentas {
         return resAceptar;
     }
 
-    private boolean aceptarImporte(Venta ven) {
+    private boolean aceptarImporte(Venta_ADO ven) {
         if (resAceptar) {
             // Comprobamos si está vacío
             if ("".equals(ven.getImporte())) {

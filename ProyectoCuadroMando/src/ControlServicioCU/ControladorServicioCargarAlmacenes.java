@@ -7,7 +7,7 @@ import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ProveedorInformacionAlmacenes;
 import ControlAuxiliarCU.RegistroAlmacenes;
 import ControlAuxiliarCU.TratamientoDatosCarga;
-import EntidadesCU.Almacen;
+import EntidadesCU.Almacen_ADO;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -46,7 +46,7 @@ public class ControladorServicioCargarAlmacenes {
 
             for (int i = 0; i < tam; i++) {
                 registros = (RegistroAlmacenes) almacenes.get(i);
-                Almacen alm = new Almacen(registros.getId_almacen(),
+                Almacen_ADO alm = new Almacen_ADO(registros.getId_almacen(),
                                           registros.getCalle(),
                                           registros.getNumero(),
                                           registros.getCod_postal(),

@@ -1,6 +1,6 @@
 package ControlAuxiliarCU;
 
-import EntidadesCU.Tienda;
+import EntidadesCU.Tienda_ADO;
 
 /*
  *
@@ -17,14 +17,14 @@ public class AceptadorTiendas {
     public AceptadorTiendas(){
         //controlador = objeto;
     }
-    public boolean validar(Tienda tie){
+    public boolean validar(Tienda_ADO tie){
         textoError = "";
         resAceptar = true;
         
         return (aceptarCalle(tie) && aceptarNumeroCalle(tie) && aceptarCodPostal(tie) && aceptarPoblacion(tie) && aceptarProvincia(tie) && comprobarAlmacen(tie));
     }
 
-    private boolean aceptarCalle (Tienda tie){
+    private boolean aceptarCalle (Tienda_ADO tie){
          if (resAceptar) {
             if ("".equals(tie.getCalle())) {
                 textoError = "Tienda "+ tie.getId_tienda()+" con incoherencia de datos, el campo CALLE está vacío";
@@ -34,7 +34,7 @@ public class AceptadorTiendas {
         return resAceptar;
     }
 
-    private boolean aceptarNumeroCalle (Tienda tie){
+    private boolean aceptarNumeroCalle (Tienda_ADO tie){
          if (resAceptar) {
             if ("".equals(tie.getNumero())) {
                 textoError = "Tienda "+ tie.getId_tienda() +" con incoherencia de datos, el campo NÚMERO DE CALLE está vacío";
@@ -44,7 +44,7 @@ public class AceptadorTiendas {
         return resAceptar;
     }    
 
-    private boolean aceptarCodPostal (Tienda tie){
+    private boolean aceptarCodPostal (Tienda_ADO tie){
          if (resAceptar) {
             if ("".equals(tie.getCod_Postal())) {
                 textoError = "Tienda "+ tie.getId_tienda() +" con incoherencia de datos, el campo CODIGO POSTAL está vacío";
@@ -54,7 +54,7 @@ public class AceptadorTiendas {
         return resAceptar;
     }       
 
-    private boolean aceptarPoblacion (Tienda tie){
+    private boolean aceptarPoblacion (Tienda_ADO tie){
          if (resAceptar) {
             if ("".equals(tie.getPoblacion())) {
                 textoError = "Tienda "+ tie.getId_tienda() +" con incoherencia de datos, el campo POBLACIÓN está vacío";
@@ -64,7 +64,7 @@ public class AceptadorTiendas {
         return resAceptar;
     }  
     
-    private boolean aceptarProvincia (Tienda tie){
+    private boolean aceptarProvincia (Tienda_ADO tie){
          if (resAceptar) {
             if ("".equals(tie.getProvincia())) {
                 textoError = "Tienda "+ tie.getId_tienda() +" con incoherencia de datos, el campo PROVINCIA está vacío";
@@ -75,7 +75,7 @@ public class AceptadorTiendas {
     }     
     
     
-    private boolean comprobarAlmacen(Tienda tie){
+    private boolean comprobarAlmacen(Tienda_ADO tie){
         if (resAceptar){
             if (tie.getAlmacen() == null){
                 textoError = "Tienda "+ tie.getId_tienda() +" con incoherencia de datos, no existe el ALMACÉN asociado";

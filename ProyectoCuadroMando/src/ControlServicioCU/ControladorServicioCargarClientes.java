@@ -7,7 +7,7 @@ import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ProveedorInformacionClientes;
 import ControlAuxiliarCU.RegistroClientes;
 import ControlAuxiliarCU.TratamientoDatosCarga;
-import EntidadesCU.Cliente;
+import EntidadesCU.Cliente_ADO;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -45,7 +45,7 @@ public class ControladorServicioCargarClientes {
            
             for (int i = 0; i < tam; i++) {
                 registros = (RegistroClientes) clientes.get(i);
-                Cliente cli = new Cliente(registros.getId_cliente(),
+                Cliente_ADO cli = new Cliente_ADO(registros.getId_cliente(),
                                           registros.getDni(),
                                           registros.getNombre(),
                                           registros.getApellidos(),

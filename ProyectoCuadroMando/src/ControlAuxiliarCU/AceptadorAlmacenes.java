@@ -1,6 +1,6 @@
 package ControlAuxiliarCU;
 
-import EntidadesCU.Almacen;
+import EntidadesCU.Almacen_ADO;
 
 /*
  *
@@ -15,7 +15,7 @@ public class AceptadorAlmacenes {
     
     public AceptadorAlmacenes(){
     }
-    public boolean validar(Almacen alm){
+    public boolean validar(Almacen_ADO alm){
         textoError = "";
         resAceptar = true;
         
@@ -23,7 +23,7 @@ public class AceptadorAlmacenes {
     }
 
     
-    private boolean aceptarCalle (Almacen alm){
+    private boolean aceptarCalle (Almacen_ADO alm){
          if (resAceptar) {
             if ("".equals(alm.getCalle())) {
                 textoError = "Almacén "+ alm.getId_almacen() +" con incoherencia de datos, el campo CALLE está vacío";
@@ -33,7 +33,7 @@ public class AceptadorAlmacenes {
         return resAceptar;
     }
 
-    private boolean aceptarNumeroCalle (Almacen alm){
+    private boolean aceptarNumeroCalle (Almacen_ADO alm){
          if (resAceptar) {
             if ("".equals(alm.getNumero())) {
                 textoError = "Almacén "+ alm.getId_almacen() +" con incoherencia de datos, el campo NÚMERO DE CALLE está vacío";
@@ -43,7 +43,7 @@ public class AceptadorAlmacenes {
         return resAceptar;
     }    
 
-    private boolean aceptarCodPostal (Almacen alm){
+    private boolean aceptarCodPostal (Almacen_ADO alm){
          if (resAceptar) {
             if ("".equals(alm.getCod_postal())) {
                 textoError = "Almacén "+ alm.getId_almacen() +" con incoherencia de datos, el campo CODIGO POSTAL está vacío";
@@ -53,7 +53,7 @@ public class AceptadorAlmacenes {
         return resAceptar;
     }       
 
-    private boolean aceptarMunicipio (Almacen alm){
+    private boolean aceptarMunicipio (Almacen_ADO alm){
          if (resAceptar) {
             if ("".equals(alm.getMunicipio())) {
                 textoError = "Almacén "+ alm.getId_almacen() +" con incoherencia de datos, el campo MUNICIPIO está vacío";
@@ -63,7 +63,7 @@ public class AceptadorAlmacenes {
         return resAceptar;
     }  
     
-    private boolean aceptarProvincia (Almacen alm){
+    private boolean aceptarProvincia (Almacen_ADO alm){
          if (resAceptar) {
             if ("".equals(alm.getProvincia())) {
                 textoError = "Almacén "+ alm.getId_almacen() +" con incoherencia de datos, el campo PROVINCIA está vacío";

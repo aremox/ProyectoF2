@@ -1,6 +1,6 @@
 package ContenedoresCU;
 
-import EntidadesCU.Tienda;
+import EntidadesCU.Tienda_ADO;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
@@ -11,7 +11,7 @@ import java.util.LinkedList;
  */
 public class ContenedorTiendasSingleton {
 
-    private LinkedList<Tienda> coleccionElementos;
+    private LinkedList<Tienda_ADO> coleccionElementos;
     private static ContenedorTiendasSingleton _instancia;
 
     private ContenedorTiendasSingleton() {
@@ -26,16 +26,16 @@ public class ContenedorTiendasSingleton {
         return _instancia;
     }
 
-    public void almacenar(Tienda tie) {
+    public void almacenar(Tienda_ADO tie) {
         coleccionElementos.add(tie);
     }
 
-    public Tienda getTienda(String id) {
-        Tienda tie_resultado = null;
+    public Tienda_ADO getTienda(String id) {
+        Tienda_ADO tie_resultado = null;
         int tam = coleccionElementos.size();
         //int cont = 0;
         for (int i = 0; i < tam; i++) {
-            Tienda tie = (Tienda) coleccionElementos.get(i);
+            Tienda_ADO tie = (Tienda_ADO) coleccionElementos.get(i);
             if (tie.getId_tienda().equals(id)) {
                 tie_resultado = tie;
                 break;
@@ -50,7 +50,7 @@ public class ContenedorTiendasSingleton {
             int tam = coleccionElementos.size();
 
             for (int i = 0; i < tam; i++) {
-                Tienda elemento = (Tienda) coleccionElementos.get(i);
+                Tienda_ADO elemento = (Tienda_ADO) coleccionElementos.get(i);
                 elemento.borrar();
             }
             coleccionElementos.clear();
@@ -61,7 +61,7 @@ public class ContenedorTiendasSingleton {
         int tam = coleccionElementos.size();
 
         for (int i = 0; i < tam; i++) {
-            Tienda elemento = (Tienda) coleccionElementos.get(i);
+            Tienda_ADO elemento = (Tienda_ADO) coleccionElementos.get(i);
             elemento.grabar();
         }
     }

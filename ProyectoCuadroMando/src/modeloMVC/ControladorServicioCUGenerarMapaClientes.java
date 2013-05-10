@@ -5,6 +5,7 @@
 
 package modeloMVC;
 import ContenedoresCU.ContenedorClientesSingleton;
+import EntidadesCU.Cliente_ADO;
 
 public class ControladorServicioCUGenerarMapaClientes {
    
@@ -13,7 +14,13 @@ public class ControladorServicioCUGenerarMapaClientes {
         ContenedorClientesSingleton contenedor= ContenedorClientesSingleton.getInstancia();
         // 
        // pintar el mapa
-        mapa.representar(null);
+       int tam = ContenedorClientesSingleton.getInstancia().getClientes().size();
+                for (int i = 0; i < tam; i++) {
+                   Cliente_ADO elemento = (Cliente_ADO) ContenedorClientesSingleton.getInstancia().getClientes().get(i);
+                       mapa.representar(elemento);     
+                }
+             
+       
     return true;
     }
 }

@@ -1,6 +1,6 @@
 package ContenedoresCU;
 
-import EntidadesCU.Cliente;
+import EntidadesCU.Cliente_ADO;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
@@ -12,7 +12,7 @@ import java.util.LinkedList;
 
 public class ContenedorClientesSingleton {
 
-    private LinkedList<Cliente> coleccionElementos;
+    private LinkedList<Cliente_ADO> coleccionElementos;
     private static ContenedorClientesSingleton _instancia;
 
     private ContenedorClientesSingleton() {
@@ -27,16 +27,16 @@ public class ContenedorClientesSingleton {
         return _instancia; 
     }
 
-    public void almacenar(Cliente cli) {
+    public void almacenar(Cliente_ADO cli) {
         coleccionElementos.add(cli);
     }
 
-    public Cliente getCliente(String id) {
-        Cliente cli_resultado = null;
+    public Cliente_ADO getCliente(String id) {
+        Cliente_ADO cli_resultado = null;
         int tam = coleccionElementos.size();
         //int cont = 0;
         for (int i = 0; i < tam; i++) {
-            Cliente cli = (Cliente) coleccionElementos.get(i);
+            Cliente_ADO cli = (Cliente_ADO) coleccionElementos.get(i);
             if (cli.getId_cliente().equals(id)) {
                 cli_resultado = cli;
                 break;
@@ -51,7 +51,7 @@ public class ContenedorClientesSingleton {
         if (null != coleccionElementos) {
             int tam = coleccionElementos.size();
         for (int i = 0; i < tam; i++) {
-            Cliente elemento = (Cliente) coleccionElementos.get(i);
+            Cliente_ADO elemento = (Cliente_ADO) coleccionElementos.get(i);
             elemento.borrar();
         }
             coleccionElementos.clear();
@@ -61,7 +61,7 @@ public class ContenedorClientesSingleton {
         int tam = coleccionElementos.size();
         
         for (int i = 0; i < tam; i++) {
-            Cliente elemento = (Cliente) coleccionElementos.get(i);
+            Cliente_ADO elemento = (Cliente_ADO) coleccionElementos.get(i);
             elemento.grabar();
         }
    }

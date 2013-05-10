@@ -11,9 +11,9 @@ import java.sql.SQLException;
  *
  */
 
-public class Tienda extends GeoEntidad {
+public class Tienda_ADO extends GeoEntidad {
     private String id_tienda;
-    private Almacen id_almacen;
+    private Almacen_ADO id_almacen;
     private String calle;
     private String numero;
     private String cod_postal;
@@ -32,7 +32,7 @@ public class Tienda extends GeoEntidad {
     private boolean saved = false;
 
 
-    public Tienda(String at_id_tienda, String at_calle, String at_numero, String at_cod_postal, String at_telefono, String at_poblacion, String at_provincia, Almacen at_id_almacen) {
+    public Tienda_ADO(String at_id_tienda, String at_calle, String at_numero, String at_cod_postal, String at_telefono, String at_poblacion, String at_provincia, Almacen_ADO at_id_almacen) {
         super();
         id_tienda = at_id_tienda;
         calle = at_calle;
@@ -64,7 +64,7 @@ public class Tienda extends GeoEntidad {
         return provincia;
     }    
     
-    public Almacen getAlmacen(){
+    public Almacen_ADO getAlmacen(){
         return id_almacen;
     }
     public void borrar() throws SQLException { 

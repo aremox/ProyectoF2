@@ -8,7 +8,7 @@ import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ProveedorInformacionTiendas;
 import ControlAuxiliarCU.RegistroTiendas;
 import ControlAuxiliarCU.TratamientoDatosCarga;
-import EntidadesCU.Tienda;
+import EntidadesCU.Tienda_ADO;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -46,7 +46,7 @@ public class ControladorServicioCargarTiendas {
             totalLecturas = tam;
             for (int i = 0; i < tam; i++) {
                 registros = (RegistroTiendas) tiendas.get(i);
-                Tienda tie = new Tienda(registros.getId_tienda(),
+                Tienda_ADO tie = new Tienda_ADO(registros.getId_tienda(),
                                           //ControladorServicioCargarAlmacenes.contenedor_almacen.getAlmacen(registros.getId_almacen()),                  
                                           registros.getCalle(), 
                                           registros.getNumero(), 

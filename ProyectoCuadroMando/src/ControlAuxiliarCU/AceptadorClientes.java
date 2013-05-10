@@ -1,6 +1,6 @@
 package ControlAuxiliarCU;
 
-import EntidadesCU.Cliente;
+import EntidadesCU.Cliente_ADO;
 
 /*
  *
@@ -17,13 +17,13 @@ public class AceptadorClientes {
     public AceptadorClientes(){
       
     }
-    public boolean validar(Cliente cli){
+    public boolean validar(Cliente_ADO cli){
         textoError = "";
         resAceptar = true;
         return (aceptarCalle(cli) && aceptarNumeroCalle(cli) && aceptarCodPostal(cli) && aceptarPoblacion(cli) && aceptarProvincia(cli));
     }
     
-    private boolean aceptarCalle (Cliente cli){
+    private boolean aceptarCalle (Cliente_ADO cli){
          if (resAceptar) {
             if ("".equals(cli.getCalle())) {
                 textoError = "Cliente "+ cli.getId_cliente() +" con incoherencia de datos, el campo CALLE está vacío";
@@ -33,7 +33,7 @@ public class AceptadorClientes {
         return resAceptar;
     }
 
-    private boolean aceptarNumeroCalle (Cliente cli){
+    private boolean aceptarNumeroCalle (Cliente_ADO cli){
          if (resAceptar) {
             if ("".equals(cli.getNumero())) {
                 textoError = "Cliente "+ cli.getId_cliente() +" con incoherencia de datos, el campo NÚMERO DE CALLE está vacío";
@@ -47,7 +47,7 @@ public class AceptadorClientes {
         return resAceptar;
     }    
 
-    private boolean aceptarCodPostal (Cliente cli){
+    private boolean aceptarCodPostal (Cliente_ADO cli){
          if (resAceptar) {
             if ("".equals(cli.getCod_Postal())) {
                 textoError = "Cliente "+ cli.getId_cliente() +" con incoherencia de datos, el campo CODIGO POSTAL está vacío";
@@ -57,7 +57,7 @@ public class AceptadorClientes {
         return resAceptar;
     }       
 
-    private boolean aceptarPoblacion (Cliente cli){
+    private boolean aceptarPoblacion (Cliente_ADO cli){
          if (resAceptar) {
             if ("".equals(cli.getPoblacion())) {
                 textoError = "Cliente "+ cli.getId_cliente() +" con incoherencia de datos, el campo POBLACIÓN está vacío";
@@ -67,7 +67,7 @@ public class AceptadorClientes {
         return resAceptar;
     }  
     
-    private boolean aceptarProvincia (Cliente cli){
+    private boolean aceptarProvincia (Cliente_ADO cli){
          if (resAceptar) {
             if ("".equals(cli.getProvincia())) {
                 textoError = "Cliente "+ cli.getId_cliente() +" con incoherencia de datos, el campo PROVINCIA está vacío";

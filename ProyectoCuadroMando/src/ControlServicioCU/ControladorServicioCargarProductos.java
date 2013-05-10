@@ -5,7 +5,7 @@ import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ProveedorInformacionProductos;
 import ControlAuxiliarCU.RegistroProductos;
 import ControlAuxiliarCU.TratamientoDatosCarga;
-import EntidadesCU.Producto;
+import EntidadesCU.Producto_ADO;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class ControladorServicioCargarProductos {
             int cont = 0;
             for (int i = 0; i < tam; i++) {
                 RegistroProductos registros = (RegistroProductos) productos.get(i);
-                Producto pro = new Producto(registros.getId_producto(),
+                Producto_ADO pro = new Producto_ADO(registros.getId_producto(),
                                             registros.getCategoria(),
                                             registros.getPrecio(),
                                             registros.getFicha_tecnica());

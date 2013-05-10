@@ -1,6 +1,6 @@
 package ContenedoresCU;
 
-import EntidadesCU.Venta;
+import EntidadesCU.Venta_ADO;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.LinkedList;
@@ -12,11 +12,11 @@ import java.util.LinkedList;
  */
 public class ContenedorVentasSingleton {
 
-    private LinkedList<Venta> coleccionElementos;
+    private LinkedList<Venta_ADO> coleccionElementos;
     private static ContenedorVentasSingleton _instancia;
 
     private ContenedorVentasSingleton() {
-        coleccionElementos = new LinkedList<Venta>();
+        coleccionElementos = new LinkedList<Venta_ADO>();
     }
     
     public static ContenedorVentasSingleton getInstancia(){ 
@@ -27,16 +27,16 @@ public class ContenedorVentasSingleton {
         return _instancia; 
     }
 
-    public void almacenar(Venta ven) {
+    public void almacenar(Venta_ADO ven) {
         coleccionElementos.add(ven);
     }
 
-    public Venta getVenta(String id) {
-        Venta ven_resultado = null;
+    public Venta_ADO getVenta(String id) {
+        Venta_ADO ven_resultado = null;
         int tam = coleccionElementos.size();
         int cont = 0;
         for (int i = 0; i < tam; i++) {
-            Venta ven = (Venta) coleccionElementos.get(i);
+            Venta_ADO ven = (Venta_ADO) coleccionElementos.get(i);
             if (ven.getId_venta().equals(id)) {
                 ven_resultado = ven;
                 break;
@@ -51,7 +51,7 @@ public class ContenedorVentasSingleton {
             int tam = coleccionElementos.size();
 
             for (int i = 0; i < tam; i++) {
-                Venta elemento = (Venta) coleccionElementos.get(i);
+                Venta_ADO elemento = (Venta_ADO) coleccionElementos.get(i);
                 elemento.borrar();
             }
             coleccionElementos.clear();
@@ -61,7 +61,7 @@ public class ContenedorVentasSingleton {
         int tam = coleccionElementos.size();
         
         for (int i = 0; i < tam; i++) {
-            Venta elemento = (Venta) coleccionElementos.get(i);
+            Venta_ADO elemento = (Venta_ADO) coleccionElementos.get(i);
             elemento.grabar();
         }
    }

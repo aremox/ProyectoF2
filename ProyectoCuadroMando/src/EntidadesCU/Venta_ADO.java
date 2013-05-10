@@ -14,12 +14,12 @@ import java.util.Date;
  *
  */
 
-public class Venta {
+public class Venta_ADO {
 
     private String id_venta;
-    private Cliente cliente;
-    private Producto producto;
-    private Tienda tienda;
+    private Cliente_ADO cliente;
+    private Producto_ADO producto;
+    private Tienda_ADO tienda;
     private String unidades;
     private String importe;
     private String fecha;
@@ -33,7 +33,7 @@ public class Venta {
     private static final String borrar = "delete from ventas where id_venta = ?";
     private boolean saved = false;
 
-    public Venta(String at1, Cliente at2, Producto at3, Tienda at4, String at5, String at6, String at7) {
+    public Venta_ADO(String at1, Cliente_ADO at2, Producto_ADO at3, Tienda_ADO at4, String at5, String at6, String at7) {
         id_venta = at1;
         cliente = at2;
         producto = at3;
@@ -48,15 +48,15 @@ public class Venta {
         return id_venta;
     }
     
-    public Cliente getCliente(){
+    public Cliente_ADO getCliente(){
         return cliente;
     }
     
-    public Producto getProducto(){
+    public Producto_ADO getProducto(){
         return producto;
     }
     
-    public Tienda getTienda(){
+    public Tienda_ADO getTienda(){
         return tienda;
     }
     

@@ -10,7 +10,7 @@ import ControlAuxiliarCU.ArchivoResultadoCarga;
 import ControlAuxiliarCU.ProveedorInformacionVentas;
 import ControlAuxiliarCU.RegistroVentas;
 import ControlAuxiliarCU.TratamientoDatosCarga;
-import EntidadesCU.Venta;
+import EntidadesCU.Venta_ADO;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -51,7 +51,7 @@ public class ControladorServicioCargarVentas {
             for (int i = 0; i < tam; i++) {
 
                 registros = (RegistroVentas) ventas.get(i);
-                Venta ven = new Venta(registros.getId_venta(), 
+                Venta_ADO ven = new Venta_ADO(registros.getId_venta(), 
                                       ContenedorClientesSingleton.getInstancia().getCliente(registros.getId_cliente()),
                                       ContenedorProductosSingleton.getInstancia().getProducto(registros.getId_producto()), 
                                       ContenedorTiendasSingleton.getInstancia().getTienda(registros.getId_tienda()), 
