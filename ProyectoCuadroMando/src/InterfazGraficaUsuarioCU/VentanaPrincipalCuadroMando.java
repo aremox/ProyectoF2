@@ -1,9 +1,14 @@
 package InterfazGraficaUsuarioCU;
 
+import controllerMVC.ControllerMVCMapaClientes;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import vistamvc.PanelGraficoMapa;
 
 
 /*
@@ -16,6 +21,7 @@ import javax.swing.JFrame;
 public class VentanaPrincipalCuadroMando extends JFrame implements Action {
 
     PanelGeneralOpciones panelOpciones;
+    PanelGraficoMapa vista;// variable de estado de representación del mapa
     
     public VentanaPrincipalCuadroMando() {
         //Configurar ventana principal
@@ -28,7 +34,10 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action {
         this.setLocationRelativeTo(null);
         //
 
-        
+        JMenuBar barraMenus = new JMenuBar();// control barra de menú superior
+        JMenu menuC = creaControlMenuMapas(); // crear control menú elementos
+        barraMenus.add(menuC);// asignar control de menú a barra superior 
+        this.setJMenuBar(barraMenus);// asignar barra a control JFrame
 
 
 
@@ -48,5 +57,32 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action {
 
     public void putValue(String key, Object value) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+    private JMenu creaControlMenuMapas() {
+
+        JMenuItem itemAA = new JMenuItem("Generar Mapa de Clientes");
+        JMenuItem itemAB = new JMenuItem("Generar Mapa Ventas");
+        JMenuItem itemAC = new JMenuItem("Generar Mapa de Suministro");
+
+        JMenu menu = new JMenu("Opciones de Análisis");
+        menu.add(itemAA);
+        menu.add(itemAB);
+        menu.add(itemAC);
+
+        itemAA.addActionListener(new ControllerMVCMapaClientes(this));
+        itemAB.addActionListener(new ControllerMVCMapaClientes(this));
+        itemAC.addActionListener(new ControllerMVCMapaClientes(this));
+
+        return menu;
+    }
+
+    /**
+     *
+     * Método que permite configurar la vista y actualizarla
+     */
+    public void setPanel(PanelGraficoMapa vista) {
+        this.vista = vista;
+        this.setContentPane(vista);
+        this.setVisible(true);
     }
 }

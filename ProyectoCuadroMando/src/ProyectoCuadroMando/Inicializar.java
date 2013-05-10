@@ -46,7 +46,7 @@ public class Inicializar {
     private void borrarTablas() throws SQLException, ClassNotFoundException{
          Class.forName("org.apache.derby.jdbc.ClientDriver");
  
-                    String url = "jdbc:derby://localhost:1527/cuadro_mando";
+                    String url = "jdbc:derby://localhost:1527/cuadromando";
                     String user = "ivan";
                     String password = "123456";
                     
