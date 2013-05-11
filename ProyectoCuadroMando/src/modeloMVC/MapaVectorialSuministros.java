@@ -7,23 +7,26 @@ package modeloMVC;
 import EntidadesCU.GeoEntidad;
 import java.awt.Color;
 import java.awt.Rectangle;
+import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
 
-public class MapaVectorialSuministros extends MapaVectorialBase implements IMapaRepresentarEntidad, IMapaRepresentarAsociacion {
+public class MapaVectorialSuministros extends MapaVectorialBase implements IMapaRepresentarEntidades, IMapaRepresentarAsociacion {
 
     public MapaVectorialSuministros() {
         super();
         //incializar contexto de dibujo
-       grafico2d.setPaint(Color.red);//color de la línea rojo
+       grafico2d.setPaint(Color.BLUE);//color de la línea rojo
     }
 
     @Override
-    public boolean representar(GeoEntidad entidad) {
+    public boolean representar(GeoEntidad entidad, GeoEntidad entidad2) {
         // Crear tipo de geometría  y asignar posición (x,y)        
         Rectangle cuadrado1 = new Rectangle(entidad.getX(),entidad.getY(), 5, 5);
+        Ellipse2D cuadrado2 = new Ellipse2D.Float(entidad2.getX(),entidad2.getY(), 7, 7);
         geometrias.add(cuadrado1);
+        geometrias.add(cuadrado2);
         return true;
     }
 

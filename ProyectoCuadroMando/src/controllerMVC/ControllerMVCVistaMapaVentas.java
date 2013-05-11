@@ -44,8 +44,8 @@ public class ControllerMVCVistaMapaVentas implements ActionListener {
            int tam = ContenedorVentasSingleton.getInstancia().getVentas().size();
                 for (int i = 0; i < tam; i++) {
                    Venta_ADO elemento = (Venta_ADO) ContenedorVentasSingleton.getInstancia().getVentas().get(i);
-                       mapa.representar(elemento.getTienda()); 
-                       mapa.representar(elemento.getCliente());
+                       mapa.representar(elemento.getCliente(), elemento.getTienda()); 
+                       //mapa.representar(elemento.getCliente());
                        mapa.asociar(elemento.getTienda(), elemento.getCliente());
                 } 
         // 
