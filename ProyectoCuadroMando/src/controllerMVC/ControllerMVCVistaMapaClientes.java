@@ -15,14 +15,14 @@ import vistamvc.PanelGraficoMapa;
 
 
 
-public class ControllerMVCMapaClientes implements ActionListener {
+public class ControllerMVCVistaMapaClientes implements ActionListener {
     //asociacion con la vista
     VentanaPrincipalCuadroMando vistaMapa;
     //asociacion con el modelo
     MapaVectorialClientes mapaclientes;
     ContenedorClientesSingleton contenedorCli;
 
-    public ControllerMVCMapaClientes(VentanaPrincipalCuadroMando ventana) {
+    public ControllerMVCVistaMapaClientes(VentanaPrincipalCuadroMando ventana) {
         //incializacion
         this.vistaMapa = ventana;
         mapaclientes = new MapaVectorialClientes();

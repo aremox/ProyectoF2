@@ -1,6 +1,8 @@
 package InterfazGraficaUsuarioCU;
 
-import controllerMVC.ControllerMVCMapaClientes;
+import controllerMVC.ControllerMVCVistaMapaClientes;
+import controllerMVC.ControllerMVCVistaMapaSuministros;
+import controllerMVC.ControllerMVCVistaMapaVentas;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
@@ -61,7 +63,7 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action {
     private JMenu creaControlMenuMapas() {
 
         JMenuItem itemAA = new JMenuItem("Generar Mapa de Clientes");
-        JMenuItem itemAB = new JMenuItem("Generar Mapa Ventas");
+        JMenuItem itemAB = new JMenuItem("Generar Mapa de Ventas");
         JMenuItem itemAC = new JMenuItem("Generar Mapa de Suministro");
 
         JMenu menu = new JMenu("Opciones de Análisis");
@@ -69,9 +71,9 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action {
         menu.add(itemAB);
         menu.add(itemAC);
 
-        itemAA.addActionListener(new ControllerMVCMapaClientes(this));
-        itemAB.addActionListener(new ControllerMVCMapaClientes(this));
-        itemAC.addActionListener(new ControllerMVCMapaClientes(this));
+        itemAA.addActionListener(new ControllerMVCVistaMapaClientes(this));
+        itemAB.addActionListener(new ControllerMVCVistaMapaVentas(this));
+        itemAC.addActionListener(new ControllerMVCVistaMapaSuministros(this));
 
         return menu;
     }

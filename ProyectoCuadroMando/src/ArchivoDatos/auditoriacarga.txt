@@ -1,1 +1,181 @@
 
+:::::::::::Clientes::::::::::
+
+Cliente XX0000004 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000005 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000006 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000008 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000009 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000010 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000016 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000017 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000018 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000020 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000021 con incoherencia de datos, el campo NÚMERO DE CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000022 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000023 con incoherencia de datos, el campo CODIGO POSTAL está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000025 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000026 con incoherencia de datos, el campo NÚMERO DE CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000027 con incoherencia de datos, el campo NÚMERO DE CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000031 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000032 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000033 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000035 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000036 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000037 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000040 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000041 con incoherencia de datos, el campo NÚMERO DE CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000042 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000043 con incoherencia de datos, el campo CODIGO POSTAL está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000045 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000046 con incoherencia de datos, el campo NÚMERO DE CALLE está vacío
+
+:::::::::::Clientes::::::::::
+
+Cliente XX0000047 con incoherencia de datos, el campo NÚMERO DE CALLE está vacío
+
+:::::::::::Tiendas::::::::::
+
+Tienda T-003 con incoherencia de datos, el campo CALLE está vacío
+
+:::::::::::Tiendas::::::::::
+
+Tienda T-004 con incoherencia de datos, no existe el ALMACÉN asociado
+
+:::::::::::Ventas::::::::::
+
+Venta V-002 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-004 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-005 con incoherencia de datos, no se ha encontrado la TIENDA asociada a la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-006 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-007 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-008 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-009 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-014 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-015 con incoherencia de datos, no se ha encontrado la TIENDA asociada a la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-016 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-017 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-018 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-019 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+
+:::::::::::Ventas::::::::::
+
+Venta V-024 con incoherencia de datos, no se ha encontrado el CLIENTE asociado la venta
+

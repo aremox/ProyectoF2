@@ -8,6 +8,8 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 import modeloMVC.MapaVectorialBase;
 import modeloMVC.MapaVectorialClientes;
+import modeloMVC.MapaVectorialSuministros;
+import modeloMVC.MapaVectorialVentas;
 
 
 public class PanelGraficoMapa extends JPanel{
@@ -16,6 +18,15 @@ public class PanelGraficoMapa extends JPanel{
     MapaVectorialBase mapa;    
     
     public PanelGraficoMapa(MapaVectorialClientes mapa){
+        
+        this.mapa=mapa;   
+    }
+    
+    public PanelGraficoMapa(MapaVectorialVentas mapa){
+        
+        this.mapa=mapa;   
+    }
+    public PanelGraficoMapa(MapaVectorialSuministros mapa){
         
         this.mapa=mapa;   
     }

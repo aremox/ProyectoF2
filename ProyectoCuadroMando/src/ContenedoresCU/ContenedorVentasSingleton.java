@@ -65,4 +65,8 @@ public class ContenedorVentasSingleton {
             elemento.grabar();
         }
    }
+      public LinkedList getVentas(){
+        return coleccionElementos;
+         
+     }
 }

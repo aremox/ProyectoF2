@@ -5,7 +5,9 @@
 
 package modeloMVC;
 
+import EntidadesCU.GeoEntidad;
+
 
 public interface IMapaRepresentarAsociacion {
-
+    public boolean asociar ( GeoEntidad entidad1, GeoEntidad entidad2);
 }
