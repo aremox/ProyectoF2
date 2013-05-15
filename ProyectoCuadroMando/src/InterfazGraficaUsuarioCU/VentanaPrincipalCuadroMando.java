@@ -1,6 +1,7 @@
 package InterfazGraficaUsuarioCU;
 
 import controllerMVC.ControllerMVCVistaMapaClientes;
+import controllerMVC.ControllerMVCVistaMapaInfuencia;
 import controllerMVC.ControllerMVCVistaMapaMayorVentas;
 import controllerMVC.ControllerMVCVistaMapaSuministros;
 import controllerMVC.ControllerMVCVistaMapaVentas;
@@ -67,17 +68,20 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action {
         JMenuItem itemAB = new JMenuItem("Generar Mapa de Ventas");
         JMenuItem itemAC = new JMenuItem("Generar Mapa de Suministro");
         JMenuItem itemAD = new JMenuItem("Generar Mapa de tienda con mayor numero de ventas");
+        JMenuItem itemAE = new JMenuItem("Generar Mapa de influencia");
 
         JMenu menu = new JMenu("Opciones de Análisis");
         menu.add(itemAA);
         menu.add(itemAB);
         menu.add(itemAC);
         menu.add(itemAD);
+        menu.add(itemAE);
 
         itemAA.addActionListener(new ControllerMVCVistaMapaClientes(this));
         itemAB.addActionListener(new ControllerMVCVistaMapaVentas(this));
         itemAC.addActionListener(new ControllerMVCVistaMapaSuministros(this));
         itemAD.addActionListener(new ControllerMVCVistaMapaMayorVentas(this));
+        itemAE.addActionListener(new ControllerMVCVistaMapaInfuencia(this));
 
         return menu;
     }

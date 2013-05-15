@@ -4,6 +4,13 @@
  */
 package ProyectoCuadroMando;
 
+import ControlServicioCU.ControladorServicioCargarAlmacenes;
+import ControlServicioCU.ControladorServicioCargarClientes;
+import ControlServicioCU.ControladorServicioCargarProductos;
+import ControlServicioCU.ControladorServicioCargarTiendas;
+import ControlServicioCU.ControladorServicioCargarVentas;
+import ControlServicioCU.ControladorServicioGeoreferenciar;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,6 +28,7 @@ public class Inicializar {
         borrarFicheroCarga();
         borrarFicheroLog();
         borrarTablas();
+        cargarDatos();
     }
     
     private void borrarFicheroCarga() throws IOException{
@@ -91,6 +99,30 @@ public class Inicializar {
                          }
     con.close();
                         
+    }
+    private void cargarDatos() throws IOException{
+        String ruta = "src//ArchivoDatos//cliente.txt";
+       File file = new File(ruta);
+        ControladorServicioCargarClientes controladorClientes = new ControladorServicioCargarClientes(file);
+        controladorClientes.DesarrollarServicio();
+        ruta = "src//ArchivoDatos//articulos.txt";
+        file = new File(ruta);
+        ControladorServicioCargarProductos controladorProductos = new ControladorServicioCargarProductos(file);
+        controladorProductos.DesarrollarServicio();
+        ruta = "src//ArchivoDatos//almacenes.txt";
+        file = new File(ruta);
+        ControladorServicioCargarAlmacenes controladorAlmacenes = new ControladorServicioCargarAlmacenes(file);
+        controladorAlmacenes.DesarrollarServicio();
+        ruta = "src//ArchivoDatos//tiendas.txt";
+        file = new File(ruta);
+        ControladorServicioCargarTiendas controladorTiendas = new ControladorServicioCargarTiendas(file);
+        controladorTiendas.DesarrollarServicio();
+        ruta = "src//ArchivoDatos//ventas.txt";
+        file = new File(ruta);
+        ControladorServicioCargarVentas controladorVentas = new ControladorServicioCargarVentas(file);
+        controladorVentas.DesarrollarServicio();
+        ControladorServicioGeoreferenciar controladorGeoreferenciar = new ControladorServicioGeoreferenciar();
+            controladorGeoreferenciar.DesarrollarServicio();
     }
 }
                     

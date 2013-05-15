@@ -14,9 +14,9 @@ import java.awt.geom.Point2D;
  *
  * @author ivan
  */
-public class MapaVectorialMayorVenas extends MapaVectorialBase implements IMapaRepresentarEntidades, IMapaRepresentarAsociacion {
+public class MapaVectorialMayorVentas extends MapaVectorialBase implements IMapaRepresentarEntidades, IMapaRepresentarAsociacion {
 
-    public MapaVectorialMayorVenas() {
+    public MapaVectorialMayorVentas() {
         super();
         //incializar contexto de dibujo
         grafico2d.setPaint(Color.DARK_GRAY);//color de la línea gris

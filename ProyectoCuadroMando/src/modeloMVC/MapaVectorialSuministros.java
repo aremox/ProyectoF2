@@ -25,11 +25,11 @@ public class MapaVectorialSuministros extends MapaVectorialBase implements IMapa
         // Crear tipo de geometría  y asignar posición (x,y)        
         Rectangle cuadrado1 = new Rectangle(entidad.getX()-3,entidad.getY()-3, 6, 6);
         Rectangle cuadrado2 = new Rectangle(entidad2.getX()-10,entidad2.getY()-3, 20, 6);
-        //Ellipse2D cuadrado2 = new Ellipse2D.Float(entidad2.getX(),entidad2.getY(), 7, 7);
+        //Ellipse2D cuadrado3 = new Ellipse2D.Float(entidad.getX(),entidad.getY(), 100, 100);
         
         geometrias.add(cuadrado1);
-       
         geometrias.add(cuadrado2);
+        //geometrias.add(cuadrado3);
         return true;
     }
 
@@ -38,7 +38,7 @@ public class MapaVectorialSuministros extends MapaVectorialBase implements IMapa
        //Por cada geometria operación draw en la coordenadas asinadas
         int tam = geometrias.size();
                 for (int i = 0; i < tam; i++){
-                    int x = geometrias.get(i).getBounds().width;
+                    int x = Math.round((float)geometrias.get(i).getBounds().getWidth());
                     grafico2d.setPaint(Color.RED);  
                     switch(x) {
                         case 1:

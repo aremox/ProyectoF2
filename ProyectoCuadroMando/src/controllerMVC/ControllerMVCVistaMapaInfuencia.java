@@ -5,28 +5,30 @@
 package controllerMVC;
 
 import ContenedoresCU.ContenedorVentasSingleton;
+import EntidadesCU.Cliente_ADO;
 import EntidadesCU.Tienda_ADO;
 import EntidadesCU.Venta_ADO;
 import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
-import modeloMVC.MapaVectorialMayorVentas;
+import modeloMVC.MapaVectorialInfluencia;
+import modeloMVC.MapaVectorialVentas;
 import vistamvc.PanelGraficoMapa;
 
 
 
-public class ControllerMVCVistaMapaMayorVentas implements ActionListener {
+public class ControllerMVCVistaMapaInfuencia implements ActionListener {
     //asociacion con la vista
     VentanaPrincipalCuadroMando vistaMapa;
     //asociacion con el modelo
-    MapaVectorialMayorVentas mapa;
+    MapaVectorialInfluencia mapa;
     ContenedorVentasSingleton contenedorVen;
 
-    public ControllerMVCVistaMapaMayorVentas(VentanaPrincipalCuadroMando ventana) {
+    public ControllerMVCVistaMapaInfuencia(VentanaPrincipalCuadroMando ventana) {
         //incializacion
         this.vistaMapa = ventana;
-        mapa = new MapaVectorialMayorVentas();
+        mapa = new MapaVectorialInfluencia();
         contenedorVen=ContenedorVentasSingleton.getInstancia();
     }
 
@@ -36,19 +38,19 @@ public class ControllerMVCVistaMapaMayorVentas implements ActionListener {
         //1.-Actualiza el modelo en función del evento de entrada
        
         JMenuItem controlInterfaz = (JMenuItem) e.getSource(); //conversión del evento producido
-        if (controlInterfaz.getText().equals("Generar Mapa de tienda con mayor numero de ventas")) {
+        if (controlInterfaz.getText().equals("Generar Mapa de influencia")) {
             
             
             //2.-Procesar y confifurar el mapa con la colección de figuras geometricas
            int tam = ContenedorVentasSingleton.getInstancia().getVentas().size();
-           Tienda_ADO tienda= ContenedorVentasSingleton.getInstancia().getMayor_Venta();
+           
                 for (int i = 0; i < tam; i++) {
                     Venta_ADO elemento = (Venta_ADO) ContenedorVentasSingleton.getInstancia().getVentas().get(i);
-                    if (elemento.getTienda().equals(tienda) )
-                    {
-                       mapa.representar(elemento.getCliente(), elemento.getTienda()); 
-                       //mapa.representar(elemento.getCliente());
-                       mapa.asociar(elemento.getTienda(), elemento.getCliente());
+                    Cliente_ADO cli = ContenedorVentasSingleton.getInstancia().getInfuenciaTienda(elemento.getTienda());
+                    if (cli.equals(elemento.getCliente())){
+                    float diametro = ContenedorVentasSingleton.getInstancia().getDiametroInfuencia(elemento.getTienda(), cli);
+                       mapa.representar(cli, elemento.getTienda()); 
+                       mapa.influencia(cli, elemento.getTienda(),diametro);
                     }
                 } 
                 
@@ -59,8 +61,8 @@ public class ControllerMVCVistaMapaMayorVentas implements ActionListener {
             mapa.generarGrafico(); //Generar el mapa
             
             //3.-seleccionar la vista y configurar para mostrar nuevo estado del modelo 
-            PanelGraficoMapa panel_graficoMapaMayorVentas = new PanelGraficoMapa(mapa);            
-            this.vistaMapa.setPanel(panel_graficoMapaMayorVentas);
+            PanelGraficoMapa panel_graficoMapaInfluencia = new PanelGraficoMapa(mapa);            
+            this.vistaMapa.setPanel(panel_graficoMapaInfluencia);
           }
     }
 }
