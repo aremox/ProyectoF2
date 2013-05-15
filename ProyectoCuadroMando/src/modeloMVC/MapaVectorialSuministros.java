@@ -42,7 +42,7 @@ public class MapaVectorialSuministros extends MapaVectorialBase implements IMapa
                     grafico2d.setPaint(Color.RED);  
                     switch(x) {
                         case 1:
-                           grafico2d.setPaint(Color.DARK_GRAY);
+                           grafico2d.setPaint(Color.BLUE);
                            
                             break;
                         case 6:

@@ -35,7 +35,7 @@ public class MapaVectorialClientes extends MapaVectorialBase implements IMapaRep
                     
                     switch(x) {
                         case 2:
-                           grafico2d.setPaint(Color.DARK_GRAY);
+                           grafico2d.setPaint(Color.blue);
                             break;
                         case 5:
                            grafico2d.setPaint(Color.green);

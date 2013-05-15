@@ -4,13 +4,8 @@
  */
 package controllerMVC;
 
-import ContenedoresCU.ContenedorAlmacenesSingleton;
-import ContenedoresCU.ContenedorClientesSingleton;
 import ContenedoresCU.ContenedorTiendasSingleton;
-import ContenedoresCU.ContenedorVentasSingleton;
-import EntidadesCU.Cliente_ADO;
 import EntidadesCU.Tienda_ADO;
-import EntidadesCU.Venta_ADO;
 import InterfazGraficaUsuarioCU.VentanaPrincipalCuadroMando;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

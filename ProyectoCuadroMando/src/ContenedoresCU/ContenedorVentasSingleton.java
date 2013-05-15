@@ -1,5 +1,6 @@
 package ContenedoresCU;
 
+import EntidadesCU.Tienda_ADO;
 import EntidadesCU.Venta_ADO;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -66,7 +67,22 @@ public class ContenedorVentasSingleton {
         }
    }
       public LinkedList getVentas(){
-        return coleccionElementos;
-         
+        return coleccionElementos;         
      }
+      
+      public Tienda_ADO getMayor_Venta(){
+        int tam = coleccionElementos.size();
+                for (int i = 0; i < tam; i++) {
+                   Venta_ADO elemento = (Venta_ADO) coleccionElementos.get(i);
+                      elemento.getTienda().setN_ventas(); 
+                }
+           Tienda_ADO tienda =  coleccionElementos.get(0).getTienda();
+            for (int i = 0; i < tam; i++) {
+                Tienda_ADO elemento = (Tienda_ADO) coleccionElementos.get(i).getTienda();
+                      
+                if (tienda.getN_ventas() < elemento.getN_ventas())
+                   tienda = elemento;
+                }  
+        return tienda;
+}
 }

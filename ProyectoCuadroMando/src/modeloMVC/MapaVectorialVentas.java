@@ -7,7 +7,6 @@ package modeloMVC;
 import EntidadesCU.GeoEntidad;
 import java.awt.Color;
 import java.awt.Rectangle;
-import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
@@ -41,7 +40,7 @@ public class MapaVectorialVentas extends MapaVectorialBase implements IMapaRepre
                     grafico2d.setPaint(Color.RED);
                     switch(x) {
                         case 2:
-                           grafico2d.setPaint(Color.DARK_GRAY);
+                           grafico2d.setPaint(Color.BLUE);
                             break;
                         case 6:
                            grafico2d.setPaint(Color.green);
