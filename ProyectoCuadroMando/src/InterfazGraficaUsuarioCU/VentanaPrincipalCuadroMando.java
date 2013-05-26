@@ -3,15 +3,20 @@ package InterfazGraficaUsuarioCU;
 import controllerMVC.ControllerMVCVistaMapaClientes;
 import controllerMVC.ControllerMVCVistaMapaInfuencia;
 import controllerMVC.ControllerMVCVistaMapaMayorVentas;
+import controllerMVC.ControllerMVCVistaMapaProductos;
 import controllerMVC.ControllerMVCVistaMapaSuministros;
 import controllerMVC.ControllerMVCVistaMapaVentas;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import vistamvc.PanelGraficoMapa;
 
 
@@ -26,12 +31,14 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action {
 
     PanelGeneralOpciones panelOpciones;
     PanelGraficoMapa vista;// variable de estado de representación del mapa
+    ControllerMVCVistaMapaProductos ControladorProductos = new ControllerMVCVistaMapaProductos(this);
+    private JTextField cuadroTexto = new JTextField(40);
     
     public VentanaPrincipalCuadroMando() {
         //Configurar ventana principal
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setLayout(new BorderLayout());
-        this.setSize(900, 600);
+        this.setSize(900, 700);
         this.setTitle("Proyecto Cuadro de Mando");
         this.setResizable(true);
         //Centramos la ventana en la pantalla
@@ -69,6 +76,7 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action {
         JMenuItem itemAC = new JMenuItem("Generar Mapa de Suministro");
         JMenuItem itemAD = new JMenuItem("Generar Mapa de tienda con mayor numero de ventas");
         JMenuItem itemAE = new JMenuItem("Generar Mapa de influencia");
+        JMenuItem itemAF = new JMenuItem("Generar Mapa de zona de producto");
 
         JMenu menu = new JMenu("Opciones de Análisis");
         menu.add(itemAA);
@@ -76,12 +84,14 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action {
         menu.add(itemAC);
         menu.add(itemAD);
         menu.add(itemAE);
+        menu.add(itemAF);
 
         itemAA.addActionListener(new ControllerMVCVistaMapaClientes(this));
         itemAB.addActionListener(new ControllerMVCVistaMapaVentas(this));
         itemAC.addActionListener(new ControllerMVCVistaMapaSuministros(this));
         itemAD.addActionListener(new ControllerMVCVistaMapaMayorVentas(this));
         itemAE.addActionListener(new ControllerMVCVistaMapaInfuencia(this));
+        itemAF.addActionListener(ControladorProductos);
 
         return menu;
     }
@@ -94,5 +104,29 @@ public class VentanaPrincipalCuadroMando extends JFrame implements Action {
         this.vista = vista;
         this.setContentPane(vista);
         this.setVisible(true);
+    }
+    public void selector(PanelGraficoMapa vista){
+       
+       this.vista = vista;
+       
+        JPanel panel1 = new JPanel();
+        panel1.setLayout(new BorderLayout());
+        this.setContentPane(panel1);
+        
+        JPanel busqueda = new JPanel();
+        busqueda.setLayout(new FlowLayout());
+        JButton buscar = new JButton("Buscar");
+        buscar.addActionListener(ControladorProductos);
+        busqueda.add(buscar);        
+        busqueda.add(this.cuadroTexto);
+         
+        
+        this.getContentPane().add(busqueda, BorderLayout.NORTH);     
+        this.getContentPane().add(this.vista, BorderLayout.CENTER);  
+        this.setVisible(true);
+    }
+    
+    public String texto(){        
+        return this.cuadroTexto.getText();
     }
 }

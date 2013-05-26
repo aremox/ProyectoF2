@@ -4,12 +4,16 @@
  */
 package vistamvc;
 
+import java.awt.FlowLayout;
 import java.awt.Graphics;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import modeloMVC.MapaVectorialBase;
 import modeloMVC.MapaVectorialClientes;
 import modeloMVC.MapaVectorialInfluencia;
 import modeloMVC.MapaVectorialMayorVentas;
+import modeloMVC.MapaVectorialProductos;
 import modeloMVC.MapaVectorialSuministros;
 import modeloMVC.MapaVectorialVentas;
 
@@ -18,6 +22,7 @@ public class PanelGraficoMapa extends JPanel{
     
     //asociación de sólo lectura con el modelo 
     MapaVectorialBase mapa;    
+   
     
     public PanelGraficoMapa(MapaVectorialClientes mapa){
         
@@ -40,11 +45,17 @@ public class PanelGraficoMapa extends JPanel{
         
         this.mapa=mapa;   
     }
+     public PanelGraficoMapa(MapaVectorialProductos mapa){
+        this.setLayout(new FlowLayout());
+        this.mapa=mapa; 
+       
+        
+    }
     
     @Override
     public void paint(Graphics g) {
          //actualizacion de la vista y acceso al modelo     
         g.drawImage(mapa.getImagen(), 0, 0, this);
     }
-
+    
 }
